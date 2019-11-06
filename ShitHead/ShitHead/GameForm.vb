@@ -22,16 +22,15 @@
         For l = 0 To 2
             Dim rm As Resources.ResourceManager = My.Resources.ResourceManager
             Dim resname As String = "5C"
-            Dim p As Image = CType(rm.GetObject("\\cca07\C14\SeyJar14\GitHub\ShitHead\ShitHead\ShitHead\Resources\2H.png"), Image)
+            Dim picture As Image = CType(rm.GetObject(resname), Image)
             Dim pb = PBList(l)
-
-            'Dim cardim As Image = Image.FromFile("\\cca07\C14\SeyJar14\GitHub\ShitHead\ShitHead\ShitHead\Resources\2H.png")
-
             Dim CardVal As String = "5C"
-
+            'Dim cardim As Image = Image.FromFile("\\cca07\C14\SeyJar14\GitHub\ShitHead\ShitHead\ShitHead\Resources\2H.png")
             'pb.Image = CType(rm.GetObject("AC.png"), Image)
+            'pb.Image = 
+            'Dim theStream As System.IO.Stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(Application.ProductName & ".5C.png")
 
-
+            'pb.Image = Image.FromStream(theStream)
             'pb.Image = My.Resources.AC
 
 
