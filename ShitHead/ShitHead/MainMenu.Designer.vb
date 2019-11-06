@@ -27,6 +27,7 @@ Partial Class MainMenu
         Me.cmdExit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnLogOut = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cmdPlay
@@ -35,7 +36,7 @@ Partial Class MainMenu
         Me.cmdPlay.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.cmdPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdPlay.ForeColor = System.Drawing.Color.Yellow
-        Me.cmdPlay.Location = New System.Drawing.Point(51, 84)
+        Me.cmdPlay.Location = New System.Drawing.Point(51, 123)
         Me.cmdPlay.Margin = New System.Windows.Forms.Padding(2)
         Me.cmdPlay.Name = "cmdPlay"
         Me.cmdPlay.Size = New System.Drawing.Size(190, 54)
@@ -48,7 +49,7 @@ Partial Class MainMenu
         Me.cmdStore.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.cmdStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdStore.ForeColor = System.Drawing.Color.Yellow
-        Me.cmdStore.Location = New System.Drawing.Point(51, 160)
+        Me.cmdStore.Location = New System.Drawing.Point(51, 181)
         Me.cmdStore.Margin = New System.Windows.Forms.Padding(2)
         Me.cmdStore.Name = "cmdStore"
         Me.cmdStore.Size = New System.Drawing.Size(190, 54)
@@ -95,6 +96,18 @@ Partial Class MainMenu
         Me.btnLogOut.Text = "LogOut"
         Me.btnLogOut.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Yellow
+        Me.Label2.Location = New System.Drawing.Point(12, 71)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(77, 25)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Label2"
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -103,6 +116,7 @@ Partial Class MainMenu
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(287, 290)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmdExit)
@@ -121,4 +135,5 @@ Partial Class MainMenu
     Friend WithEvents cmdExit As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents btnLogOut As Button
+    Friend WithEvents Label2 As Label
 End Class

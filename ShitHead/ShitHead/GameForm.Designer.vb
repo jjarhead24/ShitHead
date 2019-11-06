@@ -57,12 +57,15 @@ Partial Class GameForm
         '
         'CmdClose
         '
+        Me.CmdClose.BackColor = System.Drawing.Color.Transparent
+        Me.CmdClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CmdClose.ForeColor = System.Drawing.Color.Yellow
         Me.CmdClose.Location = New System.Drawing.Point(1259, 704)
         Me.CmdClose.Name = "CmdClose"
         Me.CmdClose.Size = New System.Drawing.Size(91, 52)
         Me.CmdClose.TabIndex = 2
         Me.CmdClose.Text = "End Game"
-        Me.CmdClose.UseVisualStyleBackColor = True
+        Me.CmdClose.UseVisualStyleBackColor = False
         '
         'TableCard1
         '
@@ -148,7 +151,7 @@ Partial Class GameForm
         Me.CompTable3.TabIndex = 8
         Me.CompTable3.TabStop = False
         '
-        'Form1
+        'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -165,7 +168,7 @@ Partial Class GameForm
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.ListBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Form1"
+        Me.Name = "GameForm"
         Me.Text = "Form1"
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).EndInit()

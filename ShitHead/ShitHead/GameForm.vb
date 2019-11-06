@@ -41,11 +41,7 @@
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles CmdClose.Click
-        Dim Confrim = MsgBox("Are you sure you want to quit?", vbYesNo)
-        If Confrim = vbYes Then
-            Me.Close()
-        Else
-
-        End If
+        Quit.Show()
+        Me.Hide()
     End Sub
 End Class

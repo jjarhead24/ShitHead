@@ -67,7 +67,7 @@ Public Class MainMenu
 
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadFromFile()
-
+        Label2.Text = "Your Bill balance is: " & Score
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
@@ -78,5 +78,9 @@ Public Class MainMenu
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         MsgBox($"{CurrentUser} = {Score}")
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
     End Sub
 End Class

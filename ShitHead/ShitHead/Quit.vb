@@ -9,4 +9,8 @@
         MainMenu.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Quit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cmdYes.Focus()
+    End Sub
 End Class
