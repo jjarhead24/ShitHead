@@ -72,7 +72,7 @@ Partial Class GameForm
         Me.TableCard1.Cursor = System.Windows.Forms.Cursors.Default
         Me.TableCard1.Enabled = False
         Me.TableCard1.ErrorImage = Nothing
-        Me.TableCard1.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788d
+        Me.TableCard1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard1.InitialImage = Nothing
         Me.TableCard1.Location = New System.Drawing.Point(222, 502)
         Me.TableCard1.Name = "TableCard1"
@@ -86,7 +86,7 @@ Partial Class GameForm
         Me.TableCard2.Cursor = System.Windows.Forms.Cursors.Default
         Me.TableCard2.Enabled = False
         Me.TableCard2.ErrorImage = Nothing
-        Me.TableCard2.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788d
+        Me.TableCard2.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard2.InitialImage = Nothing
         Me.TableCard2.Location = New System.Drawing.Point(546, 502)
         Me.TableCard2.Name = "TableCard2"
@@ -100,7 +100,7 @@ Partial Class GameForm
         Me.TableCard3.Cursor = System.Windows.Forms.Cursors.Default
         Me.TableCard3.Enabled = False
         Me.TableCard3.ErrorImage = Nothing
-        Me.TableCard3.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788d
+        Me.TableCard3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard3.InitialImage = Nothing
         Me.TableCard3.Location = New System.Drawing.Point(872, 502)
         Me.TableCard3.Name = "TableCard3"
@@ -114,7 +114,7 @@ Partial Class GameForm
         Me.CompTable1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CompTable1.Enabled = False
         Me.CompTable1.ErrorImage = Nothing
-        Me.CompTable1.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788d
+        Me.CompTable1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompTable1.InitialImage = Nothing
         Me.CompTable1.Location = New System.Drawing.Point(872, 12)
         Me.CompTable1.Name = "CompTable1"
@@ -128,7 +128,7 @@ Partial Class GameForm
         Me.CompTable2.Cursor = System.Windows.Forms.Cursors.Default
         Me.CompTable2.Enabled = False
         Me.CompTable2.ErrorImage = Nothing
-        Me.CompTable2.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788d
+        Me.CompTable2.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompTable2.InitialImage = Nothing
         Me.CompTable2.Location = New System.Drawing.Point(546, 12)
         Me.CompTable2.Name = "CompTable2"
@@ -142,7 +142,7 @@ Partial Class GameForm
         Me.CompTable3.Cursor = System.Windows.Forms.Cursors.Default
         Me.CompTable3.Enabled = False
         Me.CompTable3.ErrorImage = Nothing
-        Me.CompTable3.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788d
+        Me.CompTable3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompTable3.InitialImage = Nothing
         Me.CompTable3.Location = New System.Drawing.Point(222, 12)
         Me.CompTable3.Name = "CompTable3"

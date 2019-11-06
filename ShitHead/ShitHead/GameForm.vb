@@ -10,30 +10,24 @@
         SpareCards = ReturnedLists.Item2
         Try
             For Each card In playerCards
-                ListBox1.Items.Add($"{card.Suit} - {card.Type} - {card.Number}")
+                ListBox1.Items.Add($"{card.Suit} - {card.Type} ")
             Next
             For Each card In SpareCards
-                ListBox2.Items.Add($"{card.Suit} - {card.Type} - {card.Number}")
+                ListBox2.Items.Add($"{card.Suit} - {card.Type} ")
             Next
         Catch ex As Exception
 
         End Try
+        'PBList
         Dim l As Integer
         For l = 0 To 2
-            Dim rm As Resources.ResourceManager = My.Resources.ResourceManager
-            Dim resname As String = "5C"
-            Dim picture As Image = CType(rm.GetObject(resname), Image)
             Dim pb = PBList(l)
-            Dim CardVal As String = "5C"
-            'Dim cardim As Image = Image.FromFile("\\cca07\C14\SeyJar14\GitHub\ShitHead\ShitHead\ShitHead\Resources\2H.png")
-            'pb.Image = CType(rm.GetObject("AC.png"), Image)
-            'pb.Image = 
-            'Dim theStream As System.IO.Stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(Application.ProductName & ".5C.png")
+            Dim CardVal As String
+            Dim CardSuit As String
+            Dim CardType As String
 
-            'pb.Image = Image.FromStream(theStream)
-            'pb.Image = My.Resources.AC
-
-
+            'CardVal = "_" + Card.Type + Card.Suit
+            'TableCard1.Image = My.Resources.ResourceManager.GetObject(CardVal)
 
 
         Next
