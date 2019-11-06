@@ -35,6 +35,7 @@ Public Class MainMenu
     ''' <summary>
     ''' To be called when the <see cref="Scores"/> dictionary is updated
     ''' Causes it to be wrote to text file
+    ''' MainMenu.Score = 
     ''' </summary>
     Public Sub SaveToFile()
         Dim contents = ""
@@ -56,12 +57,8 @@ Public Class MainMenu
     End Sub
 
     Private Sub cmdExit_Click(sender As Object, e As EventArgs) Handles cmdExit.Click
-        Dim Confrim = MsgBox("Are you sure you want to quit?", vbYesNo)
-        If Confrim = vbYes Then
-            Me.Close()
-        Else
-
-        End If
+        Me.Hide()
+        Quit.Show()
     End Sub
 
     Private Sub cmdLogOut_Click(sender As Object, e As EventArgs)
@@ -70,6 +67,7 @@ Public Class MainMenu
 
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadFromFile()
+
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
