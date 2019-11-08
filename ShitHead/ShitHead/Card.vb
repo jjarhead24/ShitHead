@@ -9,6 +9,7 @@
         Dim usedNums As New List(Of Integer)
         Dim NewCards As New Random()
         Dim CurrCard As Integer
+        Dim Picture As Image
 
         For x = 1 To 52
             CurrCard = NewCards.Next(1, 53)
@@ -242,7 +243,6 @@
 
 
         Next
-
         Return New Tuple(Of List(Of Card), List(Of Card))(playerCards, SpareCards)
 
     End Function

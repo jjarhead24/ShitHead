@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class GameForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class GameForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.CmdClose = New System.Windows.Forms.Button()
@@ -31,6 +32,7 @@ Partial Class GameForm
         Me.CompTable1 = New System.Windows.Forms.PictureBox()
         Me.CompTable2 = New System.Windows.Forms.PictureBox()
         Me.CompTable3 = New System.Windows.Forms.PictureBox()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,12 +71,13 @@ Partial Class GameForm
         '
         'TableCard1
         '
+        Me.TableCard1.BackColor = System.Drawing.Color.Transparent
         Me.TableCard1.Cursor = System.Windows.Forms.Cursors.Default
         Me.TableCard1.Enabled = False
         Me.TableCard1.ErrorImage = Nothing
         Me.TableCard1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard1.InitialImage = Nothing
-        Me.TableCard1.Location = New System.Drawing.Point(222, 502)
+        Me.TableCard1.Location = New System.Drawing.Point(349, 502)
         Me.TableCard1.Name = "TableCard1"
         Me.TableCard1.Size = New System.Drawing.Size(180, 254)
         Me.TableCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -83,6 +86,7 @@ Partial Class GameForm
         '
         'TableCard2
         '
+        Me.TableCard2.BackColor = System.Drawing.Color.Transparent
         Me.TableCard2.Cursor = System.Windows.Forms.Cursors.Default
         Me.TableCard2.Enabled = False
         Me.TableCard2.ErrorImage = Nothing
@@ -97,12 +101,13 @@ Partial Class GameForm
         '
         'TableCard3
         '
+        Me.TableCard3.BackColor = System.Drawing.Color.Transparent
         Me.TableCard3.Cursor = System.Windows.Forms.Cursors.Default
         Me.TableCard3.Enabled = False
         Me.TableCard3.ErrorImage = Nothing
         Me.TableCard3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard3.InitialImage = Nothing
-        Me.TableCard3.Location = New System.Drawing.Point(872, 502)
+        Me.TableCard3.Location = New System.Drawing.Point(742, 502)
         Me.TableCard3.Name = "TableCard3"
         Me.TableCard3.Size = New System.Drawing.Size(180, 254)
         Me.TableCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -116,7 +121,7 @@ Partial Class GameForm
         Me.CompTable1.ErrorImage = Nothing
         Me.CompTable1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompTable1.InitialImage = Nothing
-        Me.CompTable1.Location = New System.Drawing.Point(872, 12)
+        Me.CompTable1.Location = New System.Drawing.Point(742, 12)
         Me.CompTable1.Name = "CompTable1"
         Me.CompTable1.Size = New System.Drawing.Size(180, 254)
         Me.CompTable1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -144,12 +149,18 @@ Partial Class GameForm
         Me.CompTable3.ErrorImage = Nothing
         Me.CompTable3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompTable3.InitialImage = Nothing
-        Me.CompTable3.Location = New System.Drawing.Point(222, 12)
+        Me.CompTable3.Location = New System.Drawing.Point(349, 12)
         Me.CompTable3.Name = "CompTable3"
         Me.CompTable3.Size = New System.Drawing.Size(180, 254)
         Me.CompTable3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CompTable3.TabIndex = 8
         Me.CompTable3.TabStop = False
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'GameForm
         '
@@ -189,4 +200,5 @@ Partial Class GameForm
     Friend WithEvents CompTable1 As PictureBox
     Friend WithEvents CompTable2 As PictureBox
     Friend WithEvents CompTable3 As PictureBox
+    Friend WithEvents ImageList1 As ImageList
 End Class

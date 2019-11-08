@@ -1,9 +1,9 @@
 ﻿Public Class GameForm
     Dim playerCards As New List(Of Card)
     Dim SpareCards As New List(Of Card)
-    Dim PBList As New List(Of PictureBox) From {TableCard1, TableCard2, TableCard3}
-
+    Dim card As Card
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim PBList As New List(Of PictureBox) From {TableCard1, TableCard2, TableCard3}
         Me.WindowState = FormWindowState.Maximized
         Dim ReturnedLists = Card.GenCards()
         playerCards = ReturnedLists.Item1
@@ -20,14 +20,14 @@
         End Try
         'PBList
         Dim l As Integer
-        For l = 0 To 2
-            Dim pb = PBList(l)
+        For l = 3 To 5
+            'Dim pb = PBList(l)
             Dim CardVal As String
-            Dim CardSuit As String
-            Dim CardType As String
 
-            'CardVal = "_" + Card.Type + Card.Suit
-            'TableCard1.Image = My.Resources.ResourceManager.GetObject(CardVal)
+            card = playerCards(l)
+            CardVal = "_" + card.Type + card.Suit
+            'TableCard{"1"}.Image = My.Resources.ResourceManager.GetObject(CardVal)
+            PBList(l - 3).Image = My.Resources.ResourceManager.GetObject(CardVal)
 
 
         Next
