@@ -3,13 +3,13 @@
     Public Number As Integer
     Public Type As String
 
-    Public Shared Function GenCards() As Tuple(Of List(Of Card), List(Of Card))
+    Public Shared Function GenCards() As Tuple(Of List(Of Card), List(Of Card), List(Of Card))
         Dim playerCards As New List(Of Card)
         Dim SpareCards As New List(Of Card)
+        Dim Comp1Cards As New List(Of Card)
         Dim usedNums As New List(Of Integer)
         Dim NewCards As New Random()
         Dim CurrCard As Integer
-        Dim Picture As Image
 
         For x = 1 To 52
             CurrCard = NewCards.Next(1, 53)
@@ -235,7 +235,9 @@
 
             If playerCards.Count <> 9 Then
                 playerCards.Add(MadeCard)
+            ElseIf Comp1Cards.Count <> 9 Then
 
+                Comp1Cards.Add(MadeCard)
             Else
                 SpareCards.Add(MadeCard)
 
@@ -243,7 +245,7 @@
 
 
         Next
-        Return New Tuple(Of List(Of Card), List(Of Card))(playerCards, SpareCards)
+        Return New Tuple(Of List(Of Card), List(Of Card), List(Of Card))(playerCards, SpareCards, Comp1Cards)
 
     End Function
 End Class
