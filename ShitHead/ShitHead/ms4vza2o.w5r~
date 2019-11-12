@@ -28,11 +28,12 @@ Partial Class SelectUser
         '
         'lbUsers
         '
+        Me.lbUsers.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lbUsers.Dock = System.Windows.Forms.DockStyle.Top
         Me.lbUsers.FormattingEnabled = True
         Me.lbUsers.Location = New System.Drawing.Point(0, 0)
         Me.lbUsers.Name = "lbUsers"
-        Me.lbUsers.Size = New System.Drawing.Size(227, 225)
+        Me.lbUsers.Size = New System.Drawing.Size(227, 221)
         Me.lbUsers.TabIndex = 0
         '
         'btnNew
@@ -41,9 +42,9 @@ Partial Class SelectUser
         Me.btnNew.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNew.ForeColor = System.Drawing.Color.Yellow
-        Me.btnNew.Location = New System.Drawing.Point(0, 225)
+        Me.btnNew.Location = New System.Drawing.Point(0, 221)
         Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(227, 30)
+        Me.btnNew.Size = New System.Drawing.Size(227, 34)
         Me.btnNew.TabIndex = 1
         Me.btnNew.Text = "New User"
         Me.btnNew.UseVisualStyleBackColor = False

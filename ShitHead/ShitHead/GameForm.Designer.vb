@@ -86,7 +86,7 @@ Partial Class GameForm
         Me.CmdClose.BackColor = System.Drawing.Color.Transparent
         Me.CmdClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CmdClose.ForeColor = System.Drawing.Color.Yellow
-        Me.CmdClose.Location = New System.Drawing.Point(1501, 844)
+        Me.CmdClose.Location = New System.Drawing.Point(1273, 714)
         Me.CmdClose.Name = "CmdClose"
         Me.CmdClose.Size = New System.Drawing.Size(91, 52)
         Me.CmdClose.TabIndex = 2
@@ -95,15 +95,15 @@ Partial Class GameForm
         '
         'TableCard1
         '
-        Me.TableCard1.BackColor = System.Drawing.Color.Transparent
+        Me.TableCard1.BackColor = System.Drawing.Color.White
         Me.TableCard1.Cursor = System.Windows.Forms.Cursors.Default
         Me.TableCard1.Enabled = False
         Me.TableCard1.ErrorImage = Nothing
         Me.TableCard1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard1.InitialImage = Nothing
-        Me.TableCard1.Location = New System.Drawing.Point(349, 687)
+        Me.TableCard1.Location = New System.Drawing.Point(465, 627)
         Me.TableCard1.Name = "TableCard1"
-        Me.TableCard1.Size = New System.Drawing.Size(139, 209)
+        Me.TableCard1.Size = New System.Drawing.Size(89, 133)
         Me.TableCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.TableCard1.TabIndex = 3
         Me.TableCard1.TabStop = False
@@ -116,9 +116,9 @@ Partial Class GameForm
         Me.TableCard2.ErrorImage = Nothing
         Me.TableCard2.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard2.InitialImage = Nothing
-        Me.TableCard2.Location = New System.Drawing.Point(546, 687)
+        Me.TableCard2.Location = New System.Drawing.Point(588, 627)
         Me.TableCard2.Name = "TableCard2"
-        Me.TableCard2.Size = New System.Drawing.Size(139, 209)
+        Me.TableCard2.Size = New System.Drawing.Size(89, 133)
         Me.TableCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.TableCard2.TabIndex = 4
         Me.TableCard2.TabStop = False
@@ -131,9 +131,9 @@ Partial Class GameForm
         Me.TableCard3.ErrorImage = Nothing
         Me.TableCard3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard3.InitialImage = Nothing
-        Me.TableCard3.Location = New System.Drawing.Point(742, 687)
+        Me.TableCard3.Location = New System.Drawing.Point(714, 627)
         Me.TableCard3.Name = "TableCard3"
-        Me.TableCard3.Size = New System.Drawing.Size(139, 209)
+        Me.TableCard3.Size = New System.Drawing.Size(89, 133)
         Me.TableCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.TableCard3.TabIndex = 5
         Me.TableCard3.TabStop = False
@@ -186,9 +186,9 @@ Partial Class GameForm
         'FaceDown1
         '
         Me.FaceDown1.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.FaceDown1.Location = New System.Drawing.Point(349, 687)
+        Me.FaceDown1.Location = New System.Drawing.Point(480, 627)
         Me.FaceDown1.Name = "FaceDown1"
-        Me.FaceDown1.Size = New System.Drawing.Size(139, 209)
+        Me.FaceDown1.Size = New System.Drawing.Size(89, 133)
         Me.FaceDown1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.FaceDown1.TabIndex = 9
         Me.FaceDown1.TabStop = False
@@ -196,9 +196,9 @@ Partial Class GameForm
         'FaceDown2
         '
         Me.FaceDown2.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.FaceDown2.Location = New System.Drawing.Point(546, 687)
+        Me.FaceDown2.Location = New System.Drawing.Point(605, 627)
         Me.FaceDown2.Name = "FaceDown2"
-        Me.FaceDown2.Size = New System.Drawing.Size(139, 209)
+        Me.FaceDown2.Size = New System.Drawing.Size(89, 133)
         Me.FaceDown2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.FaceDown2.TabIndex = 10
         Me.FaceDown2.TabStop = False
@@ -206,9 +206,9 @@ Partial Class GameForm
         'FaceDown3
         '
         Me.FaceDown3.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.FaceDown3.Location = New System.Drawing.Point(742, 687)
+        Me.FaceDown3.Location = New System.Drawing.Point(738, 627)
         Me.FaceDown3.Name = "FaceDown3"
-        Me.FaceDown3.Size = New System.Drawing.Size(139, 209)
+        Me.FaceDown3.Size = New System.Drawing.Size(89, 133)
         Me.FaceDown3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.FaceDown3.TabIndex = 11
         Me.FaceDown3.TabStop = False
@@ -270,9 +270,9 @@ Partial Class GameForm
         Me.HandCard3.ErrorImage = Nothing
         Me.HandCard3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.HandCard3.InitialImage = Nothing
-        Me.HandCard3.Location = New System.Drawing.Point(742, 472)
+        Me.HandCard3.Location = New System.Drawing.Point(729, 488)
         Me.HandCard3.Name = "HandCard3"
-        Me.HandCard3.Size = New System.Drawing.Size(139, 209)
+        Me.HandCard3.Size = New System.Drawing.Size(89, 133)
         Me.HandCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.HandCard3.TabIndex = 19
         Me.HandCard3.TabStop = False
@@ -285,9 +285,9 @@ Partial Class GameForm
         Me.HandCard2.ErrorImage = Nothing
         Me.HandCard2.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.HandCard2.InitialImage = Nothing
-        Me.HandCard2.Location = New System.Drawing.Point(546, 472)
+        Me.HandCard2.Location = New System.Drawing.Point(596, 488)
         Me.HandCard2.Name = "HandCard2"
-        Me.HandCard2.Size = New System.Drawing.Size(139, 209)
+        Me.HandCard2.Size = New System.Drawing.Size(89, 133)
         Me.HandCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.HandCard2.TabIndex = 18
         Me.HandCard2.TabStop = False
@@ -300,9 +300,9 @@ Partial Class GameForm
         Me.HandCard1.ErrorImage = Nothing
         Me.HandCard1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.HandCard1.InitialImage = Nothing
-        Me.HandCard1.Location = New System.Drawing.Point(349, 472)
+        Me.HandCard1.Location = New System.Drawing.Point(471, 488)
         Me.HandCard1.Name = "HandCard1"
-        Me.HandCard1.Size = New System.Drawing.Size(139, 209)
+        Me.HandCard1.Size = New System.Drawing.Size(89, 133)
         Me.HandCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.HandCard1.TabIndex = 17
         Me.HandCard1.TabStop = False
@@ -330,9 +330,9 @@ Partial Class GameForm
         Me.HandRight.BackColor = System.Drawing.Color.Transparent
         Me.HandRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.HandRight.ForeColor = System.Drawing.Color.Yellow
-        Me.HandRight.Location = New System.Drawing.Point(887, 472)
+        Me.HandRight.Location = New System.Drawing.Point(824, 488)
         Me.HandRight.Name = "HandRight"
-        Me.HandRight.Size = New System.Drawing.Size(24, 209)
+        Me.HandRight.Size = New System.Drawing.Size(17, 133)
         Me.HandRight.TabIndex = 22
         Me.HandRight.Text = ">"
         Me.HandRight.UseVisualStyleBackColor = False
@@ -342,9 +342,9 @@ Partial Class GameForm
         Me.HandLeft.BackColor = System.Drawing.Color.Transparent
         Me.HandLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.HandLeft.ForeColor = System.Drawing.Color.Yellow
-        Me.HandLeft.Location = New System.Drawing.Point(319, 472)
+        Me.HandLeft.Location = New System.Drawing.Point(448, 488)
         Me.HandLeft.Name = "HandLeft"
-        Me.HandLeft.Size = New System.Drawing.Size(24, 209)
+        Me.HandLeft.Size = New System.Drawing.Size(17, 133)
         Me.HandLeft.TabIndex = 23
         Me.HandLeft.Text = "<"
         Me.HandLeft.UseVisualStyleBackColor = False
@@ -355,7 +355,7 @@ Partial Class GameForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
-        Me.ClientSize = New System.Drawing.Size(1620, 920)
+        Me.ClientSize = New System.Drawing.Size(1386, 788)
         Me.Controls.Add(Me.HandLeft)
         Me.Controls.Add(Me.HandRight)
         Me.Controls.Add(Me.Button2)

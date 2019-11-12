@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardSwap.Designer.vb">
+      <DependentUpon>CardSwap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CardSwap.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Card.vb" />
     <Compile Include="GameForm.vb">
       <SubType>Form</SubType>
@@ -122,6 +128,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CardSwap.resx">
+      <DependentUpon>CardSwap.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.vb</DependentUpon>
     </EmbeddedResource>
