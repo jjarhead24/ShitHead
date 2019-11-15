@@ -53,7 +53,7 @@
 
     Private Sub Hand2_Click(sender As Object, e As EventArgs) Handles Hand2.Click
         If card1 = "" Then
-            card1 = "hand1"
+            card1 = "hand2"
 
         ElseIf card2 = "" Then
             card2 = "hand2"
@@ -83,20 +83,20 @@
 
     Private Sub Table2_Click(sender As Object, e As EventArgs) Handles Table2.Click
         If card1 = "" Then
-            card1 = "table1"
+            card1 = "table2"
 
         ElseIf card2 = "" Then
-            card2 = "table1"
+            card2 = "table2"
             Swap()
         End If
     End Sub
 
     Private Sub Table3_Click(sender As Object, e As EventArgs) Handles Table3.Click
         If card1 = "" Then
-            card1 = "table1"
+            card1 = "table3"
 
         ElseIf card2 = "" Then
-            card2 = "table1"
+            card2 = "table3"
             Swap()
         End If
     End Sub
@@ -123,9 +123,31 @@
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "table2" Then
+                tempTag = Hand1.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
+                tempLbl = HandLbl1.Text
+
+                Hand1.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
+                Hand1.Tag = Table2.Tag
+                HandLbl1.Text = TableLbl2.Text
+
+                Table2.Image = tempPic
+                Table2.Tag = tempTag
+                TableLbl2.Text = tempLbl
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "table3" Then
+                tempTag = Hand1.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
+                tempLbl = HandLbl1.Text
+
+                Hand1.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
+                Hand1.Tag = Table3.Tag
+                HandLbl1.Text = TableLbl3.Text
+
+                Table3.Image = tempPic
+                Table3.Tag = tempTag
+                TableLbl3.Text = tempLbl
                 card1 = ""
                 card2 = ""
             Else
@@ -137,12 +159,48 @@
 
         ElseIf card1 = "hand2" Then
             If card2 = "table1" Then
+                tempTag = Hand2.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
+                tempLbl = HandLbl2.Text
+
+                Hand2.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
+                Hand2.Tag = Table1.Tag
+                HandLbl2.Text = TableLbl1.Text
+
+                Table1.Image = tempPic
+                Table1.Tag = tempTag
+                TableLbl1.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "table2" Then
+                tempTag = Hand2.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
+                tempLbl = HandLbl2.Text
+
+                Hand2.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
+                Hand2.Tag = Table2.Tag
+                HandLbl2.Text = TableLbl2.Text
+
+                Table2.Image = tempPic
+                Table2.Tag = tempTag
+                TableLbl2.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "table3" Then
+                tempTag = Hand2.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
+                tempLbl = HandLbl2.Text
+
+                Hand2.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
+                Hand2.Tag = Table3.Tag
+                HandLbl2.Text = TableLbl3.Text
+
+                Table3.Image = tempPic
+                Table3.Tag = tempTag
+                TableLbl3.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             Else
@@ -154,12 +212,48 @@
 
         ElseIf card1 = "hand3" Then
             If card2 = "table1" Then
+                tempTag = Hand3.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
+                tempLbl = HandLbl3.Text
+
+                Hand3.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
+                Hand3.Tag = Table1.Tag
+                HandLbl3.Text = TableLbl1.Text
+
+                Table1.Image = tempPic
+                Table1.Tag = tempTag
+                TableLbl1.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "table2" Then
+                tempTag = Hand3.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
+                tempLbl = HandLbl3.Text
+
+                Hand3.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
+                Hand3.Tag = Table2.Tag
+                HandLbl3.Text = TableLbl2.Text
+
+                Table2.Image = tempPic
+                Table2.Tag = tempTag
+                TableLbl2.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "table3" Then
+                tempTag = Hand3.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
+                tempLbl = HandLbl3.Text
+
+                Hand3.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
+                Hand3.Tag = Table3.Tag
+                HandLbl3.Text = TableLbl3.Text
+
+                Table3.Image = tempPic
+                Table3.Tag = tempTag
+                TableLbl3.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             Else
@@ -186,9 +280,33 @@
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "hand2" Then
+                tempTag = Hand2.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
+                tempLbl = HandLbl2.Text
+
+                Hand2.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
+                Hand2.Tag = Table1.Tag
+                HandLbl2.Text = TableLbl1.Text
+
+                Table1.Image = tempPic
+                Table1.Tag = tempTag
+                TableLbl1.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "hand3" Then
+                tempTag = Hand3.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
+                tempLbl = HandLbl3.Text
+
+                Hand3.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
+                Hand3.Tag = Table1.Tag
+                HandLbl3.Text = TableLbl1.Text
+
+                Table1.Image = tempPic
+                Table1.Tag = tempTag
+                TableLbl1.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             Else
@@ -200,12 +318,48 @@
 
         ElseIf card1 = "table2" Then
             If card2 = "hand1" Then
+                tempTag = Hand1.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
+                tempLbl = HandLbl1.Text
+
+                Hand1.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
+                Hand1.Tag = Table2.Tag
+                HandLbl1.Text = TableLbl2.Text
+
+                Table2.Image = tempPic
+                Table2.Tag = tempTag
+                TableLbl2.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "hand2" Then
+                tempTag = Hand2.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
+                tempLbl = HandLbl2.Text
+
+                Hand2.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
+                Hand2.Tag = Table2.Tag
+                HandLbl2.Text = TableLbl2.Text
+
+                Table2.Image = tempPic
+                Table2.Tag = tempTag
+                TableLbl2.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "hand3" Then
+                tempTag = Hand3.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
+                tempLbl = HandLbl3.Text
+
+                Hand3.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
+                Hand3.Tag = Table2.Tag
+                HandLbl3.Text = TableLbl2.Text
+
+                Table2.Image = tempPic
+                Table2.Tag = tempTag
+                TableLbl2.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             Else
@@ -217,12 +371,48 @@
 
         ElseIf card1 = "table3" Then
             If card2 = "hand1" Then
+                tempTag = Hand1.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
+                tempLbl = HandLbl1.Text
+
+                Hand1.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
+                Hand1.Tag = Table3.Tag
+                HandLbl1.Text = TableLbl3.Text
+
+                Table3.Image = tempPic
+                Table3.Tag = tempTag
+                TableLbl3.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "hand2" Then
+                tempTag = Hand2.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
+                tempLbl = HandLbl2.Text
+
+                Hand2.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
+                Hand2.Tag = Table3.Tag
+                HandLbl2.Text = TableLbl3.Text
+
+                Table3.Image = tempPic
+                Table3.Tag = tempTag
+                TableLbl3.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             ElseIf card2 = "hand3" Then
+                tempTag = Hand3.Tag
+                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
+                tempLbl = HandLbl3.Text
+
+                Hand3.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
+                Hand3.Tag = Table3.Tag
+                HandLbl3.Text = TableLbl3.Text
+
+                Table3.Image = tempPic
+                Table3.Tag = tempTag
+                TableLbl3.Text = tempLbl
+
                 card1 = ""
                 card2 = ""
             Else
