@@ -29,6 +29,12 @@ Partial Class card_swap
         Me.Table2 = New System.Windows.Forms.PictureBox()
         Me.Table1 = New System.Windows.Forms.PictureBox()
         Me.Done = New System.Windows.Forms.Button()
+        Me.HandLbl1 = New System.Windows.Forms.Label()
+        Me.HandLbl2 = New System.Windows.Forms.Label()
+        Me.HandLbl3 = New System.Windows.Forms.Label()
+        Me.TableLbl1 = New System.Windows.Forms.Label()
+        Me.TableLbl2 = New System.Windows.Forms.Label()
+        Me.TableLbl3 = New System.Windows.Forms.Label()
         CType(Me.Hand1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Table3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Hand3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,12 +121,72 @@ Partial Class card_swap
         Me.Done.Text = "Done"
         Me.Done.UseVisualStyleBackColor = False
         '
+        'HandLbl1
+        '
+        Me.HandLbl1.AutoSize = True
+        Me.HandLbl1.Location = New System.Drawing.Point(138, 237)
+        Me.HandLbl1.Name = "HandLbl1"
+        Me.HandLbl1.Size = New System.Drawing.Size(39, 13)
+        Me.HandLbl1.TabIndex = 8
+        Me.HandLbl1.Text = "Label1"
+        '
+        'HandLbl2
+        '
+        Me.HandLbl2.AutoSize = True
+        Me.HandLbl2.Location = New System.Drawing.Point(326, 237)
+        Me.HandLbl2.Name = "HandLbl2"
+        Me.HandLbl2.Size = New System.Drawing.Size(39, 13)
+        Me.HandLbl2.TabIndex = 9
+        Me.HandLbl2.Text = "Label2"
+        '
+        'HandLbl3
+        '
+        Me.HandLbl3.AutoSize = True
+        Me.HandLbl3.Location = New System.Drawing.Point(500, 237)
+        Me.HandLbl3.Name = "HandLbl3"
+        Me.HandLbl3.Size = New System.Drawing.Size(39, 13)
+        Me.HandLbl3.TabIndex = 10
+        Me.HandLbl3.Text = "Label3"
+        '
+        'TableLbl1
+        '
+        Me.TableLbl1.AutoSize = True
+        Me.TableLbl1.Location = New System.Drawing.Point(138, 256)
+        Me.TableLbl1.Name = "TableLbl1"
+        Me.TableLbl1.Size = New System.Drawing.Size(39, 13)
+        Me.TableLbl1.TabIndex = 11
+        Me.TableLbl1.Text = "Label4"
+        '
+        'TableLbl2
+        '
+        Me.TableLbl2.AutoSize = True
+        Me.TableLbl2.Location = New System.Drawing.Point(326, 256)
+        Me.TableLbl2.Name = "TableLbl2"
+        Me.TableLbl2.Size = New System.Drawing.Size(39, 13)
+        Me.TableLbl2.TabIndex = 12
+        Me.TableLbl2.Text = "Label5"
+        '
+        'TableLbl3
+        '
+        Me.TableLbl3.AutoSize = True
+        Me.TableLbl3.Location = New System.Drawing.Point(500, 256)
+        Me.TableLbl3.Name = "TableLbl3"
+        Me.TableLbl3.Size = New System.Drawing.Size(39, 13)
+        Me.TableLbl3.TabIndex = 13
+        Me.TableLbl3.Text = "Label6"
+        '
         'card_swap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(691, 506)
+        Me.Controls.Add(Me.TableLbl3)
+        Me.Controls.Add(Me.TableLbl2)
+        Me.Controls.Add(Me.TableLbl1)
+        Me.Controls.Add(Me.HandLbl3)
+        Me.Controls.Add(Me.HandLbl2)
+        Me.Controls.Add(Me.HandLbl1)
         Me.Controls.Add(Me.Done)
         Me.Controls.Add(Me.Table1)
         Me.Controls.Add(Me.Table2)
@@ -137,6 +203,7 @@ Partial Class card_swap
         CType(Me.Table2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Table1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -147,4 +214,10 @@ Partial Class card_swap
     Friend WithEvents Table2 As PictureBox
     Friend WithEvents Table1 As PictureBox
     Friend WithEvents Done As Button
+    Friend WithEvents HandLbl1 As Label
+    Friend WithEvents HandLbl2 As Label
+    Friend WithEvents HandLbl3 As Label
+    Friend WithEvents TableLbl1 As Label
+    Friend WithEvents TableLbl2 As Label
+    Friend WithEvents TableLbl3 As Label
 End Class
