@@ -336,5 +336,14 @@
   <ItemGroup>
     <None Include="Resources\QS.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue outline.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-webp-to-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

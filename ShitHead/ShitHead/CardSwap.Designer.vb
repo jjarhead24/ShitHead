@@ -35,12 +35,14 @@ Partial Class card_swap
         Me.TableLbl1 = New System.Windows.Forms.Label()
         Me.TableLbl2 = New System.Windows.Forms.Label()
         Me.TableLbl3 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.Hand1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Table3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Hand3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Hand2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Table2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Table1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Hand1
@@ -175,6 +177,17 @@ Partial Class card_swap
         Me.TableLbl3.TabIndex = 13
         Me.TableLbl3.Text = "Label6"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.ShitHead.My.Resources.Resources.border1
+        Me.PictureBox1.Location = New System.Drawing.Point(64, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(173, 250)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 14
+        Me.PictureBox1.TabStop = False
+        '
         'card_swap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -194,6 +207,7 @@ Partial Class card_swap
         Me.Controls.Add(Me.Hand3)
         Me.Controls.Add(Me.Table3)
         Me.Controls.Add(Me.Hand1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Name = "card_swap"
         Me.Text = "card_swap"
         CType(Me.Hand1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -202,6 +216,7 @@ Partial Class card_swap
         CType(Me.Hand2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Table2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Table1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -220,4 +235,5 @@ Partial Class card_swap
     Friend WithEvents TableLbl1 As Label
     Friend WithEvents TableLbl2 As Label
     Friend WithEvents TableLbl3 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
