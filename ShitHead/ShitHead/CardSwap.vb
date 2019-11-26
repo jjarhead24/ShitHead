@@ -7,6 +7,13 @@
     Dim HandNums As New List(Of Label) From {HandLbl1, HandLbl2, HandLbl3}
     Dim TableNums As New List(Of Label) From {TableLbl1, TableLbl2, TableLbl3}
     Private Sub card_swap_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim outline As New List(Of PictureBox) From {outline1, outline2, outline3, outline4, outline5, outline6}
+        For i = 0 To 5
+            outline(i).Hide()
+            i = i + 1
+        Next
+
+
 
         Dim CardVal As String
         Dim card As Card
