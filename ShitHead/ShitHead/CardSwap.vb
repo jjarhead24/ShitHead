@@ -7,11 +7,12 @@
     Dim HandNums As New List(Of Label) From {HandLbl1, HandLbl2, HandLbl3}
     Dim TableNums As New List(Of Label) From {TableLbl1, TableLbl2, TableLbl3}
     Private Sub card_swap_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim outline As New List(Of PictureBox) From {outline1, outline2, outline3, outline4, outline5, outline6}
-        For i = 0 To 5
-            outline(i).Hide()
-            i = i + 1
-        Next
+        outline1.Hide()
+        outline2.Hide()
+        outline3.Hide()
+        outline4.Hide()
+        outline5.Hide()
+        outline6.Hide()
 
 
 
@@ -52,9 +53,16 @@
     Private Sub Hand1_Click(sender As Object, e As EventArgs) Handles Hand1.Click
         If card1 = "" Then
             card1 = "hand1"
+            outline1.Show()
 
         ElseIf card2 = "" Then
             card2 = "hand1"
+            outline1.Hide()
+            outline2.Hide()
+            outline3.Hide()
+            outline4.Hide()
+            outline5.Hide()
+            outline6.Hide()
             Swap()
         End If
     End Sub
@@ -62,9 +70,16 @@
     Private Sub Hand2_Click(sender As Object, e As EventArgs) Handles Hand2.Click
         If card1 = "" Then
             card1 = "hand2"
+            outline2.Show()
 
         ElseIf card2 = "" Then
             card2 = "hand2"
+            outline1.Hide()
+            outline2.Hide()
+            outline3.Hide()
+            outline4.Hide()
+            outline5.Hide()
+            outline6.Hide()
             Swap()
         End If
     End Sub
@@ -72,9 +87,16 @@
     Private Sub Hand3_Click(sender As Object, e As EventArgs) Handles Hand3.Click
         If card1 = "" Then
             card1 = "hand3"
+            outline3.Show()
 
         ElseIf card2 = "" Then
             card2 = "hand3"
+            outline1.Hide()
+            outline2.Hide()
+            outline3.Hide()
+            outline4.Hide()
+            outline5.Hide()
+            outline6.Hide()
             Swap()
         End If
     End Sub
@@ -82,9 +104,16 @@
     Private Sub Table1_Click(sender As Object, e As EventArgs) Handles Table1.Click
         If card1 = "" Then
             card1 = "table1"
+            outline4.Show()
 
         ElseIf card2 = "" Then
             card2 = "table1"
+            outline1.Hide()
+            outline2.Hide()
+            outline3.Hide()
+            outline4.Hide()
+            outline5.Hide()
+            outline6.Hide()
             Swap()
         End If
     End Sub
@@ -92,9 +121,16 @@
     Private Sub Table2_Click(sender As Object, e As EventArgs) Handles Table2.Click
         If card1 = "" Then
             card1 = "table2"
+            outline5.Show()
 
         ElseIf card2 = "" Then
             card2 = "table2"
+            outline1.Hide()
+            outline2.Hide()
+            outline3.Hide()
+            outline4.Hide()
+            outline5.Hide()
+            outline6.Hide()
             Swap()
         End If
     End Sub
@@ -102,9 +138,16 @@
     Private Sub Table3_Click(sender As Object, e As EventArgs) Handles Table3.Click
         If card1 = "" Then
             card1 = "table3"
+            outline6.Show()
 
         ElseIf card2 = "" Then
             card2 = "table3"
+            outline1.Hide()
+            outline2.Hide()
+            outline3.Hide()
+            outline4.Hide()
+            outline5.Hide()
+            outline6.Hide()
             Swap()
         End If
     End Sub
@@ -628,4 +671,15 @@
 
     End Sub
 
+    Dim handpics As List(Of String)
+    Dim handtag As List(Of Integer)
+    Dim tablepics As List(Of String)
+    Dim tabletag As List(Of Integer)
+    Dim picbox As List(Of PictureBox)
+
+    Private Sub Done_Click(sender As Object, e As EventArgs) Handles Done.Click
+        picbox.Add(Hand1)
+        picbox.Add(Hand2)
+        picbox.Add(Hand3)
+    End Sub
 End Class

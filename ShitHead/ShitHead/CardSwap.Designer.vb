@@ -61,7 +61,7 @@ Partial Class card_swap
         '
         Me.Hand1.BackColor = System.Drawing.Color.Transparent
         Me.Hand1.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.Hand1.Location = New System.Drawing.Point(73, 12)
+        Me.Hand1.Location = New System.Drawing.Point(73, 57)
         Me.Hand1.Name = "Hand1"
         Me.Hand1.Size = New System.Drawing.Size(154, 222)
         Me.Hand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -72,7 +72,7 @@ Partial Class card_swap
         '
         Me.Table3.BackColor = System.Drawing.Color.Transparent
         Me.Table3.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.Table3.Location = New System.Drawing.Point(437, 272)
+        Me.Table3.Location = New System.Drawing.Point(437, 362)
         Me.Table3.Name = "Table3"
         Me.Table3.Size = New System.Drawing.Size(154, 222)
         Me.Table3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -83,7 +83,7 @@ Partial Class card_swap
         '
         Me.Hand3.BackColor = System.Drawing.Color.Transparent
         Me.Hand3.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.Hand3.Location = New System.Drawing.Point(437, 12)
+        Me.Hand3.Location = New System.Drawing.Point(437, 57)
         Me.Hand3.Name = "Hand3"
         Me.Hand3.Size = New System.Drawing.Size(154, 222)
         Me.Hand3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -94,7 +94,7 @@ Partial Class card_swap
         '
         Me.Hand2.BackColor = System.Drawing.Color.Transparent
         Me.Hand2.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.Hand2.Location = New System.Drawing.Point(256, 12)
+        Me.Hand2.Location = New System.Drawing.Point(256, 57)
         Me.Hand2.Name = "Hand2"
         Me.Hand2.Size = New System.Drawing.Size(154, 222)
         Me.Hand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -105,7 +105,7 @@ Partial Class card_swap
         '
         Me.Table2.BackColor = System.Drawing.Color.Transparent
         Me.Table2.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.Table2.Location = New System.Drawing.Point(256, 272)
+        Me.Table2.Location = New System.Drawing.Point(256, 362)
         Me.Table2.Name = "Table2"
         Me.Table2.Size = New System.Drawing.Size(154, 222)
         Me.Table2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -116,7 +116,7 @@ Partial Class card_swap
         '
         Me.Table1.BackColor = System.Drawing.Color.Transparent
         Me.Table1.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.Table1.Location = New System.Drawing.Point(73, 272)
+        Me.Table1.Location = New System.Drawing.Point(73, 362)
         Me.Table1.Name = "Table1"
         Me.Table1.Size = New System.Drawing.Size(154, 222)
         Me.Table1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -128,7 +128,7 @@ Partial Class card_swap
         Me.Done.BackColor = System.Drawing.Color.Transparent
         Me.Done.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Done.ForeColor = System.Drawing.Color.Yellow
-        Me.Done.Location = New System.Drawing.Point(605, 447)
+        Me.Done.Location = New System.Drawing.Point(605, 537)
         Me.Done.Name = "Done"
         Me.Done.Size = New System.Drawing.Size(82, 47)
         Me.Done.TabIndex = 7
@@ -138,7 +138,7 @@ Partial Class card_swap
         'HandLbl1
         '
         Me.HandLbl1.AutoSize = True
-        Me.HandLbl1.Location = New System.Drawing.Point(138, 118)
+        Me.HandLbl1.Location = New System.Drawing.Point(126, 159)
         Me.HandLbl1.Name = "HandLbl1"
         Me.HandLbl1.Size = New System.Drawing.Size(39, 13)
         Me.HandLbl1.TabIndex = 8
@@ -147,7 +147,7 @@ Partial Class card_swap
         'HandLbl2
         '
         Me.HandLbl2.AutoSize = True
-        Me.HandLbl2.Location = New System.Drawing.Point(326, 140)
+        Me.HandLbl2.Location = New System.Drawing.Point(312, 159)
         Me.HandLbl2.Name = "HandLbl2"
         Me.HandLbl2.Size = New System.Drawing.Size(39, 13)
         Me.HandLbl2.TabIndex = 9
@@ -156,7 +156,7 @@ Partial Class card_swap
         'HandLbl3
         '
         Me.HandLbl3.AutoSize = True
-        Me.HandLbl3.Location = New System.Drawing.Point(500, 140)
+        Me.HandLbl3.Location = New System.Drawing.Point(491, 159)
         Me.HandLbl3.Name = "HandLbl3"
         Me.HandLbl3.Size = New System.Drawing.Size(39, 13)
         Me.HandLbl3.TabIndex = 10
@@ -165,7 +165,7 @@ Partial Class card_swap
         'TableLbl1
         '
         Me.TableLbl1.AutoSize = True
-        Me.TableLbl1.Location = New System.Drawing.Point(138, 353)
+        Me.TableLbl1.Location = New System.Drawing.Point(126, 464)
         Me.TableLbl1.Name = "TableLbl1"
         Me.TableLbl1.Size = New System.Drawing.Size(39, 13)
         Me.TableLbl1.TabIndex = 11
@@ -174,7 +174,7 @@ Partial Class card_swap
         'TableLbl2
         '
         Me.TableLbl2.AutoSize = True
-        Me.TableLbl2.Location = New System.Drawing.Point(312, 375)
+        Me.TableLbl2.Location = New System.Drawing.Point(312, 464)
         Me.TableLbl2.Name = "TableLbl2"
         Me.TableLbl2.Size = New System.Drawing.Size(39, 13)
         Me.TableLbl2.TabIndex = 12
@@ -183,7 +183,7 @@ Partial Class card_swap
         'TableLbl3
         '
         Me.TableLbl3.AutoSize = True
-        Me.TableLbl3.Location = New System.Drawing.Point(491, 375)
+        Me.TableLbl3.Location = New System.Drawing.Point(491, 464)
         Me.TableLbl3.Name = "TableLbl3"
         Me.TableLbl3.Size = New System.Drawing.Size(39, 13)
         Me.TableLbl3.TabIndex = 13
@@ -193,8 +193,8 @@ Partial Class card_swap
         '
         Me.outline1.BackColor = System.Drawing.Color.Transparent
         Me.outline1.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.outline1.Location = New System.Drawing.Point(64, 5)
-        Me.outline1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.outline1.Location = New System.Drawing.Point(64, 50)
+        Me.outline1.Margin = New System.Windows.Forms.Padding(2)
         Me.outline1.Name = "outline1"
         Me.outline1.Size = New System.Drawing.Size(170, 237)
         Me.outline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -206,7 +206,7 @@ Partial Class card_swap
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.ForeColor = System.Drawing.Color.Yellow
-        Me.Label1.Location = New System.Drawing.Point(5, 99)
+        Me.Label1.Location = New System.Drawing.Point(302, 33)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 13)
@@ -218,7 +218,7 @@ Partial Class card_swap
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.ForeColor = System.Drawing.Color.Yellow
-        Me.Label2.Location = New System.Drawing.Point(5, 363)
+        Me.Label2.Location = New System.Drawing.Point(301, 327)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 13)
@@ -229,7 +229,7 @@ Partial Class card_swap
         '
         Me.outline2.BackColor = System.Drawing.Color.Transparent
         Me.outline2.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.outline2.Location = New System.Drawing.Point(249, 3)
+        Me.outline2.Location = New System.Drawing.Point(249, 48)
         Me.outline2.Margin = New System.Windows.Forms.Padding(2)
         Me.outline2.Name = "outline2"
         Me.outline2.Size = New System.Drawing.Size(170, 240)
@@ -241,7 +241,7 @@ Partial Class card_swap
         '
         Me.outline3.BackColor = System.Drawing.Color.Transparent
         Me.outline3.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.outline3.Location = New System.Drawing.Point(429, 5)
+        Me.outline3.Location = New System.Drawing.Point(429, 50)
         Me.outline3.Margin = New System.Windows.Forms.Padding(2)
         Me.outline3.Name = "outline3"
         Me.outline3.Size = New System.Drawing.Size(171, 236)
@@ -253,7 +253,7 @@ Partial Class card_swap
         '
         Me.outline4.BackColor = System.Drawing.Color.Transparent
         Me.outline4.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.outline4.Location = New System.Drawing.Point(64, 263)
+        Me.outline4.Location = New System.Drawing.Point(64, 353)
         Me.outline4.Margin = New System.Windows.Forms.Padding(2)
         Me.outline4.Name = "outline4"
         Me.outline4.Size = New System.Drawing.Size(170, 240)
@@ -265,7 +265,7 @@ Partial Class card_swap
         '
         Me.outline5.BackColor = System.Drawing.Color.Transparent
         Me.outline5.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.outline5.Location = New System.Drawing.Point(249, 263)
+        Me.outline5.Location = New System.Drawing.Point(249, 353)
         Me.outline5.Margin = New System.Windows.Forms.Padding(2)
         Me.outline5.Name = "outline5"
         Me.outline5.Size = New System.Drawing.Size(170, 240)
@@ -277,7 +277,7 @@ Partial Class card_swap
         '
         Me.outline6.BackColor = System.Drawing.Color.Transparent
         Me.outline6.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.outline6.Location = New System.Drawing.Point(429, 262)
+        Me.outline6.Location = New System.Drawing.Point(429, 352)
         Me.outline6.Margin = New System.Windows.Forms.Padding(2)
         Me.outline6.Name = "outline6"
         Me.outline6.Size = New System.Drawing.Size(171, 239)
@@ -290,7 +290,7 @@ Partial Class card_swap
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
-        Me.ClientSize = New System.Drawing.Size(691, 523)
+        Me.ClientSize = New System.Drawing.Size(691, 605)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TableLbl3)
