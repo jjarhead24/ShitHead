@@ -205,11 +205,12 @@ Partial Class card_swap
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Yellow
-        Me.Label1.Location = New System.Drawing.Point(302, 33)
+        Me.Label1.Location = New System.Drawing.Point(270, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 13)
+        Me.Label1.Size = New System.Drawing.Size(140, 29)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Hand Cards"
         '
@@ -217,11 +218,12 @@ Partial Class card_swap
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Yellow
-        Me.Label2.Location = New System.Drawing.Point(301, 327)
+        Me.Label2.Location = New System.Drawing.Point(264, 322)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 13)
+        Me.Label2.Size = New System.Drawing.Size(146, 29)
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "Table Cards"
         '
@@ -293,12 +295,6 @@ Partial Class card_swap
         Me.ClientSize = New System.Drawing.Size(691, 605)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TableLbl3)
-        Me.Controls.Add(Me.TableLbl2)
-        Me.Controls.Add(Me.TableLbl1)
-        Me.Controls.Add(Me.HandLbl3)
-        Me.Controls.Add(Me.HandLbl2)
-        Me.Controls.Add(Me.HandLbl1)
         Me.Controls.Add(Me.Done)
         Me.Controls.Add(Me.Table1)
         Me.Controls.Add(Me.Table2)
@@ -312,6 +308,12 @@ Partial Class card_swap
         Me.Controls.Add(Me.outline4)
         Me.Controls.Add(Me.outline5)
         Me.Controls.Add(Me.outline6)
+        Me.Controls.Add(Me.TableLbl3)
+        Me.Controls.Add(Me.TableLbl2)
+        Me.Controls.Add(Me.TableLbl1)
+        Me.Controls.Add(Me.HandLbl1)
+        Me.Controls.Add(Me.HandLbl2)
+        Me.Controls.Add(Me.HandLbl3)
         Me.Name = "card_swap"
         Me.Text = "card_swap"
         CType(Me.Hand1, System.ComponentModel.ISupportInitialize).EndInit()
