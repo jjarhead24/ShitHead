@@ -46,6 +46,9 @@ Partial Class GameForm
         Me.Button2 = New System.Windows.Forms.Button()
         Me.HandRight = New System.Windows.Forms.Button()
         Me.HandLeft = New System.Windows.Forms.Button()
+        Me.FaceD1 = New System.Windows.Forms.Label()
+        Me.FaceD2 = New System.Windows.Forms.Label()
+        Me.FaceD3 = New System.Windows.Forms.Label()
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -349,6 +352,33 @@ Partial Class GameForm
         Me.HandLeft.Text = "<"
         Me.HandLeft.UseVisualStyleBackColor = False
         '
+        'FaceD1
+        '
+        Me.FaceD1.AutoSize = True
+        Me.FaceD1.Location = New System.Drawing.Point(543, 714)
+        Me.FaceD1.Name = "FaceD1"
+        Me.FaceD1.Size = New System.Drawing.Size(39, 13)
+        Me.FaceD1.TabIndex = 24
+        Me.FaceD1.Text = "Label1"
+        '
+        'FaceD2
+        '
+        Me.FaceD2.AutoSize = True
+        Me.FaceD2.Location = New System.Drawing.Point(669, 714)
+        Me.FaceD2.Name = "FaceD2"
+        Me.FaceD2.Size = New System.Drawing.Size(39, 13)
+        Me.FaceD2.TabIndex = 25
+        Me.FaceD2.Text = "Label2"
+        '
+        'FaceD3
+        '
+        Me.FaceD3.AutoSize = True
+        Me.FaceD3.Location = New System.Drawing.Point(802, 714)
+        Me.FaceD3.Name = "FaceD3"
+        Me.FaceD3.Size = New System.Drawing.Size(39, 13)
+        Me.FaceD3.TabIndex = 26
+        Me.FaceD3.Text = "Label3"
+        '
         'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -356,6 +386,9 @@ Partial Class GameForm
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(1386, 788)
+        Me.Controls.Add(Me.FaceD3)
+        Me.Controls.Add(Me.FaceD2)
+        Me.Controls.Add(Me.FaceD1)
         Me.Controls.Add(Me.HandLeft)
         Me.Controls.Add(Me.HandRight)
         Me.Controls.Add(Me.Button2)
@@ -401,6 +434,7 @@ Partial Class GameForm
         CType(Me.HandCard2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HandCard1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -428,4 +462,7 @@ Partial Class GameForm
     Friend WithEvents Button2 As Button
     Friend WithEvents HandRight As Button
     Friend WithEvents HandLeft As Button
+    Friend WithEvents FaceD1 As Label
+    Friend WithEvents FaceD2 As Label
+    Friend WithEvents FaceD3 As Label
 End Class

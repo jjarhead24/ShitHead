@@ -6,6 +6,8 @@
     Dim card2 As String
     Dim HandNums As New List(Of Label) From {HandLbl1, HandLbl2, HandLbl3}
     Dim TableNums As New List(Of Label) From {TableLbl1, TableLbl2, TableLbl3}
+    Public FaceDownPicList As New List(Of String)
+    Public FaceDownNumList As New List(Of Integer)
     Private Sub card_swap_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         outline1.Hide()
         outline2.Hide()
@@ -29,6 +31,15 @@
         Comp1Cards = ReturnedLists.Item3
 
         Dim l As Integer
+
+        For l = 0 To 2
+
+            card = playerCards(l)
+            CardVal = "_" + card.Type + card.Suit
+            FaceDownPicList.Add(CardVal)
+            FaceDownNumList.Add(card.Number)
+        Next
+
         For l = 3 To 5
 
 
@@ -671,15 +682,34 @@
 
     End Sub
 
-    Dim handpics As List(Of String)
-    Dim handtag As List(Of Integer)
-    Dim tablepics As List(Of String)
-    Dim tabletag As List(Of Integer)
-    Dim picbox As List(Of PictureBox)
+    Public handpics As New List(Of String)
+    Public handtag As New List(Of Integer)
+    Public tablepics As New List(Of String)
+    Public tabletag As New List(Of Integer)
+
 
     Private Sub Done_Click(sender As Object, e As EventArgs) Handles Done.Click
-        picbox.Add(Hand1)
-        picbox.Add(Hand2)
-        picbox.Add(Hand3)
+        Dim j As Integer = 0
+        handpics.Add(Hand1.Tag)
+        handpics.Add(Hand2.Tag)
+        handpics.Add(Hand3.Tag)
+
+        handtag.Add(HandLbl1.Text)
+        handtag.Add(HandLbl2.Text)
+        handtag.Add(HandLbl3.Text)
+
+
+
+        tablepics.Add(Table1.Tag)
+        tablepics.Add(Table2.Tag)
+        tablepics.Add(Table3.Tag)
+
+        tabletag.Add(TableLbl1.Text)
+        tabletag.Add(TableLbl2.Text)
+        tabletag.Add(TableLbl3.Text)
+
+
+        GameForm.Show()
+        Me.Hide()
     End Sub
 End Class
