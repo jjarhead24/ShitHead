@@ -312,7 +312,7 @@ Partial Class GameForm
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1509, 852)
+        Me.Button1.Location = New System.Drawing.Point(1027, 706)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 20
@@ -321,7 +321,7 @@ Partial Class GameForm
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(1517, 860)
+        Me.Button2.Location = New System.Drawing.Point(1035, 714)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 21
@@ -385,7 +385,7 @@ Partial Class GameForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
-        Me.ClientSize = New System.Drawing.Size(1386, 788)
+        Me.ClientSize = New System.Drawing.Size(1400, 778)
         Me.Controls.Add(Me.FaceD3)
         Me.Controls.Add(Me.FaceD2)
         Me.Controls.Add(Me.FaceD1)

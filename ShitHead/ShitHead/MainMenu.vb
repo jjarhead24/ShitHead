@@ -57,6 +57,7 @@ Public Class MainMenu
     End Sub
 
     Private Sub cmdExit_Click(sender As Object, e As EventArgs) Handles cmdExit.Click
+        GameForm.FormFrom = "Menu"
         Me.Hide()
         Quit.Show()
     End Sub

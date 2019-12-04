@@ -2,6 +2,7 @@
     Dim playerCards As New List(Of Card)
     Dim SpareCards As New List(Of Card)
     Dim Comp1Cards As New List(Of Card)
+    Public FormFrom As String
 
     Dim card As Card
 
@@ -21,6 +22,7 @@
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles CmdClose.Click
+        FormFrom = "Game"
         Quit.Show()
         Me.Hide()
     End Sub
@@ -71,7 +73,7 @@
                 PHandList(i).Tag = card_swap.handtag(j)
                 j = j + 1
             Next
-        Catch
+        Catch ex As Exception
             Try
                 PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(j))
                 PHandList(i).Tag = card_swap.handtag(j)
@@ -81,21 +83,21 @@
                     Try
                         PHandList(i + 2).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(j + 2))
                         PHandList(i + 2).Tag = card_swap.handtag(j + 2)
-                    Catch ex As Exception
+                    Catch
                         i = i + 2
                         For i = i To 2
                             PHandList(i).Image = My.Resources.ResourceManager.GetObject("Card_back")
                             PHandList(i).Tag = ("NaN")
                         Next
                     End Try
-                Catch ex As Exception
+                Catch
                     i = i + 1
                     For i = i To 2
                         PHandList(i).Image = My.Resources.ResourceManager.GetObject("Card_back")
                         PHandList(i).Tag = ("NaN")
                     Next
                 End Try
-            Catch ex As Exception
+            Catch
                 For i = i To 2
                     PHandList(i).Image = My.Resources.ResourceManager.GetObject("Card_back")
                     PHandList(i).Tag = ("NaN")
@@ -106,6 +108,7 @@
                 i = 0
                 j = -3
             End Try
+
         End Try
 
     End Sub
