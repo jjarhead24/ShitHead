@@ -1,6 +1,6 @@
 ﻿Public Class card_swap
     Dim playerCards As New List(Of Card)
-    Dim SpareCards As New List(Of Card)
+    Public SpareCards As New List(Of Card)
     Dim Comp1Cards As New List(Of Card)
     Dim card1 As String
     Dim card2 As String
@@ -25,7 +25,7 @@
         TableNums = New List(Of Label) From {TableLbl1, TableLbl2, TableLbl3}
         HandNums = New List(Of Label) From {HandLbl1, HandLbl2, HandLbl3}
 
-        Dim ReturnedLists = Card.GenCards()
+        Dim ReturnedLists = card.GenCards()
         playerCards = ReturnedLists.Item1
         SpareCards = ReturnedLists.Item2
         Comp1Cards = ReturnedLists.Item3

@@ -45,10 +45,10 @@ Partial Class GameForm
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.HandRight = New System.Windows.Forms.Button()
-        Me.HandLeft = New System.Windows.Forms.Button()
         Me.FaceD1 = New System.Windows.Forms.Label()
         Me.FaceD2 = New System.Windows.Forms.Label()
         Me.FaceD3 = New System.Windows.Forms.Label()
+        Me.LeftClick = New System.Windows.Forms.Button()
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -269,26 +269,25 @@ Partial Class GameForm
         '
         Me.HandCard3.BackColor = System.Drawing.Color.Transparent
         Me.HandCard3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.HandCard3.Enabled = False
         Me.HandCard3.ErrorImage = Nothing
         Me.HandCard3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.HandCard3.InitialImage = Nothing
-        Me.HandCard3.Location = New System.Drawing.Point(729, 488)
+        Me.HandCard3.Location = New System.Drawing.Point(714, 488)
         Me.HandCard3.Name = "HandCard3"
         Me.HandCard3.Size = New System.Drawing.Size(89, 133)
         Me.HandCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.HandCard3.TabIndex = 19
         Me.HandCard3.TabStop = False
+        Me.HandCard3.Tag = ""
         '
         'HandCard2
         '
         Me.HandCard2.BackColor = System.Drawing.Color.Transparent
         Me.HandCard2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.HandCard2.Enabled = False
         Me.HandCard2.ErrorImage = Nothing
         Me.HandCard2.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.HandCard2.InitialImage = Nothing
-        Me.HandCard2.Location = New System.Drawing.Point(596, 488)
+        Me.HandCard2.Location = New System.Drawing.Point(605, 488)
         Me.HandCard2.Name = "HandCard2"
         Me.HandCard2.Size = New System.Drawing.Size(89, 133)
         Me.HandCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -299,11 +298,10 @@ Partial Class GameForm
         '
         Me.HandCard1.BackColor = System.Drawing.Color.Transparent
         Me.HandCard1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.HandCard1.Enabled = False
         Me.HandCard1.ErrorImage = Nothing
         Me.HandCard1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.HandCard1.InitialImage = Nothing
-        Me.HandCard1.Location = New System.Drawing.Point(471, 488)
+        Me.HandCard1.Location = New System.Drawing.Point(502, 488)
         Me.HandCard1.Name = "HandCard1"
         Me.HandCard1.Size = New System.Drawing.Size(89, 133)
         Me.HandCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -333,24 +331,12 @@ Partial Class GameForm
         Me.HandRight.BackColor = System.Drawing.Color.Transparent
         Me.HandRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.HandRight.ForeColor = System.Drawing.Color.Yellow
-        Me.HandRight.Location = New System.Drawing.Point(824, 488)
+        Me.HandRight.Location = New System.Drawing.Point(809, 488)
         Me.HandRight.Name = "HandRight"
-        Me.HandRight.Size = New System.Drawing.Size(17, 133)
+        Me.HandRight.Size = New System.Drawing.Size(22, 133)
         Me.HandRight.TabIndex = 22
         Me.HandRight.Text = ">"
         Me.HandRight.UseVisualStyleBackColor = False
-        '
-        'HandLeft
-        '
-        Me.HandLeft.BackColor = System.Drawing.Color.Transparent
-        Me.HandLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.HandLeft.ForeColor = System.Drawing.Color.Yellow
-        Me.HandLeft.Location = New System.Drawing.Point(448, 488)
-        Me.HandLeft.Name = "HandLeft"
-        Me.HandLeft.Size = New System.Drawing.Size(17, 133)
-        Me.HandLeft.TabIndex = 23
-        Me.HandLeft.Text = "<"
-        Me.HandLeft.UseVisualStyleBackColor = False
         '
         'FaceD1
         '
@@ -379,17 +365,29 @@ Partial Class GameForm
         Me.FaceD3.TabIndex = 26
         Me.FaceD3.Text = "Label3"
         '
+        'LeftClick
+        '
+        Me.LeftClick.BackColor = System.Drawing.Color.Transparent
+        Me.LeftClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LeftClick.ForeColor = System.Drawing.Color.Yellow
+        Me.LeftClick.Location = New System.Drawing.Point(474, 488)
+        Me.LeftClick.Name = "LeftClick"
+        Me.LeftClick.Size = New System.Drawing.Size(22, 133)
+        Me.LeftClick.TabIndex = 27
+        Me.LeftClick.Text = "<"
+        Me.LeftClick.UseVisualStyleBackColor = False
+        '
         'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
-        Me.ClientSize = New System.Drawing.Size(1400, 778)
+        Me.ClientSize = New System.Drawing.Size(1386, 778)
+        Me.Controls.Add(Me.LeftClick)
         Me.Controls.Add(Me.FaceD3)
         Me.Controls.Add(Me.FaceD2)
         Me.Controls.Add(Me.FaceD1)
-        Me.Controls.Add(Me.HandLeft)
         Me.Controls.Add(Me.HandRight)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -461,8 +459,8 @@ Partial Class GameForm
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents HandRight As Button
-    Friend WithEvents HandLeft As Button
     Friend WithEvents FaceD1 As Label
     Friend WithEvents FaceD2 As Label
     Friend WithEvents FaceD3 As Label
+    Friend WithEvents LeftClick As Button
 End Class
