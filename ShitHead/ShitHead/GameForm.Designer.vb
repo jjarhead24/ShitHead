@@ -48,7 +48,6 @@ Partial Class GameForm
         Me.FaceD1 = New System.Windows.Forms.Label()
         Me.FaceD2 = New System.Windows.Forms.Label()
         Me.FaceD3 = New System.Windows.Forms.Label()
-        Me.LeftClick = New System.Windows.Forms.Button()
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -272,7 +271,7 @@ Partial Class GameForm
         Me.HandCard3.ErrorImage = Nothing
         Me.HandCard3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.HandCard3.InitialImage = Nothing
-        Me.HandCard3.Location = New System.Drawing.Point(714, 488)
+        Me.HandCard3.Location = New System.Drawing.Point(705, 488)
         Me.HandCard3.Name = "HandCard3"
         Me.HandCard3.Size = New System.Drawing.Size(89, 133)
         Me.HandCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -287,7 +286,7 @@ Partial Class GameForm
         Me.HandCard2.ErrorImage = Nothing
         Me.HandCard2.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.HandCard2.InitialImage = Nothing
-        Me.HandCard2.Location = New System.Drawing.Point(605, 488)
+        Me.HandCard2.Location = New System.Drawing.Point(588, 488)
         Me.HandCard2.Name = "HandCard2"
         Me.HandCard2.Size = New System.Drawing.Size(89, 133)
         Me.HandCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -301,7 +300,7 @@ Partial Class GameForm
         Me.HandCard1.ErrorImage = Nothing
         Me.HandCard1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.HandCard1.InitialImage = Nothing
-        Me.HandCard1.Location = New System.Drawing.Point(502, 488)
+        Me.HandCard1.Location = New System.Drawing.Point(465, 488)
         Me.HandCard1.Name = "HandCard1"
         Me.HandCard1.Size = New System.Drawing.Size(89, 133)
         Me.HandCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -331,9 +330,9 @@ Partial Class GameForm
         Me.HandRight.BackColor = System.Drawing.Color.Transparent
         Me.HandRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.HandRight.ForeColor = System.Drawing.Color.Yellow
-        Me.HandRight.Location = New System.Drawing.Point(809, 488)
+        Me.HandRight.Location = New System.Drawing.Point(800, 488)
         Me.HandRight.Name = "HandRight"
-        Me.HandRight.Size = New System.Drawing.Size(22, 133)
+        Me.HandRight.Size = New System.Drawing.Size(31, 133)
         Me.HandRight.TabIndex = 22
         Me.HandRight.Text = ">"
         Me.HandRight.UseVisualStyleBackColor = False
@@ -365,18 +364,6 @@ Partial Class GameForm
         Me.FaceD3.TabIndex = 26
         Me.FaceD3.Text = "Label3"
         '
-        'LeftClick
-        '
-        Me.LeftClick.BackColor = System.Drawing.Color.Transparent
-        Me.LeftClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.LeftClick.ForeColor = System.Drawing.Color.Yellow
-        Me.LeftClick.Location = New System.Drawing.Point(474, 488)
-        Me.LeftClick.Name = "LeftClick"
-        Me.LeftClick.Size = New System.Drawing.Size(22, 133)
-        Me.LeftClick.TabIndex = 27
-        Me.LeftClick.Text = "<"
-        Me.LeftClick.UseVisualStyleBackColor = False
-        '
         'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -384,7 +371,6 @@ Partial Class GameForm
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(1386, 778)
-        Me.Controls.Add(Me.LeftClick)
         Me.Controls.Add(Me.FaceD3)
         Me.Controls.Add(Me.FaceD2)
         Me.Controls.Add(Me.FaceD1)
@@ -462,5 +448,4 @@ Partial Class GameForm
     Friend WithEvents FaceD1 As Label
     Friend WithEvents FaceD2 As Label
     Friend WithEvents FaceD3 As Label
-    Friend WithEvents LeftClick As Button
 End Class

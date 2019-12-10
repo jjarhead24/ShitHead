@@ -16,7 +16,10 @@
         Dim FaceDLblList As New List(Of Label) From {FaceD1, FaceD2, FaceD3}
         Me.WindowState = FormWindowState.Maximized
         SetUp(PHandList, PTableList, PFaceDList, FaceDLblList)
-
+        If card_swap.handpics.Count <= 3 Then
+            HandRight.Enabled = False
+            LeftClick.Enabled = False
+        End If
 
 
     End Sub
@@ -29,7 +32,7 @@
 
     Dim i As Integer = 0
 
-    Dim j As Integer = 0
+    Dim j As Integer = 2
 
     Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList)
 
@@ -52,39 +55,46 @@
     End Sub
 
     Private Sub HandRight_Click(sender As Object, e As EventArgs) Handles HandRight.Click
-        Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
+        If card_swap.handpics.Count > 3 Then
+            Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
 
-        HandCard1.Image = HandCard2.Image
-        HandCard1.Tag = HandCard2.Tag
+            HandCard1.Image = HandCard2.Image
+            HandCard1.Tag = HandCard2.Tag
 
-        HandCard2.Image = HandCard3.Image
-        HandCard2.Tag = HandCard3.Tag
+            HandCard2.Image = HandCard3.Image
+            HandCard2.Tag = HandCard3.Tag
 
-        j = j + 1
-        If j >= card_swap.handpics.Count Then
-            j = 0
+            j = j + 1
+            If j = card_swap.handpics.Count Then
+                j = 0
+            End If
+
+            HandCard3.Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(j))
+            HandCard3.Tag = card_swap.handtag(j)
         End If
-        HandCard3.Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(j))
-        HandCard3.Tag = card_swap.handtag(j)
+
     End Sub
-    Dim u As Integer = card_swap.handpics.Count - 1
-    Private Sub LeftClick_Click(sender As Object, e As EventArgs) Handles LeftClick.Click
-        Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
 
-        HandCard3.Image = HandCard2.Image
-        HandCard3.Tag = HandCard2.Tag
+    Dim u As Integer = card_swap.handpics.Count
 
-        HandCard2.Image = HandCard1.Image
-        HandCard2.Tag = HandCard1.Tag
+    'Private Sub LeftClick_Click(sender As Object, e As EventArgs) Handles LeftClick.Click
+    '    Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
 
+    '    HandCard3.Image = HandCard2.Image
+    '    HandCard3.Tag = HandCard2.Tag
 
-        If u = 0 Then
-            u = card_swap.handpics.Count - 1
+    '    HandCard2.Image = HandCard1.Image
+    '    HandCard2.Tag = HandCard1.Tag
 
-        End If
-        HandCard1.Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(u))
-        HandCard1.Tag = card_swap.handtag(u)
-    End Sub
+    '    u = u - 1
+    '    If u = 0 Then
+    '        u = card_swap.handpics.Count - 1
+
+    '    End If
+
+    '    HandCard1.Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(u))
+    '    HandCard1.Tag = card_swap.handtag(u)
+    'End Sub
 
     Private Sub PickUpPile_Click(sender As Object, e As EventArgs) Handles PickUpPile.Click
         Dim CardVal As String
@@ -104,7 +114,15 @@
         If card_swap.SpareCards.Count = 0 Then
             PickUpPile.Hide()
         End If
+        If card_swap.handpics.Count <= 3 Then
+            HandRight.Enabled = False
+            LeftClick.Enabled = False
+        Else
 
+            HandRight.Enabled = True
+            LeftClick.Enabled = True
+
+        End If
     End Sub
     Dim mess As String
     Private Sub HandCard1_Click(sender As Object, e As EventArgs) Handles HandCard1.Click
