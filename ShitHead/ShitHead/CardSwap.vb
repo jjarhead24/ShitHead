@@ -1,7 +1,7 @@
 ﻿Public Class card_swap
     Dim playerCards As New List(Of Card)
     Public SpareCards As New List(Of Card)
-    Dim Comp1Cards As New List(Of Card)
+    Public Comp1Cards As New List(Of Card)
     Dim card1 As String
     Dim card2 As String
     Dim HandNums As New List(Of Label) From {HandLbl1, HandLbl2, HandLbl3}

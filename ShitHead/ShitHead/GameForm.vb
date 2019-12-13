@@ -1,7 +1,7 @@
 ﻿Public Class GameForm
     Dim playerCards As New List(Of Card)
     Dim SpareCards As New List(Of Card)
-    Dim Comp1Cards As New List(Of Card)
+    Dim Comp1Card As New List(Of Card)
     Public FormFrom As String
 
     Dim card As Card
@@ -14,13 +14,15 @@
         Dim CFaceDList As New List(Of PictureBox) From {CDown1, CDown2, CDown3}
         Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
         Dim FaceDLblList As New List(Of Label) From {FaceD1, FaceD2, FaceD3}
+        Dim CompTableUp As New List(Of PictureBox) From {CompUp1, CompUp2, CompUp3}
+        Dim CompTableDown As New List(Of PictureBox) From {CompTable1, CompTable2, CompTable3}
         Me.WindowState = FormWindowState.Maximized
-        SetUp(PHandList, PTableList, PFaceDList, FaceDLblList)
+        SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown)
         If card_swap.handpics.Count <= 3 Then
             HandRight.Enabled = False
-            LeftClick.Enabled = False
+            'LeftClick.Enabled = False
         End If
-
+        Comp1Card = card_swap.Comp1Cards
 
     End Sub
 
@@ -34,24 +36,25 @@
 
     Dim j As Integer = 2
 
-    Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList)
-
+    Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown)
+        Dim CardVal As String
         For i = 0 To 2
             PHandlist(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
             PHandlist(i).Tag = card_swap.handtag(i)
-        Next
 
-        For i = 0 To 2
             PTableList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.tablepics(i))
             PTableList(i).Tag = card_swap.tabletag(i)
-        Next
 
-        For i = 0 To 2
             PFaceDList(i).Tag = card_swap.FaceDownNumList(i)
             FaceDLblList(i).Text = card_swap.FaceDownPicList(i)
+
+            CompTableUp(i).tag = card_swap.Comp1Cards(i + 3).Number
+            card = card_swap.Comp1Cards(i + 3)
+            CardVal = "_" + card.Type + card.Suit
+            CompTableUp(i).image = My.Resources.ResourceManager.GetObject(CardVal)
+
+            CompTableDown(i).tag = card_swap.Comp1Cards(i).Number
         Next
-
-
     End Sub
 
     Private Sub HandRight_Click(sender As Object, e As EventArgs) Handles HandRight.Click
@@ -116,11 +119,11 @@
         End If
         If card_swap.handpics.Count <= 3 Then
             HandRight.Enabled = False
-            LeftClick.Enabled = False
+            'LeftClick.Enabled = False
         Else
 
             HandRight.Enabled = True
-            LeftClick.Enabled = True
+            'LeftClick.Enabled = True
 
         End If
     End Sub
@@ -140,5 +143,18 @@
         MsgBox(mess)
     End Sub
 
+    Private Sub CompTable3_Click(sender As Object, e As EventArgs) Handles CompTable3.Click
+        mess = CompTable3.Tag
+        MsgBox(mess)
+    End Sub
 
+    Private Sub CompTable2_Click(sender As Object, e As EventArgs) Handles CompTable2.Click
+        mess = CompTable2.Tag
+        MsgBox(mess)
+    End Sub
+
+    Private Sub CompTable1_Click(sender As Object, e As EventArgs) Handles CompTable1.Click
+        mess = CompTable1.Tag
+        MsgBox(mess)
+    End Sub
 End Class

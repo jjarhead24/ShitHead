@@ -22,8 +22,6 @@ Partial Class GameForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.CmdClose = New System.Windows.Forms.Button()
         Me.TableCard1 = New System.Windows.Forms.PictureBox()
         Me.TableCard2 = New System.Windows.Forms.PictureBox()
@@ -48,6 +46,9 @@ Partial Class GameForm
         Me.FaceD1 = New System.Windows.Forms.Label()
         Me.FaceD2 = New System.Windows.Forms.Label()
         Me.FaceD3 = New System.Windows.Forms.Label()
+        Me.CompUp3 = New System.Windows.Forms.PictureBox()
+        Me.CompUp2 = New System.Windows.Forms.PictureBox()
+        Me.CompUp1 = New System.Windows.Forms.PictureBox()
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,23 +66,10 @@ Partial Class GameForm
         CType(Me.HandCard3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HandCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HandCard1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CompUp3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CompUp2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CompUp1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(54, 164)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(256, 212)
-        Me.ListBox1.TabIndex = 0
-        '
-        'ListBox2
-        '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(73, 382)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(216, 186)
-        Me.ListBox2.TabIndex = 1
         '
         'CmdClose
         '
@@ -144,7 +132,6 @@ Partial Class GameForm
         '
         Me.CompTable1.BackColor = System.Drawing.Color.Transparent
         Me.CompTable1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CompTable1.Enabled = False
         Me.CompTable1.ErrorImage = Nothing
         Me.CompTable1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompTable1.InitialImage = Nothing
@@ -159,7 +146,6 @@ Partial Class GameForm
         '
         Me.CompTable2.BackColor = System.Drawing.Color.Transparent
         Me.CompTable2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CompTable2.Enabled = False
         Me.CompTable2.ErrorImage = Nothing
         Me.CompTable2.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompTable2.InitialImage = Nothing
@@ -174,7 +160,6 @@ Partial Class GameForm
         '
         Me.CompTable3.BackColor = System.Drawing.Color.Transparent
         Me.CompTable3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CompTable3.Enabled = False
         Me.CompTable3.ErrorImage = Nothing
         Me.CompTable3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompTable3.InitialImage = Nothing
@@ -364,6 +349,51 @@ Partial Class GameForm
         Me.FaceD3.TabIndex = 26
         Me.FaceD3.Text = "Label3"
         '
+        'CompUp3
+        '
+        Me.CompUp3.BackColor = System.Drawing.Color.Transparent
+        Me.CompUp3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CompUp3.Enabled = False
+        Me.CompUp3.ErrorImage = Nothing
+        Me.CompUp3.Image = Global.ShitHead.My.Resources.Resources.Card_back
+        Me.CompUp3.InitialImage = Nothing
+        Me.CompUp3.Location = New System.Drawing.Point(742, 12)
+        Me.CompUp3.Name = "CompUp3"
+        Me.CompUp3.Size = New System.Drawing.Size(139, 209)
+        Me.CompUp3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CompUp3.TabIndex = 27
+        Me.CompUp3.TabStop = False
+        '
+        'CompUp2
+        '
+        Me.CompUp2.BackColor = System.Drawing.Color.Transparent
+        Me.CompUp2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CompUp2.Enabled = False
+        Me.CompUp2.ErrorImage = Nothing
+        Me.CompUp2.Image = Global.ShitHead.My.Resources.Resources.Card_back
+        Me.CompUp2.InitialImage = Nothing
+        Me.CompUp2.Location = New System.Drawing.Point(546, 12)
+        Me.CompUp2.Name = "CompUp2"
+        Me.CompUp2.Size = New System.Drawing.Size(139, 209)
+        Me.CompUp2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CompUp2.TabIndex = 28
+        Me.CompUp2.TabStop = False
+        '
+        'CompUp1
+        '
+        Me.CompUp1.BackColor = System.Drawing.Color.Transparent
+        Me.CompUp1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CompUp1.Enabled = False
+        Me.CompUp1.ErrorImage = Nothing
+        Me.CompUp1.Image = Global.ShitHead.My.Resources.Resources.Card_back
+        Me.CompUp1.InitialImage = Nothing
+        Me.CompUp1.Location = New System.Drawing.Point(349, 12)
+        Me.CompUp1.Name = "CompUp1"
+        Me.CompUp1.Size = New System.Drawing.Size(139, 209)
+        Me.CompUp1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CompUp1.TabIndex = 29
+        Me.CompUp1.TabStop = False
+        '
         'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -371,6 +401,9 @@ Partial Class GameForm
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(1386, 778)
+        Me.Controls.Add(Me.CompUp1)
+        Me.Controls.Add(Me.CompUp2)
+        Me.Controls.Add(Me.CompUp3)
         Me.Controls.Add(Me.FaceD3)
         Me.Controls.Add(Me.FaceD2)
         Me.Controls.Add(Me.FaceD1)
@@ -389,8 +422,6 @@ Partial Class GameForm
         Me.Controls.Add(Me.TableCard2)
         Me.Controls.Add(Me.TableCard1)
         Me.Controls.Add(Me.CmdClose)
-        Me.Controls.Add(Me.ListBox2)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.FaceDown3)
         Me.Controls.Add(Me.FaceDown2)
         Me.Controls.Add(Me.FaceDown1)
@@ -417,13 +448,13 @@ Partial Class GameForm
         CType(Me.HandCard3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HandCard2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HandCard1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CompUp3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CompUp2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CompUp1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents ListBox2 As ListBox
     Friend WithEvents CmdClose As Button
     Friend WithEvents TableCard1 As PictureBox
     Friend WithEvents TableCard2 As PictureBox
@@ -448,4 +479,7 @@ Partial Class GameForm
     Friend WithEvents FaceD1 As Label
     Friend WithEvents FaceD2 As Label
     Friend WithEvents FaceD3 As Label
+    Friend WithEvents CompUp3 As PictureBox
+    Friend WithEvents CompUp2 As PictureBox
+    Friend WithEvents CompUp1 As PictureBox
 End Class
