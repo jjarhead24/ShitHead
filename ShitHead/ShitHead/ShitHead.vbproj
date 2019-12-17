@@ -120,6 +120,12 @@
     <Compile Include="SelectUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SettingsForGame.Designer.vb">
+      <DependentUpon>SettingsForGame.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsForGame.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Store.Designer.vb">
       <DependentUpon>Store.vb</DependentUpon>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectUser.resx">
       <DependentUpon>SelectUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForGame.resx">
+      <DependentUpon>SettingsForGame.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -344,6 +353,162 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\border1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JDR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KDR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QDR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AHR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JHR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KHR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QHR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8SR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9SR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10SR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JSR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KSR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QSR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2SR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3SR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4SR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5SR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6SR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7SR.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

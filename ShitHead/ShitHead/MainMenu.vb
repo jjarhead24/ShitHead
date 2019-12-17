@@ -47,7 +47,7 @@ Public Class MainMenu
 
 
     Private Sub cmdPlay_Click(sender As Object, e As EventArgs) Handles cmdPlay.Click
-        card_swap.Show()
+        SettingsForGame.Show()
         Me.Hide()
     End Sub
 
