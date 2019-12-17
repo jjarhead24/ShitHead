@@ -3,7 +3,7 @@
         BotNum.Text = BotCount.Value
 
         PayIn.Maximum = MainMenu.Score
-        PayIn.LargeChange = PayIn.Maximum / 22
+        PayIn.TickFrequency = PayIn.Maximum / 22
     End Sub
 
     Private Sub BotCount_Scroll(sender As Object, e As EventArgs) Handles BotCount.Scroll

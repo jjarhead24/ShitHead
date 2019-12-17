@@ -36,12 +36,14 @@ Partial Class SettingsForGame
         'PayIn
         '
         Me.PayIn.AutoSize = False
-        Me.PayIn.LargeChange = 8
+        Me.PayIn.LargeChange = 10
         Me.PayIn.Location = New System.Drawing.Point(12, 145)
         Me.PayIn.Maximum = 100
         Me.PayIn.Name = "PayIn"
         Me.PayIn.Size = New System.Drawing.Size(664, 39)
+        Me.PayIn.SmallChange = 5
         Me.PayIn.TabIndex = 0
+        Me.PayIn.TickFrequency = 10
         '
         'BotCount
         '
