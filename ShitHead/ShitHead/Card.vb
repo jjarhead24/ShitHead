@@ -3,10 +3,12 @@
     Public Number As Integer
     Public Type As String
 
-    Public Shared Function GenCards() As Tuple(Of List(Of Card), List(Of Card), List(Of Card))
+    Public Shared Function GenCards() As Tuple(Of List(Of Card), List(Of Card), List(Of Card), List(Of Card), List(Of Card))
         Dim playerCards As New List(Of Card)
         Dim SpareCards As New List(Of Card)
         Dim Comp1Cards As New List(Of Card)
+        Dim Comp2Cards As New List(Of Card)
+        Dim Comp3Cards As New List(Of Card)
         Dim usedNums As New List(Of Integer)
         Dim NewCards As New Random()
         Dim CurrCard As Integer
@@ -233,19 +235,45 @@
                 End If
             End If
 
-            If playerCards.Count <> 9 Then
-                playerCards.Add(MadeCard)
-            ElseIf Comp1Cards.Count <> 9 Then
+            If SettingsForGame.BotsIn = 1 Then
+                If playerCards.Count <> 9 Then
+                    playerCards.Add(MadeCard)
+                ElseIf Comp1Cards.Count <> 9 Then
 
-                Comp1Cards.Add(MadeCard)
-            Else
-                SpareCards.Add(MadeCard)
+                    Comp1Cards.Add(MadeCard)
+                Else
+                    SpareCards.Add(MadeCard)
+                End If
 
+            ElseIf SettingsForGame.BotsIn = 2 Then
+                If playerCards.Count <> 9 Then
+                    playerCards.Add(MadeCard)
+                ElseIf Comp1Cards.Count <> 9 Then
+                    Comp1Cards.Add(MadeCard)
+                ElseIf Comp2Cards.Count <> 9 Then
+                    Comp2Cards.Add(MadeCard)
+                Else
+                    SpareCards.Add(MadeCard)
+                End If
+
+            ElseIf SettingsForGame.BotsIn Then
+                If playerCards.Count <> 9 Then
+                    playerCards.Add(MadeCard)
+                ElseIf Comp1Cards.Count <> 9 Then
+                    Comp1Cards.Add(MadeCard)
+                ElseIf Comp2Cards.Count <> 9 Then
+                    Comp2Cards.Add(MadeCard)
+                ElseIf Comp3Cards.Count <> 9 Then
+                    Comp3Cards.Add(MadeCard)
+                Else
+                    SpareCards.Add(MadeCard)
+                End If
             End If
 
 
+
         Next
-        Return New Tuple(Of List(Of Card), List(Of Card), List(Of Card))(playerCards, SpareCards, Comp1Cards)
+        Return New Tuple(Of List(Of Card), List(Of Card), List(Of Card), List(Of Card), List(Of Card))(playerCards, SpareCards, Comp1Cards, Comp2Cards, Comp3Cards)
 
     End Function
 End Class

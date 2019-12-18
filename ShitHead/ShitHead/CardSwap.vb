@@ -2,6 +2,8 @@
     Dim playerCards As New List(Of Card)
     Public SpareCards As New List(Of Card)
     Public Comp1Cards As New List(Of Card)
+    Public Comp2Cards As New List(Of Card)
+    Public Comp3Cards As New List(Of Card)
     Dim card1 As String
     Dim card2 As String
     Dim HandNums As New List(Of Label) From {HandLbl1, HandLbl2, HandLbl3}
@@ -28,7 +30,25 @@
         Dim ReturnedLists = card.GenCards()
         playerCards = ReturnedLists.Item1
         SpareCards = ReturnedLists.Item2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         Comp1Cards = ReturnedLists.Item3
+        Comp2Cards = ReturnedLists.Item4
+        Comp3Cards = ReturnedLists.Item5
 
         Dim l As Integer
 

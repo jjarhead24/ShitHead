@@ -80,6 +80,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Card.vb" />
+    <Compile Include="ErrorNAN.Designer.vb">
+      <DependentUpon>ErrorNAN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorNAN.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GameForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CardSwap.resx">
       <DependentUpon>CardSwap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorNAN.resx">
+      <DependentUpon>ErrorNAN.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.vb</DependentUpon>

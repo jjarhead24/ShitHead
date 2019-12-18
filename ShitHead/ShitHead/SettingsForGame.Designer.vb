@@ -27,8 +27,11 @@ Partial Class SettingsForGame
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BotNum = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.PayInNum = New System.Windows.Forms.Label()
+        Me.Confirm = New System.Windows.Forms.Button()
+        Me.SubmitBills = New System.Windows.Forms.Button()
+        Me.CustomAmount = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PayIn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BotCount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -36,6 +39,7 @@ Partial Class SettingsForGame
         'PayIn
         '
         Me.PayIn.AutoSize = False
+        Me.PayIn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.PayIn.LargeChange = 10
         Me.PayIn.Location = New System.Drawing.Point(12, 145)
         Me.PayIn.Maximum = 100
@@ -44,15 +48,18 @@ Partial Class SettingsForGame
         Me.PayIn.SmallChange = 5
         Me.PayIn.TabIndex = 0
         Me.PayIn.TickFrequency = 10
+        Me.PayIn.TickStyle = System.Windows.Forms.TickStyle.Both
         '
         'BotCount
         '
         Me.BotCount.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BotCount.Location = New System.Drawing.Point(12, 41)
         Me.BotCount.Maximum = 3
+        Me.BotCount.Minimum = 1
         Me.BotCount.Name = "BotCount"
         Me.BotCount.Size = New System.Drawing.Size(664, 45)
         Me.BotCount.TabIndex = 1
+        Me.BotCount.TickStyle = System.Windows.Forms.TickStyle.Both
         Me.BotCount.Value = 1
         '
         'Label1
@@ -88,23 +95,60 @@ Partial Class SettingsForGame
         Me.BotNum.TabIndex = 4
         Me.BotNum.Text = "Label3"
         '
-        'Label4
+        'PayInNum
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(697, 184)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Label4"
+        Me.PayInNum.AutoSize = True
+        Me.PayInNum.Location = New System.Drawing.Point(697, 156)
+        Me.PayInNum.Name = "PayInNum"
+        Me.PayInNum.Size = New System.Drawing.Size(39, 13)
+        Me.PayInNum.TabIndex = 5
+        Me.PayInNum.Text = "Label4"
         '
-        'Button1
+        'Confirm
         '
-        Me.Button1.Location = New System.Drawing.Point(713, 220)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Confirm.BackColor = System.Drawing.Color.Transparent
+        Me.Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Confirm.ForeColor = System.Drawing.Color.Yellow
+        Me.Confirm.Location = New System.Drawing.Point(700, 207)
+        Me.Confirm.Name = "Confirm"
+        Me.Confirm.Size = New System.Drawing.Size(88, 36)
+        Me.Confirm.TabIndex = 6
+        Me.Confirm.Text = "Confirm"
+        Me.Confirm.UseVisualStyleBackColor = False
+        '
+        'SubmitBills
+        '
+        Me.SubmitBills.BackColor = System.Drawing.Color.Transparent
+        Me.SubmitBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SubmitBills.ForeColor = System.Drawing.Color.Yellow
+        Me.SubmitBills.Location = New System.Drawing.Point(118, 207)
+        Me.SubmitBills.Name = "SubmitBills"
+        Me.SubmitBills.Size = New System.Drawing.Size(75, 23)
+        Me.SubmitBills.TabIndex = 7
+        Me.SubmitBills.Text = "Submit"
+        Me.SubmitBills.UseVisualStyleBackColor = False
+        '
+        'CustomAmount
+        '
+        Me.CustomAmount.BackColor = System.Drawing.Color.Green
+        Me.CustomAmount.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CustomAmount.ForeColor = System.Drawing.Color.Yellow
+        Me.CustomAmount.Location = New System.Drawing.Point(12, 212)
+        Me.CustomAmount.Name = "CustomAmount"
+        Me.CustomAmount.Size = New System.Drawing.Size(100, 13)
+        Me.CustomAmount.TabIndex = 8
+        Me.CustomAmount.Text = "Write number here"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.ForeColor = System.Drawing.Color.Yellow
+        Me.Label3.Location = New System.Drawing.Point(12, 191)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(137, 13)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "or write your number in here"
         '
         'SettingsForGame
         '
@@ -112,8 +156,11 @@ Partial Class SettingsForGame
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(800, 255)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.CustomAmount)
+        Me.Controls.Add(Me.SubmitBills)
+        Me.Controls.Add(Me.Confirm)
+        Me.Controls.Add(Me.PayInNum)
         Me.Controls.Add(Me.BotNum)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -133,6 +180,9 @@ Partial Class SettingsForGame
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents BotNum As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents PayInNum As Label
+    Friend WithEvents Confirm As Button
+    Friend WithEvents SubmitBills As Button
+    Friend WithEvents CustomAmount As TextBox
+    Friend WithEvents Label3 As Label
 End Class

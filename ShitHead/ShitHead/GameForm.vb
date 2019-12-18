@@ -54,6 +54,13 @@
             CompTableUp(i).image = My.Resources.ResourceManager.GetObject(CardVal)
 
             CompTableDown(i).tag = card_swap.Comp1Cards(i).Number
+
+            If card_swap.Comp2Cards.Count > 0 Then
+
+            End If
+            If card_swap.Comp3Cards.Count > 0 Then
+
+            End If
         Next
     End Sub
 
