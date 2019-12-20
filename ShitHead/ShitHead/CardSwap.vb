@@ -30,22 +30,6 @@
         Dim ReturnedLists = card.GenCards()
         playerCards = ReturnedLists.Item1
         SpareCards = ReturnedLists.Item2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         Comp1Cards = ReturnedLists.Item3
         Comp2Cards = ReturnedLists.Item4
         Comp3Cards = ReturnedLists.Item5

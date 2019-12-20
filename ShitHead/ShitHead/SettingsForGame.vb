@@ -4,7 +4,6 @@
     Public BotsIn As Integer
     Private Sub SettingsForGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BotNum.Text = BotCount.Value
-
         PayIn.Maximum = MainMenu.Score
         PayIn.TickFrequency = PayIn.Maximum / 22
 

@@ -16,8 +16,12 @@
         Dim FaceDLblList As New List(Of Label) From {FaceD1, FaceD2, FaceD3}
         Dim CompTableUp As New List(Of PictureBox) From {CompUp1, CompUp2, CompUp3}
         Dim CompTableDown As New List(Of PictureBox) From {CompTable1, CompTable2, CompTable3}
+        Dim Comp2TableCards As New List(Of PictureBox) From {Comp2Table1, Comp2table2, Comp2Table3}
+        Dim Comp2DownCard As New List(Of PictureBox) From {Comp2Down1, Comp2Down2, Comp2Down3}
+        Dim Comp3TableCards As New List(Of PictureBox) From {Comp3Table1, Comp3Table2, Comp3Table3}
+        Dim Comp3DownCards As New List(Of PictureBox) From {Comp3Down1, Comp3Down2, Comp3Down3}
         Me.WindowState = FormWindowState.Maximized
-        SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown)
+        SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards)
         If card_swap.handpics.Count <= 3 Then
             HandRight.Enabled = False
             'LeftClick.Enabled = False
@@ -36,7 +40,7 @@
 
     Dim j As Integer = 2
 
-    Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown)
+    Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards)
         Dim CardVal As String
         For i = 0 To 2
             PHandlist(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
@@ -55,10 +59,13 @@
 
             CompTableDown(i).tag = card_swap.Comp1Cards(i).Number
 
-            If card_swap.Comp2Cards.Count > 0 Then
-
+            If SettingsForGame.BotsIn = 2 Then
+                Comp2TableCards(i).tag = card_swap.Comp2Cards(i + 3)
+                card = card_swap.Comp2Cards(i + 3)
+                CardVal = "_" + card.Type + card.Suit + "R"
+                Comp2TableCards(i).image = My.Resources.ResourceManager.GetObject(CardVal)
             End If
-            If card_swap.Comp3Cards.Count > 0 Then
+            If SettingsForGame.BotsIn = 3 Then
 
             End If
         Next

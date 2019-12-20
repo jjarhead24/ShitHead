@@ -519,5 +519,8 @@
   <ItemGroup>
     <None Include="Resources\7SR.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif-6-551fa5ce788dR.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

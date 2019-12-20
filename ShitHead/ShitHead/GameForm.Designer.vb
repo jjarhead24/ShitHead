@@ -49,6 +49,18 @@ Partial Class GameForm
         Me.CompUp3 = New System.Windows.Forms.PictureBox()
         Me.CompUp2 = New System.Windows.Forms.PictureBox()
         Me.CompUp1 = New System.Windows.Forms.PictureBox()
+        Me.Comp2Table1 = New System.Windows.Forms.PictureBox()
+        Me.Comp2table2 = New System.Windows.Forms.PictureBox()
+        Me.Comp2Table3 = New System.Windows.Forms.PictureBox()
+        Me.Comp3Table3 = New System.Windows.Forms.PictureBox()
+        Me.Comp3Table2 = New System.Windows.Forms.PictureBox()
+        Me.Comp3Table1 = New System.Windows.Forms.PictureBox()
+        Me.Comp2Down1 = New System.Windows.Forms.PictureBox()
+        Me.Comp2Down2 = New System.Windows.Forms.PictureBox()
+        Me.Comp2Down3 = New System.Windows.Forms.PictureBox()
+        Me.Comp3Down3 = New System.Windows.Forms.PictureBox()
+        Me.Comp3Down2 = New System.Windows.Forms.PictureBox()
+        Me.Comp3Down1 = New System.Windows.Forms.PictureBox()
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +81,18 @@ Partial Class GameForm
         CType(Me.CompUp3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompUp2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompUp1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp2Table1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp2table2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp2Table3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp3Table3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp3Table2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp3Table1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp2Down1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp2Down2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp2Down3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp3Down3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp3Down2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Comp3Down1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CmdClose
@@ -394,6 +418,186 @@ Partial Class GameForm
         Me.CompUp1.TabIndex = 29
         Me.CompUp1.TabStop = False
         '
+        'Comp2Table1
+        '
+        Me.Comp2Table1.BackColor = System.Drawing.Color.Transparent
+        Me.Comp2Table1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp2Table1.Enabled = False
+        Me.Comp2Table1.ErrorImage = Nothing
+        Me.Comp2Table1.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp2Table1.InitialImage = Nothing
+        Me.Comp2Table1.Location = New System.Drawing.Point(59, 134)
+        Me.Comp2Table1.Name = "Comp2Table1"
+        Me.Comp2Table1.Size = New System.Drawing.Size(199, 122)
+        Me.Comp2Table1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp2Table1.TabIndex = 30
+        Me.Comp2Table1.TabStop = False
+        '
+        'Comp2table2
+        '
+        Me.Comp2table2.BackColor = System.Drawing.Color.Transparent
+        Me.Comp2table2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp2table2.Enabled = False
+        Me.Comp2table2.ErrorImage = Nothing
+        Me.Comp2table2.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp2table2.InitialImage = Nothing
+        Me.Comp2table2.Location = New System.Drawing.Point(59, 283)
+        Me.Comp2table2.Name = "Comp2table2"
+        Me.Comp2table2.Size = New System.Drawing.Size(199, 122)
+        Me.Comp2table2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp2table2.TabIndex = 31
+        Me.Comp2table2.TabStop = False
+        '
+        'Comp2Table3
+        '
+        Me.Comp2Table3.BackColor = System.Drawing.Color.Transparent
+        Me.Comp2Table3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp2Table3.Enabled = False
+        Me.Comp2Table3.ErrorImage = Nothing
+        Me.Comp2Table3.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp2Table3.InitialImage = Nothing
+        Me.Comp2Table3.Location = New System.Drawing.Point(59, 433)
+        Me.Comp2Table3.Name = "Comp2Table3"
+        Me.Comp2Table3.Size = New System.Drawing.Size(199, 122)
+        Me.Comp2Table3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp2Table3.TabIndex = 32
+        Me.Comp2Table3.TabStop = False
+        '
+        'Comp3Table3
+        '
+        Me.Comp3Table3.BackColor = System.Drawing.Color.Transparent
+        Me.Comp3Table3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp3Table3.Enabled = False
+        Me.Comp3Table3.ErrorImage = Nothing
+        Me.Comp3Table3.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp3Table3.InitialImage = Nothing
+        Me.Comp3Table3.Location = New System.Drawing.Point(977, 433)
+        Me.Comp3Table3.Name = "Comp3Table3"
+        Me.Comp3Table3.Size = New System.Drawing.Size(193, 122)
+        Me.Comp3Table3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp3Table3.TabIndex = 35
+        Me.Comp3Table3.TabStop = False
+        '
+        'Comp3Table2
+        '
+        Me.Comp3Table2.BackColor = System.Drawing.Color.Transparent
+        Me.Comp3Table2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp3Table2.Enabled = False
+        Me.Comp3Table2.ErrorImage = Nothing
+        Me.Comp3Table2.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp3Table2.InitialImage = Nothing
+        Me.Comp3Table2.Location = New System.Drawing.Point(977, 283)
+        Me.Comp3Table2.Name = "Comp3Table2"
+        Me.Comp3Table2.Size = New System.Drawing.Size(193, 122)
+        Me.Comp3Table2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp3Table2.TabIndex = 34
+        Me.Comp3Table2.TabStop = False
+        '
+        'Comp3Table1
+        '
+        Me.Comp3Table1.BackColor = System.Drawing.Color.Transparent
+        Me.Comp3Table1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp3Table1.Enabled = False
+        Me.Comp3Table1.ErrorImage = Nothing
+        Me.Comp3Table1.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp3Table1.InitialImage = Nothing
+        Me.Comp3Table1.Location = New System.Drawing.Point(977, 134)
+        Me.Comp3Table1.Name = "Comp3Table1"
+        Me.Comp3Table1.Size = New System.Drawing.Size(193, 122)
+        Me.Comp3Table1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp3Table1.TabIndex = 33
+        Me.Comp3Table1.TabStop = False
+        '
+        'Comp2Down1
+        '
+        Me.Comp2Down1.BackColor = System.Drawing.Color.Transparent
+        Me.Comp2Down1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp2Down1.Enabled = False
+        Me.Comp2Down1.ErrorImage = Nothing
+        Me.Comp2Down1.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp2Down1.InitialImage = Nothing
+        Me.Comp2Down1.Location = New System.Drawing.Point(99, 134)
+        Me.Comp2Down1.Name = "Comp2Down1"
+        Me.Comp2Down1.Size = New System.Drawing.Size(199, 122)
+        Me.Comp2Down1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp2Down1.TabIndex = 36
+        Me.Comp2Down1.TabStop = False
+        '
+        'Comp2Down2
+        '
+        Me.Comp2Down2.BackColor = System.Drawing.Color.Transparent
+        Me.Comp2Down2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp2Down2.Enabled = False
+        Me.Comp2Down2.ErrorImage = Nothing
+        Me.Comp2Down2.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp2Down2.InitialImage = Nothing
+        Me.Comp2Down2.Location = New System.Drawing.Point(99, 283)
+        Me.Comp2Down2.Name = "Comp2Down2"
+        Me.Comp2Down2.Size = New System.Drawing.Size(199, 122)
+        Me.Comp2Down2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp2Down2.TabIndex = 37
+        Me.Comp2Down2.TabStop = False
+        '
+        'Comp2Down3
+        '
+        Me.Comp2Down3.BackColor = System.Drawing.Color.Transparent
+        Me.Comp2Down3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp2Down3.Enabled = False
+        Me.Comp2Down3.ErrorImage = Nothing
+        Me.Comp2Down3.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp2Down3.InitialImage = Nothing
+        Me.Comp2Down3.Location = New System.Drawing.Point(99, 433)
+        Me.Comp2Down3.Name = "Comp2Down3"
+        Me.Comp2Down3.Size = New System.Drawing.Size(199, 122)
+        Me.Comp2Down3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp2Down3.TabIndex = 38
+        Me.Comp2Down3.TabStop = False
+        '
+        'Comp3Down3
+        '
+        Me.Comp3Down3.BackColor = System.Drawing.Color.Transparent
+        Me.Comp3Down3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp3Down3.Enabled = False
+        Me.Comp3Down3.ErrorImage = Nothing
+        Me.Comp3Down3.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp3Down3.InitialImage = Nothing
+        Me.Comp3Down3.Location = New System.Drawing.Point(921, 433)
+        Me.Comp3Down3.Name = "Comp3Down3"
+        Me.Comp3Down3.Size = New System.Drawing.Size(199, 122)
+        Me.Comp3Down3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp3Down3.TabIndex = 39
+        Me.Comp3Down3.TabStop = False
+        '
+        'Comp3Down2
+        '
+        Me.Comp3Down2.BackColor = System.Drawing.Color.Transparent
+        Me.Comp3Down2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp3Down2.Enabled = False
+        Me.Comp3Down2.ErrorImage = Nothing
+        Me.Comp3Down2.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp3Down2.InitialImage = Nothing
+        Me.Comp3Down2.Location = New System.Drawing.Point(921, 283)
+        Me.Comp3Down2.Name = "Comp3Down2"
+        Me.Comp3Down2.Size = New System.Drawing.Size(199, 122)
+        Me.Comp3Down2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp3Down2.TabIndex = 40
+        Me.Comp3Down2.TabStop = False
+        '
+        'Comp3Down1
+        '
+        Me.Comp3Down1.BackColor = System.Drawing.Color.Transparent
+        Me.Comp3Down1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Comp3Down1.Enabled = False
+        Me.Comp3Down1.ErrorImage = Nothing
+        Me.Comp3Down1.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
+        Me.Comp3Down1.InitialImage = Nothing
+        Me.Comp3Down1.Location = New System.Drawing.Point(921, 134)
+        Me.Comp3Down1.Name = "Comp3Down1"
+        Me.Comp3Down1.Size = New System.Drawing.Size(199, 122)
+        Me.Comp3Down1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Comp3Down1.TabIndex = 41
+        Me.Comp3Down1.TabStop = False
+        '
         'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -401,6 +605,12 @@ Partial Class GameForm
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(1386, 778)
+        Me.Controls.Add(Me.Comp3Table3)
+        Me.Controls.Add(Me.Comp3Table2)
+        Me.Controls.Add(Me.Comp3Table1)
+        Me.Controls.Add(Me.Comp2Table3)
+        Me.Controls.Add(Me.Comp2table2)
+        Me.Controls.Add(Me.Comp2Table1)
         Me.Controls.Add(Me.CompUp1)
         Me.Controls.Add(Me.CompUp2)
         Me.Controls.Add(Me.CompUp3)
@@ -428,6 +638,12 @@ Partial Class GameForm
         Me.Controls.Add(Me.CDown2)
         Me.Controls.Add(Me.CDown1)
         Me.Controls.Add(Me.CDown3)
+        Me.Controls.Add(Me.Comp2Down1)
+        Me.Controls.Add(Me.Comp2Down2)
+        Me.Controls.Add(Me.Comp2Down3)
+        Me.Controls.Add(Me.Comp3Down3)
+        Me.Controls.Add(Me.Comp3Down2)
+        Me.Controls.Add(Me.Comp3Down1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "GameForm"
         Me.Text = "Form1"
@@ -451,6 +667,18 @@ Partial Class GameForm
         CType(Me.CompUp3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CompUp2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CompUp1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp2Table1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp2table2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp2Table3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp3Table3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp3Table2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp3Table1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp2Down1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp2Down2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp2Down3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp3Down3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp3Down2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Comp3Down1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -482,4 +710,16 @@ Partial Class GameForm
     Friend WithEvents CompUp3 As PictureBox
     Friend WithEvents CompUp2 As PictureBox
     Friend WithEvents CompUp1 As PictureBox
+    Friend WithEvents Comp2Table1 As PictureBox
+    Friend WithEvents Comp2table2 As PictureBox
+    Friend WithEvents Comp2Table3 As PictureBox
+    Friend WithEvents Comp3Table3 As PictureBox
+    Friend WithEvents Comp3Table2 As PictureBox
+    Friend WithEvents Comp3Table1 As PictureBox
+    Friend WithEvents Comp2Down1 As PictureBox
+    Friend WithEvents Comp2Down2 As PictureBox
+    Friend WithEvents Comp2Down3 As PictureBox
+    Friend WithEvents Comp3Down3 As PictureBox
+    Friend WithEvents Comp3Down2 As PictureBox
+    Friend WithEvents Comp3Down1 As PictureBox
 End Class
