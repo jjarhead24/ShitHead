@@ -41,7 +41,7 @@ Partial Class GameForm
         Me.HandCard2 = New System.Windows.Forms.PictureBox()
         Me.HandCard1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.SortCards = New System.Windows.Forms.Button()
         Me.HandRight = New System.Windows.Forms.Button()
         Me.FaceD1 = New System.Windows.Forms.Label()
         Me.FaceD2 = New System.Windows.Forms.Label()
@@ -325,14 +325,14 @@ Partial Class GameForm
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
+        'SortCards
         '
-        Me.Button2.Location = New System.Drawing.Point(1035, 714)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 21
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.SortCards.Location = New System.Drawing.Point(893, 637)
+        Me.SortCards.Name = "SortCards"
+        Me.SortCards.Size = New System.Drawing.Size(75, 23)
+        Me.SortCards.TabIndex = 21
+        Me.SortCards.Text = "Sort Cards"
+        Me.SortCards.UseVisualStyleBackColor = True
         '
         'HandRight
         '
@@ -618,7 +618,7 @@ Partial Class GameForm
         Me.Controls.Add(Me.FaceD2)
         Me.Controls.Add(Me.FaceD1)
         Me.Controls.Add(Me.HandRight)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.SortCards)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.HandCard3)
         Me.Controls.Add(Me.HandCard2)
@@ -702,7 +702,7 @@ Partial Class GameForm
     Friend WithEvents HandCard2 As PictureBox
     Friend WithEvents HandCard1 As PictureBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents SortCards As Button
     Friend WithEvents HandRight As Button
     Friend WithEvents FaceD1 As Label
     Friend WithEvents FaceD2 As Label

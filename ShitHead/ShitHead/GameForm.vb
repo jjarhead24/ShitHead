@@ -21,7 +21,7 @@
         Dim Comp3TableCards As New List(Of PictureBox) From {Comp3Table1, Comp3Table2, Comp3Table3}
         Dim Comp3DownCards As New List(Of PictureBox) From {Comp3Down1, Comp3Down2, Comp3Down3}
         Me.WindowState = FormWindowState.Maximized
-        SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards)
+        SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
         If card_swap.handpics.Count <= 3 Then
             HandRight.Enabled = False
             'LeftClick.Enabled = False
@@ -40,7 +40,7 @@
 
     Dim j As Integer = 2
 
-    Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards)
+    Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
         Dim CardVal As String
         For i = 0 To 2
             PHandlist(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
@@ -64,9 +64,26 @@
                 card = card_swap.Comp2Cards(i + 3)
                 CardVal = "_" + card.Type + card.Suit + "R"
                 Comp2TableCards(i).image = My.Resources.ResourceManager.GetObject(CardVal)
+
+                card = card_swap.Comp2Cards(i)
+                Comp2DownCard(i).tag = card.Number
             End If
             If SettingsForGame.BotsIn = 3 Then
+                Comp2TableCards(i).tag = card_swap.Comp2Cards(i + 3)
+                card = card_swap.Comp2Cards(i + 3)
+                CardVal = "_" + card.Type + card.Suit + "R"
+                Comp2TableCards(i).image = My.Resources.ResourceManager.GetObject(CardVal)
 
+                card = card_swap.Comp2Cards(i)
+                Comp2DownCard(i).tag = card.Number
+
+                Comp3TableCards(i).tag = card_swap.Comp3Cards(i + 3)
+                card = card_swap.Comp3Cards(i + 3)
+                CardVal = "_" + card.Type + card.Suit + "R"
+                Comp3TableCards(i).image = My.Resources.ResourceManager.GetObject(CardVal)
+
+                card = card_swap.Comp3Cards(i)
+                Comp3DownCards(i).tag = card.Number
             End If
         Next
     End Sub
@@ -170,5 +187,38 @@
     Private Sub CompTable1_Click(sender As Object, e As EventArgs) Handles CompTable1.Click
         mess = CompTable1.Tag
         MsgBox(mess)
+    End Sub
+
+    Private Sub SortCards_Click(sender As Object, e As EventArgs) Handles SortCards.Click
+        Dim Temp As Integer
+        Dim temp2 As String
+        Dim cont As Boolean = True
+        'MsgBox(card_swap.handpics.Count)
+        'For i = 0 To card_swap.handpics.Count - 1
+        '    If card_swap.handtag(i) > card_swap.handtag(i + 1) Then 'out of range?
+        '        Temp = card_swap.handtag(i)
+        '        MsgBox(Temp)
+        '        card_swap.handtag(i) = card_swap.handtag(i + 1)
+        '        card_swap.handtag(i + 1) = Temp
+        '    End If
+        'Next
+
+        While cont = True
+            Try
+                If card_swap.handtag(i) > card_swap.handtag(i + 1) Then 'out of range?
+                    Temp = card_swap.handtag(i)
+                    MsgBox(Temp)
+                    card_swap.handtag(i) = card_swap.handtag(i + 1)
+                    card_swap.handtag(i + 1) = Temp
+
+                    temp2 = card_swap.handpics(i)
+                    MsgBox(temp2)
+                    card_swap.handpics(i) = card_swap.handpics(i + 1)
+                    card_swap.handpics(i + 1) = temp2
+                End If
+            Catch
+                cont = False
+            End Try
+        End While
     End Sub
 End Class
