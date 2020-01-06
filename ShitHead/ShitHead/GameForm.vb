@@ -89,6 +89,7 @@
     End Sub
 
     Private Sub HandRight_Click(sender As Object, e As EventArgs) Handles HandRight.Click
+       
         If card_swap.handpics.Count > 3 Then
             Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
 
@@ -191,34 +192,42 @@
 
     Private Sub SortCards_Click(sender As Object, e As EventArgs) Handles SortCards.Click
         Dim Temp As Integer
+        Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
         Dim temp2 As String
-        Dim cont As Boolean = True
-        'MsgBox(card_swap.handpics.Count)
-        'For i = 0 To card_swap.handpics.Count - 1
-        '    If card_swap.handtag(i) > card_swap.handtag(i + 1) Then 'out of range?
-        '        Temp = card_swap.handtag(i)
-        '        MsgBox(Temp)
-        '        card_swap.handtag(i) = card_swap.handtag(i + 1)
-        '        card_swap.handtag(i + 1) = Temp
-        '    End If
-        'Next
+        Dim changes As Integer = 0
+        Dim cont As Boolean
+        i = 0
+        cont = True
+        For j = 0 To card_swap.handtag.Count
+            While cont = True
+                Try
+                    If card_swap.handtag(i) > card_swap.handtag(i + 1) Then
+                        Temp = card_swap.handtag(i)
+                        card_swap.handtag(i) = card_swap.handtag(i + 1)
+                        card_swap.handtag(i + 1) = Temp
 
-        While cont = True
-            Try
-                If card_swap.handtag(i) > card_swap.handtag(i + 1) Then 'out of range?
-                    Temp = card_swap.handtag(i)
-                    MsgBox(Temp)
-                    card_swap.handtag(i) = card_swap.handtag(i + 1)
-                    card_swap.handtag(i + 1) = Temp
-
-                    temp2 = card_swap.handpics(i)
-                    MsgBox(temp2)
-                    card_swap.handpics(i) = card_swap.handpics(i + 1)
-                    card_swap.handpics(i + 1) = temp2
+                        temp2 = card_swap.handpics(i)
+                        card_swap.handpics(i) = card_swap.handpics(i + 1)
+                        card_swap.handpics(i + 1) = temp2
+                        changes = changes + 1
+                        For i = 0 To 2
+                            PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
+                            PHandList(i).Tag = card_swap.handtag(i)
+                        Next
+                    End If
+                Catch
+                    cont = False
+                End Try
+                If i = card_swap.handpics.Count Then
+                    i = 0
                 End If
-            Catch
-                cont = False
-            End Try
-        End While
+                i = i + 1
+            End While
+        Next
+        j = 2
+    End Sub
+
+    Private Sub Comp3Table3_Click(sender As Object, e As EventArgs) Handles Comp3Table3.Click
+        MsgBox(CompTable3.Tag)
     End Sub
 End Class

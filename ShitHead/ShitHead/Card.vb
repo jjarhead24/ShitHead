@@ -216,7 +216,7 @@
                     End If
 
                 ElseIf CurrCard = 49 Then
-                    MadeCard.Number = 10
+                    MadeCard.Number = 13
                     MadeCard.Type = "A"
 
 

@@ -327,12 +327,15 @@ Partial Class GameForm
         '
         'SortCards
         '
-        Me.SortCards.Location = New System.Drawing.Point(893, 637)
+        Me.SortCards.BackColor = System.Drawing.Color.Transparent
+        Me.SortCards.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SortCards.ForeColor = System.Drawing.Color.Yellow
+        Me.SortCards.Location = New System.Drawing.Point(837, 575)
         Me.SortCards.Name = "SortCards"
-        Me.SortCards.Size = New System.Drawing.Size(75, 23)
+        Me.SortCards.Size = New System.Drawing.Size(86, 46)
         Me.SortCards.TabIndex = 21
         Me.SortCards.Text = "Sort Cards"
-        Me.SortCards.UseVisualStyleBackColor = True
+        Me.SortCards.UseVisualStyleBackColor = False
         '
         'HandRight
         '
@@ -422,7 +425,6 @@ Partial Class GameForm
         '
         Me.Comp2Table1.BackColor = System.Drawing.Color.Transparent
         Me.Comp2Table1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Comp2Table1.Enabled = False
         Me.Comp2Table1.ErrorImage = Nothing
         Me.Comp2Table1.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
         Me.Comp2Table1.InitialImage = Nothing
@@ -437,7 +439,6 @@ Partial Class GameForm
         '
         Me.Comp2table2.BackColor = System.Drawing.Color.Transparent
         Me.Comp2table2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Comp2table2.Enabled = False
         Me.Comp2table2.ErrorImage = Nothing
         Me.Comp2table2.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
         Me.Comp2table2.InitialImage = Nothing
@@ -452,7 +453,6 @@ Partial Class GameForm
         '
         Me.Comp2Table3.BackColor = System.Drawing.Color.Transparent
         Me.Comp2Table3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Comp2Table3.Enabled = False
         Me.Comp2Table3.ErrorImage = Nothing
         Me.Comp2Table3.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
         Me.Comp2Table3.InitialImage = Nothing
@@ -467,7 +467,6 @@ Partial Class GameForm
         '
         Me.Comp3Table3.BackColor = System.Drawing.Color.Transparent
         Me.Comp3Table3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Comp3Table3.Enabled = False
         Me.Comp3Table3.ErrorImage = Nothing
         Me.Comp3Table3.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
         Me.Comp3Table3.InitialImage = Nothing
@@ -482,7 +481,6 @@ Partial Class GameForm
         '
         Me.Comp3Table2.BackColor = System.Drawing.Color.Transparent
         Me.Comp3Table2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Comp3Table2.Enabled = False
         Me.Comp3Table2.ErrorImage = Nothing
         Me.Comp3Table2.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
         Me.Comp3Table2.InitialImage = Nothing
@@ -497,7 +495,6 @@ Partial Class GameForm
         '
         Me.Comp3Table1.BackColor = System.Drawing.Color.Transparent
         Me.Comp3Table1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Comp3Table1.Enabled = False
         Me.Comp3Table1.ErrorImage = Nothing
         Me.Comp3Table1.Image = Global.ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR
         Me.Comp3Table1.InitialImage = Nothing
