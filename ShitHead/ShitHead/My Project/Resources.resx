@@ -121,19 +121,19 @@
   <data name="_8D" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KCR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_KCR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KCR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_6D" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QDR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_QDR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QDR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_8S" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ADR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_ADR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_9DR" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -169,19 +169,19 @@
   <data name="_10S" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KDR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_KDR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KDR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_KHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KHR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_10D" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="JDR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_JDR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JDR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_QS" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -199,7 +199,7 @@
   <data name="_7DR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7DR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KSR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_KSR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KSR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_3DR" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -211,7 +211,7 @@
   <data name="_KH" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ACR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_ACR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ACR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_2C" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -220,7 +220,7 @@
   <data name="_AD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="JCR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_JCR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JCR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_9D" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -235,7 +235,7 @@
   <data name="_9HR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9HR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QSR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_QSR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QSR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_7H" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -271,13 +271,13 @@
   <data name="_5SR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5SR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_QHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QHR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_5D" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QCR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_QCR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QCR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_9SR" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -313,7 +313,7 @@
   <data name="_2SR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2SR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ASR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_ASR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ASR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_2S" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -355,7 +355,7 @@
   <data name="_6CR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6CR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_AHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AHR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_5HR" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -409,7 +409,7 @@
   <data name="_8SR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8SR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="JSR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_JSR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JSR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_QC" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -436,7 +436,7 @@
   <data name="_4D" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="JHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_JHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JHR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_5CR" type="System.Resources.ResXFileRef, System.Windows.Forms">
