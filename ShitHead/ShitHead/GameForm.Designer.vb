@@ -40,7 +40,7 @@ Partial Class GameForm
         Me.HandCard3 = New System.Windows.Forms.PictureBox()
         Me.HandCard2 = New System.Windows.Forms.PictureBox()
         Me.HandCard1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.RNDplayer = New System.Windows.Forms.Button()
         Me.SortCards = New System.Windows.Forms.Button()
         Me.HandRight = New System.Windows.Forms.Button()
         Me.FaceD1 = New System.Windows.Forms.Label()
@@ -61,6 +61,8 @@ Partial Class GameForm
         Me.Comp3Down3 = New System.Windows.Forms.PictureBox()
         Me.Comp3Down2 = New System.Windows.Forms.PictureBox()
         Me.Comp3Down1 = New System.Windows.Forms.PictureBox()
+        Me.CardCount = New System.Windows.Forms.Label()
+        Me.RollStart = New System.Windows.Forms.Button()
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -316,14 +318,17 @@ Partial Class GameForm
         Me.HandCard1.TabIndex = 17
         Me.HandCard1.TabStop = False
         '
-        'Button1
+        'RNDplayer
         '
-        Me.Button1.Location = New System.Drawing.Point(1027, 706)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.RNDplayer.BackColor = System.Drawing.Color.Transparent
+        Me.RNDplayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RNDplayer.ForeColor = System.Drawing.Color.Yellow
+        Me.RNDplayer.Location = New System.Drawing.Point(1027, 627)
+        Me.RNDplayer.Name = "RNDplayer"
+        Me.RNDplayer.Size = New System.Drawing.Size(73, 44)
+        Me.RNDplayer.TabIndex = 20
+        Me.RNDplayer.Text = "Random player start"
+        Me.RNDplayer.UseVisualStyleBackColor = False
         '
         'SortCards
         '
@@ -595,6 +600,30 @@ Partial Class GameForm
         Me.Comp3Down1.TabIndex = 41
         Me.Comp3Down1.TabStop = False
         '
+        'CardCount
+        '
+        Me.CardCount.AutoSize = True
+        Me.CardCount.BackColor = System.Drawing.Color.Transparent
+        Me.CardCount.ForeColor = System.Drawing.Color.Yellow
+        Me.CardCount.Location = New System.Drawing.Point(837, 559)
+        Me.CardCount.Name = "CardCount"
+        Me.CardCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.CardCount.Size = New System.Drawing.Size(60, 13)
+        Me.CardCount.TabIndex = 42
+        Me.CardCount.Text = "Card Count"
+        '
+        'RollStart
+        '
+        Me.RollStart.BackColor = System.Drawing.Color.Transparent
+        Me.RollStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RollStart.ForeColor = System.Drawing.Color.Yellow
+        Me.RollStart.Location = New System.Drawing.Point(1027, 683)
+        Me.RollStart.Name = "RollStart"
+        Me.RollStart.Size = New System.Drawing.Size(73, 44)
+        Me.RollStart.TabIndex = 43
+        Me.RollStart.Text = "Roll dice to start"
+        Me.RollStart.UseVisualStyleBackColor = False
+        '
         'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -602,6 +631,8 @@ Partial Class GameForm
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(1386, 778)
+        Me.Controls.Add(Me.RollStart)
+        Me.Controls.Add(Me.CardCount)
         Me.Controls.Add(Me.Comp3Table3)
         Me.Controls.Add(Me.Comp3Table2)
         Me.Controls.Add(Me.Comp3Table1)
@@ -616,7 +647,7 @@ Partial Class GameForm
         Me.Controls.Add(Me.FaceD1)
         Me.Controls.Add(Me.HandRight)
         Me.Controls.Add(Me.SortCards)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.RNDplayer)
         Me.Controls.Add(Me.HandCard3)
         Me.Controls.Add(Me.HandCard2)
         Me.Controls.Add(Me.HandCard1)
@@ -698,7 +729,7 @@ Partial Class GameForm
     Friend WithEvents HandCard3 As PictureBox
     Friend WithEvents HandCard2 As PictureBox
     Friend WithEvents HandCard1 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents RNDplayer As Button
     Friend WithEvents SortCards As Button
     Friend WithEvents HandRight As Button
     Friend WithEvents FaceD1 As Label
@@ -719,4 +750,6 @@ Partial Class GameForm
     Friend WithEvents Comp3Down3 As PictureBox
     Friend WithEvents Comp3Down2 As PictureBox
     Friend WithEvents Comp3Down1 As PictureBox
+    Friend WithEvents CardCount As Label
+    Friend WithEvents RollStart As Button
 End Class

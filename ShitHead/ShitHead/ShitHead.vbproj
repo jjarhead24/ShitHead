@@ -120,6 +120,12 @@
     <Compile Include="Quit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Rolling start.Designer.vb">
+      <DependentUpon>Rolling start.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rolling start.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SelectUser.Designer.vb">
       <DependentUpon>SelectUser.vb</DependentUpon>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Quit.resx">
       <DependentUpon>Quit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rolling start.resx">
+      <DependentUpon>Rolling start.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectUser.resx">
       <DependentUpon>SelectUser.vb</DependentUpon>

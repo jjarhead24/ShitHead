@@ -3,7 +3,7 @@
     Dim SpareCards As New List(Of Card)
     Dim Comp1Card As New List(Of Card)
     Public FormFrom As String
-
+    Dim FirstPlayer As Integer
     Dim card As Card
 
 
@@ -21,6 +21,7 @@
         Dim Comp3TableCards As New List(Of PictureBox) From {Comp3Table1, Comp3Table2, Comp3Table3}
         Dim Comp3DownCards As New List(Of PictureBox) From {Comp3Down1, Comp3Down2, Comp3Down3}
         Me.WindowState = FormWindowState.Maximized
+        UpdateCardCount()
         SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
         If card_swap.handpics.Count <= 3 Then
             HandRight.Enabled = False
@@ -158,6 +159,7 @@
             'LeftClick.Enabled = True
 
         End If
+        UpdateCardCount()
     End Sub
     Dim mess As String
     Private Sub HandCard1_Click(sender As Object, e As EventArgs) Handles HandCard1.Click
@@ -241,5 +243,20 @@
 
     Private Sub Comp3Table3_Click(sender As Object, e As EventArgs) Handles Comp3Table3.Click
         MsgBox(Str(Comp3Table3.Tag))
+    End Sub
+
+    Private Sub UpdateCardCount()
+        Dim countCard As String
+        countCard = "You have " & card_swap.handpics.Count & " cards in your hand"
+        CardCount.Text = countCard
+    End Sub
+
+    Private Sub RollStart_Click(sender As Object, e As EventArgs) Handles RollStart.Click
+        Rolling_start.Show()
+    End Sub
+
+    Private Sub RNDplayer_Click(sender As Object, e As EventArgs) Handles RNDplayer.Click
+        Dim r As New Random
+        FirstPlayer = r.Next(1, 4)
     End Sub
 End Class
