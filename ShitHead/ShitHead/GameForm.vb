@@ -198,7 +198,6 @@
         Dim temp2 As String
         Dim changes As Integer = 0
         Dim cont As Boolean
-
         i = 0
         For k = 0 To 1
             For j = 0 To card_swap.handtag.Count
