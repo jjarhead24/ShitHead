@@ -562,6 +562,36 @@ ShitHead
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:ShitHead.My.Resources.Resources.Dice_1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShitHead.My.Resources.Resources.Dice_2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShitHead.My.Resources.Resources.Dice_3">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShitHead.My.Resources.Resources.Dice_4">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShitHead.My.Resources.Resources.Dice_5">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShitHead.My.Resources.Resources.Dice_6">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:ShitHead.My.Resources.Resources.ezgif_6_551fa5ce788dR">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

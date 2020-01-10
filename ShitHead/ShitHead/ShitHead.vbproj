@@ -160,9 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Quit.resx">
       <DependentUpon>Quit.vb</DependentUpon>
@@ -530,6 +530,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ezgif-6-551fa5ce788dR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dice_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dice_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dice_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dice_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dice_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dice_6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
