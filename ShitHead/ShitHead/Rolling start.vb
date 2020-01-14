@@ -14,6 +14,7 @@
         Dim Reslist As New List(Of Results)
         Dim diceval As String
         Dim draws As New List(Of Integer)
+        Dim endList As Integer
 
         Bot1res.resNumber = r.Next(1, 6)
         Bot2res.resNumber = r.Next(1, 6)
@@ -36,7 +37,9 @@
             DiceList(x).Image = My.Resources.ResourceManager.GetObject(diceval)
         Next
 
-        For x = 0 To Reslist.Count
+        endList = Reslist.Count
+
+        For x = 0 To endList
             For i = 0 To Reslist.Count
                 If Reslist(x).resNumber = Reslist(i).resNumber Then
                     draws.Add(Reslist(x).resPlayer)
@@ -44,11 +47,19 @@
                 End If
             Next
         Next
+        For i = 0 To endList
+            draws.Remove(i)
+        Next
 
         If draws.Count = 0 Then
             FindWinner(Reslist)
         Else
+            For i = 0 To Reslist.Count
+                If Reslist(i).resPlayer Then 
+                    Then
 
+                End If
+            Next
         End If
 
     End Sub
