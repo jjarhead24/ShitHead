@@ -36,6 +36,7 @@ Partial Class Rolling_start
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Bot1Dice = New System.Windows.Forms.PictureBox()
         Me.Bot1Roll = New System.Windows.Forms.Label()
+        Me.RollDiceAgain = New System.Windows.Forms.Button()
         CType(Me.DiceShow, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -193,6 +194,18 @@ Partial Class Rolling_start
         Me.Bot1Roll.TabIndex = 4
         Me.Bot1Roll.Text = "Bot 1 got:"
         '
+        'RollDiceAgain
+        '
+        Me.RollDiceAgain.BackColor = System.Drawing.Color.Transparent
+        Me.RollDiceAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RollDiceAgain.ForeColor = System.Drawing.Color.Yellow
+        Me.RollDiceAgain.Location = New System.Drawing.Point(87, 106)
+        Me.RollDiceAgain.Name = "RollDiceAgain"
+        Me.RollDiceAgain.Size = New System.Drawing.Size(96, 47)
+        Me.RollDiceAgain.TabIndex = 4
+        Me.RollDiceAgain.Text = "Roll the dice again!"
+        Me.RollDiceAgain.UseVisualStyleBackColor = False
+        '
         'Rolling_start
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -204,6 +217,7 @@ Partial Class Rolling_start
         Me.Controls.Add(Me.DiceShow)
         Me.Controls.Add(Me.Back)
         Me.Controls.Add(Me.RollDice)
+        Me.Controls.Add(Me.RollDiceAgain)
         Me.Name = "Rolling_start"
         Me.Text = "Rolling_start"
         CType(Me.DiceShow, System.ComponentModel.ISupportInitialize).EndInit()
@@ -234,4 +248,5 @@ Partial Class Rolling_start
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Bot1Dice As PictureBox
     Friend WithEvents Bot1Roll As Label
+    Friend WithEvents RollDiceAgain As Button
 End Class

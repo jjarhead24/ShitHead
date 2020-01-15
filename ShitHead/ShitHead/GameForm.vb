@@ -3,7 +3,7 @@
     Dim SpareCards As New List(Of Card)
     Dim Comp1Card As New List(Of Card)
     Public FormFrom As String
-    Dim FirstPlayer As Integer
+    Public FirstPlayer As Integer
     Dim card As Card
 
 
@@ -256,6 +256,6 @@
 
     Private Sub RNDplayer_Click(sender As Object, e As EventArgs) Handles RNDplayer.Click
         Dim r As New Random
-        FirstPlayer = r.Next(1, 4)
+        FirstPlayer = r.Next(0, 3)
     End Sub
 End Class
