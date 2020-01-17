@@ -16,6 +16,7 @@
     Dim drawlist As New List(Of Integer)
     Dim peopletoplay As New List(Of String)
     Private Sub RollDice_Click(sender As Object, e As EventArgs) Handles RollDice.Click
+        Dim DiceList As New List(Of PictureBox) From {DiceShow, Bot1Dice, Bot2Dice, Bot3Dice}
         Bot1res.resNumber = r.Next(1, 6)
         Bot2res.resNumber = r.Next(1, 6)
         Bot3res.resNumber = r.Next(1, 6)
@@ -39,8 +40,8 @@
 
         endList = Reslist.Count
 
-        For x = 0 To endList
-            For i = 0 To Reslist.Count
+        For x = 0 To endList - 1
+            For i = 0 To endList - 1
                 If Reslist(x).resNumber = Reslist(i).resNumber Then
                     draws.Add(Reslist(x).resPlayer)
                     draws.Add(Reslist(i).resPlayer)
@@ -54,7 +55,7 @@
         If draws.Count = 0 Then
             FindWinner(Reslist)
         Else
-            For i = 0 To Reslist.Count
+            For i = 0 To Reslist.Count - 1
                 drawlist.Add(Reslist(i).resPlayer)
 
             Next
@@ -96,9 +97,10 @@
         End If
     End Sub
 
-    Dim NewRollerList As List(Of String)
+    Dim NewRollerList As New List(Of String)
 
     Private Sub Rollagain(peopletoplay)
+
         RollDice.Hide()
         RollDiceAgain.Show()
         Reslist.Clear()
@@ -114,7 +116,7 @@
         Else
             Bot2res.resNumber = 0
         End If
-        If peopletoplay.Contains("Bot1") Then
+        If peopletoplay.Contains("Bot3") Then
             Bot2res.resNumber = r.Next(1, 6)
             NewRollerList.Add("Bot3")
         Else
@@ -173,10 +175,10 @@
         End If
         endList = Reslist.Count
 
-        For x = 0 To endList
-            For i = 0 To Reslist.Count
+        For x = 0 To endList - 1
+            For i = 0 To endList - 1
                 If Reslist(x).resNumber = Reslist(i).resNumber Then
-                    draws.Add(Reslist(x).resPlayer)
+                    draws.Add(Reslist(x).resPlayer) 'wtf 
                     draws.Add(Reslist(i).resPlayer)
                 End If
             Next
@@ -188,7 +190,7 @@
         If draws.Count = 0 Then
             FindWinner(Reslist)
         Else
-            For i = 0 To Reslist.Count
+            For i = 0 To Reslist.Count - 1
                 drawlist.Add(Reslist(i).resPlayer)
 
             Next
