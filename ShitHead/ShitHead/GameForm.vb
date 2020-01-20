@@ -252,10 +252,16 @@
 
     Private Sub RollStart_Click(sender As Object, e As EventArgs) Handles RollStart.Click
         Rolling_start.Show()
+        StartGame()
     End Sub
 
     Private Sub RNDplayer_Click(sender As Object, e As EventArgs) Handles RNDplayer.Click
         Dim r As New Random
         FirstPlayer = r.Next(0, 3)
+        StartGame()
+    End Sub
+
+    Private Sub StartGame()
+
     End Sub
 End Class

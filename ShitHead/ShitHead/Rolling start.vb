@@ -13,7 +13,7 @@
     Dim DiceList As New List(Of PictureBox) From {DiceShow, Bot1Dice, Bot2Dice, Bot3Dice}
     Dim draws As New List(Of Integer)
     Dim endList As Integer
-    Dim drawlist As New List(Of Integer)
+    Dim drawlist As New List(Of Integer) From {0}
     Dim peopletoplay As New List(Of String)
     Private Sub RollDice_Click(sender As Object, e As EventArgs) Handles RollDice.Click
         Dim DiceList As New List(Of PictureBox) From {DiceShow, Bot1Dice, Bot2Dice, Bot3Dice}
@@ -37,7 +37,7 @@
             MsgBox(diceval)
             DiceList(x).Image = My.Resources.ResourceManager.GetObject(diceval)
         Next
-
+        draws.Remove(0)
         endList = Reslist.Count
 
         For x = 0 To endList - 1
@@ -48,10 +48,9 @@
                 End If
             Next
         Next
-        For i = 0 To endList
-            draws.Remove(i)
-        Next
-        draws.Add(0)
+        'For i = 0 To endList
+        '    draws.Remove(i)
+        'Next
         If draws.Count = 0 Then
             FindWinner(Reslist)
         Else
@@ -95,6 +94,8 @@
         ElseIf highestplayer = 3 Then
             GameForm.FirstPlayer = 3
         End If
+        Me.Hide()
+        GameForm.Show()
     End Sub
 
     Dim NewRollerList As New List(Of String)
@@ -136,7 +137,7 @@
 
     Private Sub RollDiceAgain_Click(sender As Object, e As EventArgs) Handles RollDiceAgain.Click
         If NewRollerList.Contains("Bot1") Then
-            diceval = "Dice_" + Bot1res.ToString()
+            diceval = "Dice_" + Bot1res.resNumber.ToString()
             MsgBox(diceval)
             Bot1Dice.Image = My.Resources.ResourceManager.GetObject(diceval)
             Reslist.Add(Bot1res)
@@ -146,7 +147,7 @@
         End If
 
         If NewRollerList.Contains("Bot2") Then
-            diceval = "Dice_" + Bot2res.ToString()
+            diceval = "Dice_" + Bot2res.resNumber.ToString()
             MsgBox(diceval)
             Bot2Dice.Image = My.Resources.ResourceManager.GetObject(diceval)
             Reslist.Add(Bot2res)
@@ -156,7 +157,7 @@
         End If
 
         If NewRollerList.Contains("Bot3") Then
-            diceval = "Dice_" + Bot3res.ToString()
+            diceval = "Dice_" + Bot3res.resNumber.ToString()
             MsgBox(diceval)
             Bot3Dice.Image = My.Resources.ResourceManager.GetObject(diceval)
             Reslist.Add(Bot3res)
@@ -166,7 +167,7 @@
         End If
 
         If NewRollerList.Contains("Player") Then
-            diceval = "Dice_" + playerRes.ToString()
+            diceval = "Dice_" + playerRes.resNumber.ToString()
             MsgBox(diceval)
             DiceShow.Image = My.Resources.ResourceManager.GetObject(diceval)
             Reslist.Add(playerRes)
@@ -178,7 +179,7 @@
         For x = 0 To endList - 1
             For i = 0 To endList - 1
                 If Reslist(x).resNumber = Reslist(i).resNumber Then
-                    draws.Add(Reslist(x).resPlayer) 'wtf 
+                    draws.Add(Reslist(x).resPlayer)
                     draws.Add(Reslist(i).resPlayer)
                 End If
             Next
