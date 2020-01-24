@@ -208,4 +208,8 @@
         Rollagain(peopletoplay)
 
     End Sub
+
+    Private Sub DiceShow_Click(sender As Object, e As EventArgs) Handles DiceShow.Click
+
+    End Sub
 End Class

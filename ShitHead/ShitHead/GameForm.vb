@@ -5,14 +5,15 @@
     Public FormFrom As String
     Public FirstPlayer As Integer
     Dim card As Card
-
+    Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
+    Dim currentPlayer As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim PTableList As New List(Of PictureBox) From {TableCard1, TableCard2, TableCard3}
         Dim PFaceDList As New List(Of PictureBox) From {FaceDown1, FaceDown2, FaceDown3}
         Dim compList As New List(Of PictureBox) From {CompTable1, CompTable2, CompTable3}
         Dim CFaceDList As New List(Of PictureBox) From {CDown1, CDown2, CDown3}
-        Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
+
         Dim FaceDLblList As New List(Of Label) From {FaceD1, FaceD2, FaceD3}
         Dim CompTableUp As New List(Of PictureBox) From {CompUp1, CompUp2, CompUp3}
         Dim CompTableDown As New List(Of PictureBox) From {CompTable1, CompTable2, CompTable3}
@@ -20,6 +21,7 @@
         Dim Comp2DownCard As New List(Of PictureBox) From {Comp2Down1, Comp2Down2, Comp2Down3}
         Dim Comp3TableCards As New List(Of PictureBox) From {Comp3Table1, Comp3Table2, Comp3Table3}
         Dim Comp3DownCards As New List(Of PictureBox) From {Comp3Down1, Comp3Down2, Comp3Down3}
+        PickUpPile.Enabled = False
         Me.WindowState = FormWindowState.Maximized
         UpdateCardCount()
         SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
@@ -140,26 +142,30 @@
         If card_swap.SpareCards.Count = 0 Then
             PickUpPile.Hide()
         End If
-        card = card_swap.SpareCards(0)
-        CardVal = "_" + card.Type + card.Suit
-        card_swap.handpics.Add(CardVal)
-        card_swap.handtag.Add(card.Number)
 
-        card_swap.SpareCards.Remove(card)
+        If currentPlayer = 0 Then
+            card = card_swap.SpareCards(0)
+            CardVal = "_" + card.Type + card.Suit
+            card_swap.handpics.Add(CardVal)
+            card_swap.handtag.Add(card.Number)
 
-        If card_swap.SpareCards.Count = 0 Then
-            PickUpPile.Hide()
+            card_swap.SpareCards.Remove(card)
+
+            If card_swap.SpareCards.Count = 0 Then
+                PickUpPile.Hide()
+            End If
+            If card_swap.handpics.Count <= 3 Then
+                HandRight.Enabled = False
+                'LeftClick.Enabled = False
+            Else
+
+                HandRight.Enabled = True
+                'LeftClick.Enabled = True
+
+            End If
+            UpdateCardCount()
         End If
-        If card_swap.handpics.Count <= 3 Then
-            HandRight.Enabled = False
-            'LeftClick.Enabled = False
-        Else
 
-            HandRight.Enabled = True
-            'LeftClick.Enabled = True
-
-        End If
-        UpdateCardCount()
     End Sub
     Dim mess As String
     Private Sub HandCard1_Click(sender As Object, e As EventArgs) Handles HandCard1.Click
@@ -252,16 +258,22 @@
 
     Private Sub RollStart_Click(sender As Object, e As EventArgs) Handles RollStart.Click
         Rolling_start.Show()
-        StartGame()
+        PlayGame()
     End Sub
 
     Private Sub RNDplayer_Click(sender As Object, e As EventArgs) Handles RNDplayer.Click
         Dim r As New Random
         FirstPlayer = r.Next(0, 3)
-        StartGame()
+        PlayGame()
     End Sub
 
-    Private Sub StartGame()
+    Private Sub PlayGame()
 
+        If currentPlayer = 0 Then
+            PickUpPile.Enabled = True
+            For i = 0 To Len(PHandList) - 1
+                PHandList(i).Enabled = True
+            Next
+        End If
     End Sub
 End Class

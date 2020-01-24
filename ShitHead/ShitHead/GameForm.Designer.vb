@@ -615,6 +615,7 @@ Partial Class GameForm
         'RollStart
         '
         Me.RollStart.BackColor = System.Drawing.Color.Transparent
+        Me.RollStart.Enabled = False
         Me.RollStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RollStart.ForeColor = System.Drawing.Color.Yellow
         Me.RollStart.Location = New System.Drawing.Point(1027, 683)
