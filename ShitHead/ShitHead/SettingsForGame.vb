@@ -50,7 +50,7 @@
     Private Sub Confirm_Click(sender As Object, e As EventArgs) Handles Confirm.Click
         BotsIn = BotNum.Text
         BillsIn = PayInNum.Text
-        card_swap.Show()
+        CardSwap.Show()
         Me.Hide()
     End Sub
 End Class

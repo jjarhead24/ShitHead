@@ -79,7 +79,12 @@
     <Compile Include="CardSwap.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Card.vb" />
+    <Compile Include="Classes\Card.vb" />
+    <Compile Include="Classes\CardsStructure.vb" />
+    <Compile Include="Classes\Deck.vb" />
+    <Compile Include="Classes\House.vb" />
+    <Compile Include="Classes\Number.vb" />
+    <Compile Include="Classes\Player.vb" />
     <Compile Include="ErrorNAN.Designer.vb">
       <DependentUpon>ErrorNAN.vb</DependentUpon>
     </Compile>

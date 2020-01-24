@@ -1,15 +1,61 @@
-﻿Public Class card_swap
-    Dim playerCards As New List(Of Card)
-    Public SpareCards As New List(Of Card)
-    Public Comp1Cards As New List(Of Card)
-    Public Comp2Cards As New List(Of Card)
-    Public Comp3Cards As New List(Of Card)
-    Dim card1 As String
-    Dim card2 As String
+﻿Public Class CardSwap
     Dim HandNums As New List(Of Label) From {HandLbl1, HandLbl2, HandLbl3}
     Dim TableNums As New List(Of Label) From {TableLbl1, TableLbl2, TableLbl3}
+    Dim PBList As New List(Of PictureBox) From {Table1, Table2, Table3}
+    Dim PhandList As New List(Of PictureBox) From {Hand1, Hand2, Hand3}
     Public FaceDownPicList As New List(Of String)
     Public FaceDownNumList As New List(Of Integer)
+
+    Public GennedCards As CardsStructure
+
+    Public Function GenCards() As CardsStructure
+        Dim _deck As New Deck()
+        Dim struct As New CardsStructure() With {
+            .Deck = _deck,
+            .Other1 = New List(Of Card)(),
+            .Other2 = New List(Of Card)(),
+            .Other3 = New List(Of Card)(),
+            .Self = New List(Of Card)()
+        }
+        For i As Integer = 0 To 9
+            Dim card = _deck.Draw()
+            struct.Self.Add(card)
+        Next
+        If SettingsForGame.BotsIn >= 1 Then
+            For i As Integer = 0 To 9
+                Dim card = _deck.Draw()
+                struct.Other1.Add(card)
+            Next
+        End If
+        If SettingsForGame.BotsIn >= 2 Then
+            For i As Integer = 0 To 9
+                Dim card = _deck.Draw()
+                struct.Other2.Add(card)
+            Next
+        End If
+        If SettingsForGame.BotsIn >= 3 Then
+            For i As Integer = 0 To 9
+                Dim card = _deck.Draw()
+                struct.Other3.Add(card)
+            Next
+        End If
+        Return struct
+    End Function
+
+    Private Sub SetTableToCard(index As Integer, c As Card)
+        PBList(index).Tag = c
+        PBList(index).Image = c.Image
+        TableNums(index).Text = c.Text
+        TableNums(index).Tag = c
+    End Sub
+
+    Private Sub SetHandToCard(index As Integer, c As Card)
+        PhandList(index).Image = c.Image
+        PhandList(index).Tag = c
+        HandNums(index).Text = c.Text
+        HandNums(index).Tag = c
+    End Sub
+
     Private Sub card_swap_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         outline1.Hide()
         outline2.Hide()
@@ -18,701 +64,66 @@
         outline5.Hide()
         outline6.Hide()
 
-
-
-        Dim CardVal As String
         Dim card As Card
-        Dim PBList As New List(Of PictureBox) From {Table1, Table2, Table3}
-        Dim PhandList As New List(Of PictureBox) From {Hand1, Hand2, Hand3}
+        PBList = New List(Of PictureBox) From {Table1, Table2, Table3}
+        PhandList = New List(Of PictureBox) From {Hand1, Hand2, Hand3}
         TableNums = New List(Of Label) From {TableLbl1, TableLbl2, TableLbl3}
         HandNums = New List(Of Label) From {HandLbl1, HandLbl2, HandLbl3}
 
-        Dim ReturnedLists = card.GenCards()
-        playerCards = ReturnedLists.Item1
-        SpareCards = ReturnedLists.Item2
-        Comp1Cards = ReturnedLists.Item3
-        Comp2Cards = ReturnedLists.Item4
-        Comp3Cards = ReturnedLists.Item5
-
-        Dim l As Integer
-
-        For l = 0 To 2
-
-            card = playerCards(l)
-            CardVal = "_" + card.Type + card.Suit
-            FaceDownPicList.Add(CardVal)
-            FaceDownNumList.Add(card.Number)
-        Next
+        GennedCards = GenCards()
 
         For l = 3 To 5
-
-
-            card = playerCards(l)
-            CardVal = "_" + card.Type + card.Suit
-            PBList(l - 3).Image = My.Resources.ResourceManager.GetObject(CardVal)
-            PBList(l - 3).Tag = CardVal
-            TableNums(l - 3).Text = (card.Number)
-
+            card = GennedCards.Self(l)
+            SetTableToCard(l - 3, card)
         Next
 
         For l = 6 To 8
-            card = playerCards(l)
-            CardVal = "_" + card.Type + card.Suit
-            PhandList(l - 6).Image = My.Resources.ResourceManager.GetObject(CardVal)
-            PhandList(l - 6).Tag = CardVal
-            HandNums(l - 6).Text = (card.Number)
+            card = GennedCards.Self(l)
+            SetHandToCard(l - 6, card)
         Next
 
     End Sub
 
-    Private Sub Hand1_Click(sender As Object, e As EventArgs) Handles Hand1.Click
-        If card1 = "" Then
-            card1 = "hand1"
-            outline1.Show()
-
-        ElseIf card2 = "" Then
-            card2 = "hand1"
-            outline1.Hide()
-            outline2.Hide()
-            outline3.Hide()
-            outline4.Hide()
-            outline5.Hide()
-            outline6.Hide()
-            Swap()
-        End If
+    Private Sub SetOutLines()
+        outline1.Visible = firstBox.Name = Hand1.Name Or secondBox.Name = Hand1.Name
+        outline2.Visible = firstBox.Name = Hand2.Name Or secondBox.Name = Hand2.Name
+        outline3.Visible = firstBox.Name = Hand3.Name Or secondBox.Name = Hand3.Name
+        outline4.Visible = firstBox.Name = Table1.Name Or secondBox.Name = Table1.Name
+        outline5.Visible = firstBox.Name = Table2.Name Or secondBox.Name = Table2.Name
+        outline6.Visible = firstBox.Name = Table3.Name Or secondBox.Name = Table3.Name
     End Sub
 
-    Private Sub Hand2_Click(sender As Object, e As EventArgs) Handles Hand2.Click
-        If card1 = "" Then
-            card1 = "hand2"
-            outline2.Show()
+    Dim firstBox As PictureBox = Nothing
+    Dim secondBox As PictureBox = Nothing
 
-        ElseIf card2 = "" Then
-            card2 = "hand2"
-            outline1.Hide()
-            outline2.Hide()
-            outline3.Hide()
-            outline4.Hide()
-            outline5.Hide()
-            outline6.Hide()
-            Swap()
-        End If
+    Private Sub CardClicked(sender As Object, e As EventArgs) Handles Hand1.Click, Hand2.Click, Hand3.Click
+        firstBox = DirectCast(sender, PictureBox)
+        SetOutLines()
     End Sub
 
-    Private Sub Hand3_Click(sender As Object, e As EventArgs) Handles Hand3.Click
-        If card1 = "" Then
-            card1 = "hand3"
-            outline3.Show()
-
-        ElseIf card2 = "" Then
-            card2 = "hand3"
-            outline1.Hide()
-            outline2.Hide()
-            outline3.Hide()
-            outline4.Hide()
-            outline5.Hide()
-            outline6.Hide()
-            Swap()
-        End If
+    Private Sub HandClicked(sender As Object, e As EventArgs) Handles Table1.Click, Table2.Click, Table3.Click
+        secondBox = DirectCast(sender, PictureBox)
     End Sub
-
-    Private Sub Table1_Click(sender As Object, e As EventArgs) Handles Table1.Click
-        If card1 = "" Then
-            card1 = "table1"
-            outline4.Show()
-
-        ElseIf card2 = "" Then
-            card2 = "table1"
-            outline1.Hide()
-            outline2.Hide()
-            outline3.Hide()
-            outline4.Hide()
-            outline5.Hide()
-            outline6.Hide()
-            Swap()
-        End If
-    End Sub
-
-    Private Sub Table2_Click(sender As Object, e As EventArgs) Handles Table2.Click
-        If card1 = "" Then
-            card1 = "table2"
-            outline5.Show()
-
-        ElseIf card2 = "" Then
-            card2 = "table2"
-            outline1.Hide()
-            outline2.Hide()
-            outline3.Hide()
-            outline4.Hide()
-            outline5.Hide()
-            outline6.Hide()
-            Swap()
-        End If
-    End Sub
-
-    Private Sub Table3_Click(sender As Object, e As EventArgs) Handles Table3.Click
-        If card1 = "" Then
-            card1 = "table3"
-            outline6.Show()
-
-        ElseIf card2 = "" Then
-            card2 = "table3"
-            outline1.Hide()
-            outline2.Hide()
-            outline3.Hide()
-            outline4.Hide()
-            outline5.Hide()
-            outline6.Hide()
-            Swap()
-        End If
-    End Sub
-
     Private Sub Swap()
-        Dim tempTag As String
-        Dim tempPic As Image
-        Dim tempLbl As Integer
-
-        If card1 = "hand1" Then
-            If card2 = "table1" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                Hand1.Tag = Table1.Tag
-                HandLbl1.Text = TableLbl1.Text
-
-                Table1.Image = tempPic
-                Table1.Tag = tempTag
-                TableLbl1.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "table2" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                Hand1.Tag = Table2.Tag
-                HandLbl1.Text = TableLbl2.Text
-
-                Table2.Image = tempPic
-                Table2.Tag = tempTag
-                TableLbl2.Text = tempLbl
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "table3" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                Hand1.Tag = Table3.Tag
-                HandLbl1.Text = TableLbl3.Text
-
-                Table3.Image = tempPic
-                Table3.Tag = tempTag
-                TableLbl3.Text = tempLbl
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "hand2" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                Hand1.Tag = Hand2.Tag
-                HandLbl1.Text = HandLbl2.Text
-
-                Hand2.Image = tempPic
-                Hand2.Tag = tempTag
-                HandLbl2.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            ElseIf card2 = "hand3" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                Hand1.Tag = Hand3.Tag
-                HandLbl1.Text = HandLbl3.Text
-
-                Hand3.Image = tempPic
-                Hand3.Tag = tempTag
-                HandLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            Else
-                card1 = ""
-                card2 = ""
-            End If
-
-
-        ElseIf card1 = "hand2" Then
-            If card2 = "table1" Then
-                tempTag = Hand2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                tempLbl = HandLbl2.Text
-
-                Hand2.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                Hand2.Tag = Table1.Tag
-                HandLbl2.Text = TableLbl1.Text
-
-                Table1.Image = tempPic
-                Table1.Tag = tempTag
-                TableLbl1.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "table2" Then
-                tempTag = Hand2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                tempLbl = HandLbl2.Text
-
-                Hand2.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                Hand2.Tag = Table2.Tag
-                HandLbl2.Text = TableLbl2.Text
-
-                Table2.Image = tempPic
-                Table2.Tag = tempTag
-                TableLbl2.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "table3" Then
-                tempTag = Hand2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                tempLbl = HandLbl2.Text
-
-                Hand2.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                Hand2.Tag = Table3.Tag
-                HandLbl2.Text = TableLbl3.Text
-
-                Table3.Image = tempPic
-                Table3.Tag = tempTag
-                TableLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "hand1" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                Hand1.Tag = Hand2.Tag
-                HandLbl1.Text = HandLbl2.Text
-
-                Hand2.Image = tempPic
-                Hand2.Tag = tempTag
-                HandLbl2.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            ElseIf card2 = "hand3" Then
-                tempTag = Hand2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                tempLbl = HandLbl2.Text
-
-                Hand2.Image = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                Hand2.Tag = Hand3.Tag
-                HandLbl2.Text = HandLbl3.Text
-
-                Hand3.Image = tempPic
-                Hand3.Tag = tempTag
-                HandLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            Else
-                card1 = ""
-                card2 = ""
-            End If
-
-
-        ElseIf card1 = "hand3" Then
-            If card2 = "table1" Then
-                tempTag = Hand3.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                tempLbl = HandLbl3.Text
-
-                Hand3.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                Hand3.Tag = Table1.Tag
-                HandLbl3.Text = TableLbl1.Text
-
-                Table1.Image = tempPic
-                Table1.Tag = tempTag
-                TableLbl1.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "table2" Then
-                tempTag = Hand3.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                tempLbl = HandLbl3.Text
-
-                Hand3.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                Hand3.Tag = Table2.Tag
-                HandLbl3.Text = TableLbl2.Text
-
-                Table2.Image = tempPic
-                Table2.Tag = tempTag
-                TableLbl2.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "table3" Then
-                tempTag = Hand3.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                tempLbl = HandLbl3.Text
-
-                Hand3.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                Hand3.Tag = Table3.Tag
-                HandLbl3.Text = TableLbl3.Text
-
-                Table3.Image = tempPic
-                Table3.Tag = tempTag
-                TableLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "hand1" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                Hand1.Tag = Hand3.Tag
-                HandLbl1.Text = HandLbl3.Text
-
-                Hand3.Image = tempPic
-                Hand3.Tag = tempTag
-                HandLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            ElseIf card2 = "hand2" Then
-                tempTag = Hand2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                tempLbl = HandLbl2.Text
-
-                Hand2.Image = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                Hand2.Tag = Hand3.Tag
-                HandLbl2.Text = HandLbl3.Text
-
-                Hand3.Image = tempPic
-                Hand3.Tag = tempTag
-                HandLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            Else
-                card1 = ""
-                card2 = ""
-            End If
-
-
-        ElseIf card1 = "table1" Then
-            If card2 = "hand1" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                Hand1.Tag = Table1.Tag
-                HandLbl1.Text = TableLbl1.Text
-
-                Table1.Image = tempPic
-                Table1.Tag = tempTag
-                TableLbl1.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "hand2" Then
-                tempTag = Hand2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                tempLbl = HandLbl2.Text
-
-                Hand2.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                Hand2.Tag = Table1.Tag
-                HandLbl2.Text = TableLbl1.Text
-
-                Table1.Image = tempPic
-                Table1.Tag = tempTag
-                TableLbl1.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "hand3" Then
-                tempTag = Hand3.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                tempLbl = HandLbl3.Text
-
-                Hand3.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                Hand3.Tag = Table1.Tag
-                HandLbl3.Text = TableLbl1.Text
-
-                Table1.Image = tempPic
-                Table1.Tag = tempTag
-                TableLbl1.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            ElseIf card2 = "table2" Then
-                tempTag = Table2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                tempLbl = TableLbl2.Text
-
-                Table2.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                Table2.Tag = Table1.Tag
-                TableLbl2.Text = TableLbl1.Text
-
-                Table1.Image = tempPic
-                Table1.Tag = tempTag
-                TableLbl1.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            ElseIf card2 = "table3" Then
-                tempTag = Table3.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                tempLbl = TableLbl3.Text
-
-                Table3.Image = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                Table3.Tag = Table1.Tag
-                TableLbl3.Text = TableLbl1.Text
-
-                Table1.Image = tempPic
-                Table1.Tag = tempTag
-                TableLbl1.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            Else
-
-                card1 = ""
-                card2 = ""
-            End If
-
-
-        ElseIf card1 = "table2" Then
-            If card2 = "hand1" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                Hand1.Tag = Table2.Tag
-                HandLbl1.Text = TableLbl2.Text
-
-                Table2.Image = tempPic
-                Table2.Tag = tempTag
-                TableLbl2.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "hand2" Then
-                tempTag = Hand2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                tempLbl = HandLbl2.Text
-
-                Hand2.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                Hand2.Tag = Table2.Tag
-                HandLbl2.Text = TableLbl2.Text
-
-                Table2.Image = tempPic
-                Table2.Tag = tempTag
-                TableLbl2.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "hand3" Then
-                tempTag = Hand3.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                tempLbl = HandLbl3.Text
-
-                Hand3.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                Hand3.Tag = Table2.Tag
-                HandLbl3.Text = TableLbl2.Text
-
-                Table2.Image = tempPic
-                Table2.Tag = tempTag
-                TableLbl2.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            ElseIf card2 = "table1" Then
-                tempTag = Table1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                tempLbl = TableLbl1.Text
-
-                Table1.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                Table1.Tag = Table2.Tag
-                TableLbl1.Text = TableLbl2.Text
-
-                Table2.Image = tempPic
-                Table2.Tag = tempTag
-                TableLbl2.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            ElseIf card2 = "table3" Then
-                tempTag = Table3.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                tempLbl = TableLbl3.Text
-
-                Table3.Image = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                Table3.Tag = Table2.Tag
-                TableLbl3.Text = TableLbl2.Text
-
-                Table2.Image = tempPic
-                Table2.Tag = tempTag
-                TableLbl2.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            Else
-
-                card1 = ""
-                card2 = ""
-            End If
-
-
-        ElseIf card1 = "table3" Then
-            If card2 = "hand1" Then
-                tempTag = Hand1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand1.Tag)
-                tempLbl = HandLbl1.Text
-
-                Hand1.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                Hand1.Tag = Table3.Tag
-                HandLbl1.Text = TableLbl3.Text
-
-                Table3.Image = tempPic
-                Table3.Tag = tempTag
-                TableLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "hand2" Then
-                tempTag = Hand2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand2.Tag)
-                tempLbl = HandLbl2.Text
-
-                Hand2.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                Hand2.Tag = Table3.Tag
-                HandLbl2.Text = TableLbl3.Text
-
-                Table3.Image = tempPic
-                Table3.Tag = tempTag
-                TableLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            ElseIf card2 = "hand3" Then
-                tempTag = Hand3.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Hand3.Tag)
-                tempLbl = HandLbl3.Text
-
-                Hand3.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                Hand3.Tag = Table3.Tag
-                HandLbl3.Text = TableLbl3.Text
-
-                Table3.Image = tempPic
-                Table3.Tag = tempTag
-                TableLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            ElseIf card2 = "table1" Then
-                tempTag = Table1.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Table1.Tag)
-                tempLbl = TableLbl1.Text
-
-                Table1.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                Table1.Tag = Table3.Tag
-                TableLbl1.Text = TableLbl3.Text
-
-                Table3.Image = tempPic
-                Table3.Tag = tempTag
-                TableLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-
-            ElseIf card2 = "table2" Then
-                tempTag = Table2.Tag
-                tempPic = My.Resources.ResourceManager.GetObject(Table2.Tag)
-                tempLbl = TableLbl2.Text
-
-                Table2.Image = My.Resources.ResourceManager.GetObject(Table3.Tag)
-                Table2.Tag = Table3.Tag
-                TableLbl2.Text = TableLbl3.Text
-
-                Table3.Image = tempPic
-                Table3.Tag = tempTag
-                TableLbl3.Text = tempLbl
-
-                card1 = ""
-                card2 = ""
-            Else
-
-                card1 = ""
-                card2 = ""
-            End If
-
-
-        Else
-            MsgBox("you can only swap table and hand cards")
-            card1 = ""
-            card2 = ""
+        If firstBox IsNot Nothing AndAlso secondBox IsNot Nothing Then
+            Dim temp = DirectCast(secondBox.Tag, Card)
+            secondBox.Tag = firstBox.Tag
+            firstBox.Tag = temp
+
+            firstBox.Image = DirectCast(firstBox.Tag, Card).Image
+            secondBox.Image = DirectCast(secondBox.Tag, Card).Image
         End If
-
-
     End Sub
-
-    Public handpics As New List(Of String)
-    Public handtag As New List(Of Integer)
-    Public tablepics As New List(Of String)
-    Public tabletag As New List(Of Integer)
 
 
     Private Sub Done_Click(sender As Object, e As EventArgs) Handles Done.Click
-        Dim j As Integer = 0
-        handpics.Add(Hand1.Tag)
-        handpics.Add(Hand2.Tag)
-        handpics.Add(Hand3.Tag)
-
-        handtag.Add(HandLbl1.Text)
-        handtag.Add(HandLbl2.Text)
-        handtag.Add(HandLbl3.Text)
-
-
-
-        tablepics.Add(Table1.Tag)
-        tablepics.Add(Table2.Tag)
-        tablepics.Add(Table3.Tag)
-
-        tabletag.Add(TableLbl1.Text)
-        tabletag.Add(TableLbl2.Text)
-        tabletag.Add(TableLbl3.Text)
-
-
+        GennedCards.Self = New List(Of Card)()
+        For Each thing As PictureBox In PBList
+            GennedCards.Self.Add(thing.Tag)
+        Next
+        For Each thing As PictureBox In PhandList
+            GennedCards.Self.Add(thing.Tag)
+        Next
         GameForm.Show()
         Me.Hide()
     End Sub

@@ -1,7 +1,10 @@
 ﻿Public Class GameForm
-    Dim playerCards As New List(Of Card)
-    Dim SpareCards As New List(Of Card)
-    Dim Comp1Card As New List(Of Card)
+    Public SelfPlayer As New Player(Environment.UserName)
+    Public OtherP1 As New Player("Computer 1")
+    Public OtherP2 As New Player("Computer 2")
+    Public OtherP3 As New Player("Computer 3")
+
+    Public GameDeck As Deck
     Public FormFrom As String
     Dim FirstPlayer As Integer
     Dim card As Card
@@ -23,12 +26,10 @@
         Me.WindowState = FormWindowState.Maximized
         UpdateCardCount()
         SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
-        If card_swap.handpics.Count <= 3 Then
+        If CardSwap.handpics.Count <= 3 Then
             HandRight.Enabled = False
             'LeftClick.Enabled = False
         End If
-        Comp1Card = card_swap.Comp1Cards
-
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles CmdClose.Click
@@ -43,55 +44,61 @@
 
     Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
         Dim CardVal As String
+
+        For x As Integer = 0 To 2
+            Dim handC = CardSwap.GennedCards.Self(x)
+            Dim tableC = CardSwap.GennedCards.Self(x + 3)
+            PHandlist(x).Image = handC.Image
+            PHandlist(x).Tag = handC
+            PTableList(x).Image = tableC.Image
+            PTableList(x).tag = tableC
+        Next
+
+
         For i = 0 To 2
-            PHandlist(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
-            PHandlist(i).Tag = card_swap.handtag(i)
 
-            PTableList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.tablepics(i))
-            PTableList(i).Tag = card_swap.tabletag(i)
 
-            PFaceDList(i).Tag = card_swap.FaceDownNumList(i)
-            FaceDLblList(i).Text = card_swap.FaceDownPicList(i)
 
-            CompTableUp(i).tag = card_swap.Comp1Cards(i + 3).Number
-            card = card_swap.Comp1Cards(i + 3)
+            PHandlist(i).Image = My.Resources.ResourceManager.GetObject(CardSwap.handpics(i))
+            PHandlist(i).Tag = CardSwap.handtag(i)
+
+            PTableList(i).Image = My.Resources.ResourceManager.GetObject(CardSwap.tablepics(i))
+            PTableList(i).Tag = CardSwap.tabletag(i)
+
+            PFaceDList(i).Tag = CardSwap.FaceDownNumList(i)
+            FaceDLblList(i).Text = CardSwap.FaceDownPicList(i)
+
+            CompTableUp(i).tag = CardSwap.Comp1Cards(i + 3).Number
+            card = CardSwap.Comp1Cards(i + 3)
             CardVal = "_" + card.Type + card.Suit
             CompTableUp(i).image = My.Resources.ResourceManager.GetObject(CardVal)
 
-            CompTableDown(i).tag = card_swap.Comp1Cards(i).Number
+            CompTableDown(i).tag = CardSwap.Comp1Cards(i).Number
 
-            If SettingsForGame.BotsIn = 2 Then
-                Comp2TableCards(i).tag = card_swap.Comp2Cards(i + 3).Number
-                card = card_swap.Comp2Cards(i + 3)
+            If SettingsForGame.BotsIn >= 2 Then
+                Comp2TableCards(i).tag = CardSwap.Comp2Cards(i + 3).Number
+                card = CardSwap.Comp2Cards(i + 3)
                 CardVal = "_" + card.Type + card.Suit + "R"
                 Comp2TableCards(i).image = My.Resources.ResourceManager.GetObject(CardVal)
 
-                card = card_swap.Comp2Cards(i)
+                card = CardSwap.Comp2Cards(i)
                 Comp2DownCard(i).tag = card.Number
             End If
             If SettingsForGame.BotsIn = 3 Then
-                Comp2TableCards(i).tag = card_swap.Comp2Cards(i + 3).Number
-                card = card_swap.Comp2Cards(i + 3)
-                CardVal = "_" + card.Type + card.Suit + "R"
-                Comp2TableCards(i).image = My.Resources.ResourceManager.GetObject(CardVal)
-
-                card = card_swap.Comp2Cards(i)
-                Comp2DownCard(i).tag = card.Number
-
-                Comp3TableCards(i).tag = card_swap.Comp3Cards(i + 3).Number
-                card = card_swap.Comp3Cards(i + 3)
+                Comp3TableCards(i).tag = CardSwap.Comp3Cards(i + 3).Number
+                card = CardSwap.Comp3Cards(i + 3)
                 CardVal = "_" + card.Type + card.Suit + "R"
                 Comp3TableCards(i).image = My.Resources.ResourceManager.GetObject(CardVal)
 
-                card = card_swap.Comp3Cards(i)
+                card = CardSwap.Comp3Cards(i)
                 Comp3DownCards(i).tag = card.Number
             End If
         Next
     End Sub
 
     Private Sub HandRight_Click(sender As Object, e As EventArgs) Handles HandRight.Click
-       
-        If card_swap.handpics.Count > 3 Then
+
+        If CardSwap.handpics.Count > 3 Then
             Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
 
             HandCard1.Image = HandCard2.Image
@@ -101,17 +108,17 @@
             HandCard2.Tag = HandCard3.Tag
 
             j = j + 1
-            If j = card_swap.handpics.Count Then
+            If j = CardSwap.handpics.Count Then
                 j = 0
             End If
 
-            HandCard3.Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(j))
-            HandCard3.Tag = card_swap.handtag(j)
+            HandCard3.Image = My.Resources.ResourceManager.GetObject(CardSwap.handpics(j))
+            HandCard3.Tag = CardSwap.handtag(j)
         End If
 
     End Sub
 
-    Dim u As Integer = card_swap.handpics.Count
+    Dim u As Integer = CardSwap.handpics.Count
 
     'Private Sub LeftClick_Click(sender As Object, e As EventArgs) Handles LeftClick.Click
     '    Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
@@ -137,20 +144,20 @@
         'check if players turn
 
 
-        If card_swap.SpareCards.Count = 0 Then
+        If CardSwap.SpareCards.Count = 0 Then
             PickUpPile.Hide()
         End If
-        card = card_swap.SpareCards(0)
+        card = CardSwap.SpareCards(0)
         CardVal = "_" + card.Type + card.Suit
-        card_swap.handpics.Add(CardVal)
-        card_swap.handtag.Add(card.Number)
+        CardSwap.handpics.Add(CardVal)
+        CardSwap.handtag.Add(card.Number)
 
-        card_swap.SpareCards.Remove(card)
+        CardSwap.SpareCards.Remove(card)
 
-        If card_swap.SpareCards.Count = 0 Then
+        If CardSwap.SpareCards.Count = 0 Then
             PickUpPile.Hide()
         End If
-        If card_swap.handpics.Count <= 3 Then
+        If CardSwap.handpics.Count <= 3 Then
             HandRight.Enabled = False
             'LeftClick.Enabled = False
         Else
@@ -200,35 +207,35 @@
         Dim cont As Boolean
         i = 0
         For k = 0 To 1
-            For j = 0 To card_swap.handtag.Count
+            For j = 0 To CardSwap.handtag.Count
                 cont = True
                 While cont = True
                     Try
-                        If card_swap.handtag(i) > card_swap.handtag(i + 1) Then
-                            Temp = card_swap.handtag(i)
-                            card_swap.handtag(i) = card_swap.handtag(i + 1)
-                            card_swap.handtag(i + 1) = Temp
+                        If CardSwap.handtag(i) > CardSwap.handtag(i + 1) Then
+                            Temp = CardSwap.handtag(i)
+                            CardSwap.handtag(i) = CardSwap.handtag(i + 1)
+                            CardSwap.handtag(i + 1) = Temp
 
-                            temp2 = card_swap.handpics(i)
-                            card_swap.handpics(i) = card_swap.handpics(i + 1)
-                            card_swap.handpics(i + 1) = temp2
+                            temp2 = CardSwap.handpics(i)
+                            CardSwap.handpics(i) = CardSwap.handpics(i + 1)
+                            CardSwap.handpics(i + 1) = temp2
                             changes = changes + 1
                             For i = 0 To 2
-                                PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
-                                PHandList(i).Tag = card_swap.handtag(i)
+                                PHandList(i).Image = My.Resources.ResourceManager.GetObject(CardSwap.handpics(i))
+                                PHandList(i).Tag = CardSwap.handtag(i)
                             Next
                         End If
                     Catch
                         cont = False
                     End Try
-                    If i = card_swap.handpics.Count Then
+                    If i = CardSwap.handpics.Count Then
                         i = 0
                     End If
                     i = i + 1
                 End While
             Next
             j = 2
-            If card_swap.handtag(1) > card_swap.handtag(2) Then
+            If CardSwap.handtag(1) > CardSwap.handtag(2) Then
                 k = 0
             End If
         Next
@@ -246,7 +253,7 @@
 
     Private Sub UpdateCardCount()
         Dim countCard As String
-        countCard = "You have " & card_swap.handpics.Count & " cards in your hand"
+        countCard = "You have " & CardSwap.handpics.Count & " cards in your hand"
         CardCount.Text = countCard
     End Sub
 
