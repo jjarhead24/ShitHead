@@ -281,7 +281,7 @@
 
     End Sub
 
-    Private Sub NextTurn()
+    Private Sub NextTurnWithHand()
         Dim highestCards As Card
         Dim Thispass As Integer
         Dim ThisPassCard As Card
@@ -289,21 +289,30 @@
         Dim lowestCard As Card
         If currentPlayer = 1 Then
             highestCards = card_swap.Comp1Cards(i + 6)
-            For i = 0 To card_swap.Comp1Cards.Count - 3
-                Try
-                    If card_swap.Comp1Cards(i + 6).Number > discardPile(discardPile.Count - 1).Number Then
-                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp1Cards(i + 6).Number
-                        ThisPassCard = card_swap.Comp1Cards(i + 6)
+            For i = 6 To card_swap.Comp1Cards.Count
+
+                If discardPile(discardPile.Count - 1).Number <> 7 Then
+
+                    If card_swap.Comp1Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
+                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp1Cards(i).Number
+                        ThisPassCard = card_swap.Comp1Cards(i)
                         If Thispass < lowestDiff Then
                             lowestDiff = Thispass
                             lowestCard = ThisPassCard
                         End If
                     End If
-                Catch
-                    If highestCards.Number >= discardPile(discardPile.Count - 1).Number Then
-                        'check for special cards if none are high enough
+
+                    If lowestDiff = 1220 Then
+                        For p = 6 To card_swap.Comp1Cards.Count
+                            If card_swap.Comp1Cards(i).Number = 2 Or 10 Then
+                                lowestCard = card_swap.Comp1Cards(i)
+                            End If
+                        Next
                     End If
-                End Try
+
+                Else
+                    'must be lower than a 7 to play or special
+                End If
             Next
         End If
     End Sub

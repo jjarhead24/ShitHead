@@ -1,1 +1,1 @@
-All rights reserved by Jared
+All rights reserved by Jared Seymour
