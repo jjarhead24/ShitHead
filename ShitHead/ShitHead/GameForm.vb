@@ -7,6 +7,7 @@
     Dim card As Card
     Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
     Dim currentPlayer As Integer
+    Dim discardPile As List(Of Card)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim PTableList As New List(Of PictureBox) From {TableCard1, TableCard2, TableCard3}
@@ -274,6 +275,37 @@
             For i = 0 To Len(PHandList) - 1
                 PHandList(i).Enabled = True
             Next
+        ElseIf currentPlayer = 1 Then
+
+        End If
+
+    End Sub
+
+    Private Sub NextTurn()
+        Dim highestCards As Card
+        Dim Thispass As Integer
+        Dim ThisPassCard As Card
+        Dim lowestDiff As Integer = 1220
+        Dim lowestCard As Card
+        If currentPlayer = 1 Then
+            highestCards = card_swap.Comp1Cards(i + 6)
+            For i = 0 To card_swap.Comp1Cards.Count - 3
+                Try
+                    If card_swap.Comp1Cards(i + 6).Number > discardPile(discardPile.Count - 1).Number Then
+                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp1Cards(i + 6).Number
+                        ThisPassCard = card_swap.Comp1Cards(i + 6)
+                        If Thispass < lowestDiff Then
+                            lowestDiff = Thispass
+                            lowestCard = ThisPassCard
+                        End If
+                    End If
+                Catch
+                    If highestCards.Number >= discardPile(discardPile.Count - 1).Number Then
+                        'check for special cards if none are high enough
+                    End If
+                End Try
+            Next
         End If
     End Sub
 End Class
+
