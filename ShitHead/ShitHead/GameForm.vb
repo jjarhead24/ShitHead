@@ -264,7 +264,7 @@
 
     Private Sub RNDplayer_Click(sender As Object, e As EventArgs) Handles RNDplayer.Click
         Dim r As New Random
-        FirstPlayer = r.Next(0, 3)
+        FirstPlayer = r.Next(0, SettingsForGame.BotsIn)
         PlayGame()
     End Sub
 
@@ -287,6 +287,10 @@
         Dim ThisPassCard As Card
         Dim lowestDiff As Integer = 1220
         Dim lowestCard As Card
+        currentPlayer += 1
+        If currentPlayer > SettingsForGame.BotsIn Then
+            currentPlayer = 0
+        End If
         If currentPlayer = 1 Then
             highestCards = card_swap.Comp1Cards(i + 6)
             For i = 6 To card_swap.Comp1Cards.Count
@@ -311,9 +315,27 @@
                     End If
 
                 Else
-                    'must be lower than a 7 to play or special
+                    If card_swap.Comp1Cards(i).Number < 6 Then
+                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp1Cards(i).Number
+                        ThisPassCard = card_swap.Comp1Cards(i)
+                        If Thispass < lowestDiff Then
+                            lowestDiff = Thispass
+                            lowestCard = ThisPassCard
+                        End If
+                    End If
+                    If lowestDiff = 1220 Then
+                        For p = 6 To card_swap.Comp1Cards.Count
+                            If card_swap.Comp1Cards(i).Number = 2 Or 10 Then
+                                lowestCard = card_swap.Comp1Cards(i)
+                            End If
+                        Next
+                    End If
                 End If
             Next
+            'play the card
+            card_swap.Comp1Cards.Remove(lowestCard)
+            discardPile.Add(lowestCard)
+            'PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
         End If
     End Sub
 End Class

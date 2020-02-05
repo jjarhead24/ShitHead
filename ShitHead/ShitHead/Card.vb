@@ -2,6 +2,7 @@
     Public Suit As String
     Public Number As Integer
     Public Type As String
+    Public imagecode As String 'give all cards the right code (ineffeicently) 
 
     Public Shared Function GenCards() As Tuple(Of List(Of Card), List(Of Card), List(Of Card), List(Of Card), List(Of Card))
         Dim playerCards As New List(Of Card)
