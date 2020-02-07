@@ -282,11 +282,12 @@
     End Sub
 
     Private Sub NextTurnWithHand()
+        Dim noplay As Boolean = True
         Dim highestCards As Card
         Dim Thispass As Integer
         Dim ThisPassCard As Card
         Dim lowestDiff As Integer = 1220
-        Dim lowestCard As Card
+        Dim lowestCard As Card = Nothing
         currentPlayer += 1
         If currentPlayer > SettingsForGame.BotsIn Then
             currentPlayer = 0
@@ -310,8 +311,15 @@
                         For p = 6 To card_swap.Comp1Cards.Count
                             If card_swap.Comp1Cards(i).Number = 2 Or 10 Then
                                 lowestCard = card_swap.Comp1Cards(i)
+                                noplay = False
                             End If
                         Next
+                        If noplay = True Then
+                            For m = 0 To discardPile.Count - 1
+                                card_swap.Comp1Cards.Add(discardPile(m))
+                            Next
+                            discardPile.Clear()
+                        End If
                     End If
 
                 Else
@@ -327,15 +335,146 @@
                         For p = 6 To card_swap.Comp1Cards.Count
                             If card_swap.Comp1Cards(i).Number = 2 Or 10 Then
                                 lowestCard = card_swap.Comp1Cards(i)
+                                noplay = False
                             End If
                         Next
+                        If noplay = True Then
+                            For m = 0 To discardPile.Count - 1
+                                card_swap.Comp1Cards.Add(discardPile(m))
+                            Next
+                            discardPile.Clear()
+                        End If
                     End If
                 End If
             Next
             'play the card
             card_swap.Comp1Cards.Remove(lowestCard)
             discardPile.Add(lowestCard)
-            'PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
+            PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
+        End If
+
+
+        If currentPlayer = 2 Then
+            highestCards = card_swap.Comp2Cards(i + 6)
+            For i = 6 To card_swap.Comp2Cards.Count
+
+                If discardPile(discardPile.Count - 1).Number <> 7 Then
+
+                    If card_swap.Comp2Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
+                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp2Cards(i).Number
+                        ThisPassCard = card_swap.Comp1Cards(i)
+                        If Thispass < lowestDiff Then
+                            lowestDiff = Thispass
+                            lowestCard = ThisPassCard
+                        End If
+                    End If
+
+                    If lowestDiff = 1220 Then
+                        For p = 6 To card_swap.Comp2Cards.Count
+                            If card_swap.Comp2Cards(i).Number = 2 Or 10 Then
+                                lowestCard = card_swap.Comp2Cards(i)
+                                noplay = False
+                            End If
+                        Next
+                        If noplay = True Then
+                            For m = 0 To discardPile.Count - 1
+                                card_swap.Comp2Cards.Add(discardPile(m))
+                            Next
+                            discardPile.Clear()
+                        End If
+                    End If
+
+                Else
+                    If card_swap.Comp2Cards(i).Number < 6 Then
+                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp2Cards(i).Number
+                        ThisPassCard = card_swap.Comp2Cards(i)
+                        If Thispass < lowestDiff Then
+                            lowestDiff = Thispass
+                            lowestCard = ThisPassCard
+                        End If
+                    End If
+                    If lowestDiff = 1220 Then
+                        For p = 6 To card_swap.Comp2Cards.Count
+                            If card_swap.Comp2Cards(i).Number = 2 Or 10 Then
+                                lowestCard = card_swap.Comp2Cards(i)
+                                noplay = False
+                            End If
+                        Next
+                        If noplay = True Then
+                            For m = 0 To discardPile.Count - 1
+                                card_swap.Comp2Cards.Add(discardPile(m))
+                            Next
+                            discardPile.Clear()
+                        End If
+                    End If
+                End If
+            Next
+            'play the card
+            card_swap.Comp1Cards.Remove(lowestCard)
+            discardPile.Add(lowestCard)
+            PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
+        End If
+
+
+        If currentPlayer = 3 Then
+            highestCards = card_swap.Comp3Cards(i + 6)
+            For i = 6 To card_swap.Comp3Cards.Count
+
+                If discardPile(discardPile.Count - 1).Number <> 7 Then
+
+                    If card_swap.Comp3Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
+                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp3Cards(i).Number
+                        ThisPassCard = card_swap.Comp3Cards(i)
+                        If Thispass < lowestDiff Then
+                            lowestDiff = Thispass
+                            lowestCard = ThisPassCard
+                        End If
+                    End If
+
+                    If lowestDiff = 1220 Then
+                        For p = 6 To card_swap.Comp3Cards.Count
+                            If card_swap.Comp3Cards(i).Number = 2 Or 10 Then
+                                lowestCard = card_swap.Comp3Cards(i)
+                                noplay = False
+                            End If
+                        Next
+                        If noplay = True Then
+                            For m = 0 To discardPile.Count - 1
+                                card_swap.Comp3Cards.Add(discardPile(m))
+                            Next
+                            discardPile.Clear()
+                        End If
+                    End If
+
+                Else
+                    If card_swap.Comp3Cards(i).Number < 6 Then
+                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp3Cards(i).Number
+                        ThisPassCard = card_swap.Comp3Cards(i)
+                        If Thispass < lowestDiff Then
+                            lowestDiff = Thispass
+                            lowestCard = ThisPassCard
+                        End If
+                    End If
+                    If lowestDiff = 1220 Then
+                        For p = 6 To card_swap.Comp3Cards.Count
+                            If card_swap.Comp3Cards(i).Number = 2 Or 10 Then
+                                noplay = False
+                                lowestCard = card_swap.Comp3Cards(i)
+                            End If
+                        Next
+                        If noplay = True Then
+                            For m = 0 To discardPile.Count - 1
+                                card_swap.Comp3Cards.Add(discardPile(m))
+                            Next
+                            discardPile.Clear()
+                        End If
+                    End If
+                End If
+            Next
+            'play the card
+            card_swap.Comp1Cards.Remove(lowestCard)
+            discardPile.Add(lowestCard)
+            PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
         End If
     End Sub
 End Class
