@@ -42,7 +42,16 @@
 
     Dim j As Integer = 2
 
-    Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
+    Private Sub SetUp(PHandlist As List(Of PictureBox),
+                      PTableList As List(Of PictureBox),
+                      PFaceDList As List(Of PictureBox),
+                      FaceDLblList As List(Of PictureBox),
+                      CompTableUp As List(Of PictureBox),
+                      CompTableDown As List(Of PictureBox),
+                      Comp2TableCards As List(Of PictureBox),
+                      Comp2DownCard As List(Of PictureBox),
+                      Comp3TableCards As List(Of PictureBox),
+                      Comp3DownCards As List(Of PictureBox))
         Dim CardVal As String
 
         For x As Integer = 0 To 2
@@ -51,48 +60,16 @@
             PHandlist(x).Image = handC.Image
             PHandlist(x).Tag = handC
             PTableList(x).Image = tableC.Image
-            PTableList(x).tag = tableC
+            PTableList(x).Tag = tableC
         Next
 
-
         For i = 0 To 2
-
-
-
-            PHandlist(i).Image = My.Resources.ResourceManager.GetObject(CardSwap.handpics(i))
-            PHandlist(i).Tag = CardSwap.handtag(i)
-
-            PTableList(i).Image = My.Resources.ResourceManager.GetObject(CardSwap.tablepics(i))
-            PTableList(i).Tag = CardSwap.tabletag(i)
-
-            PFaceDList(i).Tag = CardSwap.FaceDownNumList(i)
-            FaceDLblList(i).Text = CardSwap.FaceDownPicList(i)
-
-            CompTableUp(i).tag = CardSwap.Comp1Cards(i + 3).Number
-            card = CardSwap.Comp1Cards(i + 3)
-            CardVal = "_" + card.Type + card.Suit
-            CompTableUp(i).image = My.Resources.ResourceManager.GetObject(CardVal)
-
-            CompTableDown(i).tag = CardSwap.Comp1Cards(i).Number
-
-            If SettingsForGame.BotsIn >= 2 Then
-                Comp2TableCards(i).tag = CardSwap.Comp2Cards(i + 3).Number
-                card = CardSwap.Comp2Cards(i + 3)
-                CardVal = "_" + card.Type + card.Suit + "R"
-                Comp2TableCards(i).image = My.Resources.ResourceManager.GetObject(CardVal)
-
-                card = CardSwap.Comp2Cards(i)
-                Comp2DownCard(i).tag = card.Number
-            End If
-            If SettingsForGame.BotsIn = 3 Then
-                Comp3TableCards(i).tag = CardSwap.Comp3Cards(i + 3).Number
-                card = CardSwap.Comp3Cards(i + 3)
-                CardVal = "_" + card.Type + card.Suit + "R"
-                Comp3TableCards(i).image = My.Resources.ResourceManager.GetObject(CardVal)
-
-                card = CardSwap.Comp3Cards(i)
-                Comp3DownCards(i).tag = card.Number
-            End If
+            Dim handC = CardSwap.GennedCards.Other1(i)
+            Dim tableC = CardSwap.GennedCards.Other1(i + 3)
+            CompTableUp(i).Image = handC.Image
+            CompTableUp(i).Tag = handC
+            CompTableDown(i).Image = tableC.Image
+            CompTableDown(i).Tag = tableC
         Next
     End Sub
 
