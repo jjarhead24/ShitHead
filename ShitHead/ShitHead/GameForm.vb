@@ -23,6 +23,9 @@
         Dim Comp3TableCards As New List(Of PictureBox) From {Comp3Table1, Comp3Table2, Comp3Table3}
         Dim Comp3DownCards As New List(Of PictureBox) From {Comp3Down1, Comp3Down2, Comp3Down3}
         PickUpPile.Enabled = False
+        HandCard1.Enabled = False
+        HandCard2.Enabled = False
+        HandCard3.Enabled = False
         Me.WindowState = FormWindowState.Maximized
         UpdateCardCount()
         SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
@@ -170,18 +173,15 @@
     End Sub
     Dim mess As String
     Private Sub HandCard1_Click(sender As Object, e As EventArgs) Handles HandCard1.Click
-        mess = HandCard1.Tag
-        MsgBox(mess)
+
     End Sub
 
     Private Sub HandCard2_Click(sender As Object, e As EventArgs) Handles HandCard2.Click
-        mess = HandCard2.Tag
-        MsgBox(mess)
+
     End Sub
 
     Private Sub HandCard3_Click(sender As Object, e As EventArgs) Handles HandCard3.Click
-        mess = HandCard3.Tag
-        MsgBox(mess)
+
     End Sub
 
     Private Sub CompTable3_Click(sender As Object, e As EventArgs) Handles CompTable3.Click
@@ -292,6 +292,14 @@
         If currentPlayer > SettingsForGame.BotsIn Then
             currentPlayer = 0
         End If
+
+        If currentPlayer = 0 Then
+            HandCard1.Enabled = True
+            HandCard2.Enabled = True
+            HandCard3.Enabled = True
+            PickUpPile.Enabled = True
+        End If
+
         If currentPlayer = 1 Then
             highestCards = card_swap.Comp1Cards(i + 6)
             For i = 6 To card_swap.Comp1Cards.Count
@@ -362,7 +370,7 @@
 
                     If card_swap.Comp2Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
                         Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp2Cards(i).Number
-                        ThisPassCard = card_swap.Comp1Cards(i)
+                        ThisPassCard = card_swap.Comp2Cards(i)
                         If Thispass < lowestDiff Then
                             lowestDiff = Thispass
                             lowestCard = ThisPassCard
@@ -410,7 +418,7 @@
                 End If
             Next
             'play the card
-            card_swap.Comp1Cards.Remove(lowestCard)
+            card_swap.Comp2Cards.Remove(lowestCard)
             discardPile.Add(lowestCard)
             PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
         End If
@@ -472,7 +480,7 @@
                 End If
             Next
             'play the card
-            card_swap.Comp1Cards.Remove(lowestCard)
+            card_swap.Comp3Cards.Remove(lowestCard)
             discardPile.Add(lowestCard)
             PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
         End If

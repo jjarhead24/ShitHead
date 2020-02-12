@@ -63,6 +63,11 @@ Partial Class GameForm
         Me.Comp3Down1 = New System.Windows.Forms.PictureBox()
         Me.CardCount = New System.Windows.Forms.Label()
         Me.RollStart = New System.Windows.Forms.Button()
+        Me.PlayIt = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,6 +100,10 @@ Partial Class GameForm
         CType(Me.Comp3Down3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Comp3Down2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Comp3Down1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CmdClose
@@ -117,7 +126,7 @@ Partial Class GameForm
         Me.TableCard1.ErrorImage = Nothing
         Me.TableCard1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard1.InitialImage = Nothing
-        Me.TableCard1.Location = New System.Drawing.Point(465, 627)
+        Me.TableCard1.Location = New System.Drawing.Point(465, 633)
         Me.TableCard1.Name = "TableCard1"
         Me.TableCard1.Size = New System.Drawing.Size(89, 133)
         Me.TableCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -132,7 +141,7 @@ Partial Class GameForm
         Me.TableCard2.ErrorImage = Nothing
         Me.TableCard2.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard2.InitialImage = Nothing
-        Me.TableCard2.Location = New System.Drawing.Point(588, 627)
+        Me.TableCard2.Location = New System.Drawing.Point(588, 633)
         Me.TableCard2.Name = "TableCard2"
         Me.TableCard2.Size = New System.Drawing.Size(89, 133)
         Me.TableCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -147,7 +156,7 @@ Partial Class GameForm
         Me.TableCard3.ErrorImage = Nothing
         Me.TableCard3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.TableCard3.InitialImage = Nothing
-        Me.TableCard3.Location = New System.Drawing.Point(714, 627)
+        Me.TableCard3.Location = New System.Drawing.Point(705, 633)
         Me.TableCard3.Name = "TableCard3"
         Me.TableCard3.Size = New System.Drawing.Size(89, 133)
         Me.TableCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -199,7 +208,7 @@ Partial Class GameForm
         'FaceDown1
         '
         Me.FaceDown1.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.FaceDown1.Location = New System.Drawing.Point(480, 627)
+        Me.FaceDown1.Location = New System.Drawing.Point(480, 633)
         Me.FaceDown1.Name = "FaceDown1"
         Me.FaceDown1.Size = New System.Drawing.Size(89, 133)
         Me.FaceDown1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -209,7 +218,7 @@ Partial Class GameForm
         'FaceDown2
         '
         Me.FaceDown2.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.FaceDown2.Location = New System.Drawing.Point(605, 627)
+        Me.FaceDown2.Location = New System.Drawing.Point(605, 633)
         Me.FaceDown2.Name = "FaceDown2"
         Me.FaceDown2.Size = New System.Drawing.Size(89, 133)
         Me.FaceDown2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -219,7 +228,7 @@ Partial Class GameForm
         'FaceDown3
         '
         Me.FaceDown3.Image = Global.ShitHead.My.Resources.Resources.Card_back
-        Me.FaceDown3.Location = New System.Drawing.Point(738, 627)
+        Me.FaceDown3.Location = New System.Drawing.Point(729, 633)
         Me.FaceDown3.Name = "FaceDown3"
         Me.FaceDown3.Size = New System.Drawing.Size(89, 133)
         Me.FaceDown3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -357,7 +366,7 @@ Partial Class GameForm
         'FaceD1
         '
         Me.FaceD1.AutoSize = True
-        Me.FaceD1.Location = New System.Drawing.Point(543, 714)
+        Me.FaceD1.Location = New System.Drawing.Point(543, 720)
         Me.FaceD1.Name = "FaceD1"
         Me.FaceD1.Size = New System.Drawing.Size(39, 13)
         Me.FaceD1.TabIndex = 24
@@ -366,7 +375,7 @@ Partial Class GameForm
         'FaceD2
         '
         Me.FaceD2.AutoSize = True
-        Me.FaceD2.Location = New System.Drawing.Point(669, 714)
+        Me.FaceD2.Location = New System.Drawing.Point(669, 720)
         Me.FaceD2.Name = "FaceD2"
         Me.FaceD2.Size = New System.Drawing.Size(39, 13)
         Me.FaceD2.TabIndex = 25
@@ -375,7 +384,7 @@ Partial Class GameForm
         'FaceD3
         '
         Me.FaceD3.AutoSize = True
-        Me.FaceD3.Location = New System.Drawing.Point(802, 714)
+        Me.FaceD3.Location = New System.Drawing.Point(793, 720)
         Me.FaceD3.Name = "FaceD3"
         Me.FaceD3.Size = New System.Drawing.Size(39, 13)
         Me.FaceD3.TabIndex = 26
@@ -625,6 +634,74 @@ Partial Class GameForm
         Me.RollStart.Text = "Roll dice to start"
         Me.RollStart.UseVisualStyleBackColor = False
         '
+        'PlayIt
+        '
+        Me.PlayIt.BackColor = System.Drawing.Color.Transparent
+        Me.PlayIt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PlayIt.ForeColor = System.Drawing.Color.Yellow
+        Me.PlayIt.Location = New System.Drawing.Point(838, 681)
+        Me.PlayIt.Name = "PlayIt"
+        Me.PlayIt.Size = New System.Drawing.Size(86, 46)
+        Me.PlayIt.TabIndex = 44
+        Me.PlayIt.Text = "Play Card!"
+        Me.PlayIt.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox1.ErrorImage = Nothing
+        Me.PictureBox1.Image = Global.ShitHead.My.Resources.Resources.border1
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(460, 481)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 146)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 45
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox2.ErrorImage = Nothing
+        Me.PictureBox2.Image = Global.ShitHead.My.Resources.Resources.border1
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(583, 480)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 146)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 46
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox3.ErrorImage = Nothing
+        Me.PictureBox3.Image = Global.ShitHead.My.Resources.Resources.border1
+        Me.PictureBox3.InitialImage = Nothing
+        Me.PictureBox3.Location = New System.Drawing.Point(699, 481)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(100, 146)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 47
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox4.ErrorImage = Nothing
+        Me.PictureBox4.Image = Global.ShitHead.My.Resources.Resources.border1
+        Me.PictureBox4.InitialImage = Nothing
+        Me.PictureBox4.Location = New System.Drawing.Point(635, 238)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(153, 225)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 48
+        Me.PictureBox4.TabStop = False
+        '
         'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -632,6 +709,7 @@ Partial Class GameForm
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(1386, 778)
+        Me.Controls.Add(Me.PlayIt)
         Me.Controls.Add(Me.RollStart)
         Me.Controls.Add(Me.CardCount)
         Me.Controls.Add(Me.Comp3Table3)
@@ -673,6 +751,10 @@ Partial Class GameForm
         Me.Controls.Add(Me.Comp3Down3)
         Me.Controls.Add(Me.Comp3Down2)
         Me.Controls.Add(Me.Comp3Down1)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.PictureBox4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "GameForm"
         Me.Text = "Form1"
@@ -708,6 +790,10 @@ Partial Class GameForm
         CType(Me.Comp3Down3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Comp3Down2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Comp3Down1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -753,4 +839,9 @@ Partial Class GameForm
     Friend WithEvents Comp3Down1 As PictureBox
     Friend WithEvents CardCount As Label
     Friend WithEvents RollStart As Button
+    Friend WithEvents PlayIt As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
 End Class
