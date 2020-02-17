@@ -5,7 +5,7 @@
     Public FormFrom As String
     Public FirstPlayer As Integer
     Dim card As Card
-    Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
+    Public PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
     Dim currentPlayer As Integer
     Dim discardPile As List(Of Card)
 
@@ -28,7 +28,7 @@
         HandCard3.Enabled = False
         Me.WindowState = FormWindowState.Maximized
         UpdateCardCount()
-        SetUp(PHandList, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
+        SetUp(PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
         If card_swap.handpics.Count <= 3 Then
             HandRight.Enabled = False
             'LeftClick.Enabled = False
@@ -47,11 +47,11 @@
 
     Dim j As Integer = 2
 
-    Private Sub SetUp(PHandlist, PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
+    Private Sub SetUp(PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
         Dim CardVal As String
         For i = 0 To 2
-            PHandlist(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
-            PHandlist(i).Tag = card_swap.handtag(i)
+            PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
+            PHandList(i).Tag = card_swap.handtag(i)
 
             PTableList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.tablepics(i))
             PTableList(i).Tag = card_swap.tabletag(i)
@@ -106,7 +106,7 @@
             HandCard2.Image = HandCard3.Image
             HandCard2.Tag = HandCard3.Tag
 
-            j = j + 1
+            j += 1
             If j = card_swap.handpics.Count Then
                 j = 0
             End If
@@ -219,7 +219,7 @@
                             temp2 = card_swap.handpics(i)
                             card_swap.handpics(i) = card_swap.handpics(i + 1)
                             card_swap.handpics(i + 1) = temp2
-                            changes = changes + 1
+                            changes += 1
                             For i = 0 To 2
                                 PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
                                 PHandList(i).Tag = card_swap.handtag(i)
@@ -231,7 +231,7 @@
                     If i = card_swap.handpics.Count Then
                         i = 0
                     End If
-                    i = i + 1
+                    i += 1
                 End While
             Next
             j = 2
@@ -298,6 +298,11 @@
             HandCard2.Enabled = True
             HandCard3.Enabled = True
             PickUpPile.Enabled = True
+        Else
+            HandCard1.Enabled = False
+            HandCard2.Enabled = False
+            HandCard3.Enabled = False
+            PickUpPile.Enabled = False
         End If
 
         If currentPlayer = 1 Then
