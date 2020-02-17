@@ -398,7 +398,7 @@ Partial Class GameForm
         Me.CompUp3.ErrorImage = Nothing
         Me.CompUp3.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompUp3.InitialImage = Nothing
-        Me.CompUp3.Location = New System.Drawing.Point(742, 12)
+        Me.CompUp3.Location = New System.Drawing.Point(755, 12)
         Me.CompUp3.Name = "CompUp3"
         Me.CompUp3.Size = New System.Drawing.Size(139, 209)
         Me.CompUp3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -413,7 +413,7 @@ Partial Class GameForm
         Me.CompUp2.ErrorImage = Nothing
         Me.CompUp2.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompUp2.InitialImage = Nothing
-        Me.CompUp2.Location = New System.Drawing.Point(546, 12)
+        Me.CompUp2.Location = New System.Drawing.Point(555, 12)
         Me.CompUp2.Name = "CompUp2"
         Me.CompUp2.Size = New System.Drawing.Size(139, 209)
         Me.CompUp2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -428,7 +428,7 @@ Partial Class GameForm
         Me.CompUp1.ErrorImage = Nothing
         Me.CompUp1.Image = Global.ShitHead.My.Resources.Resources.Card_back
         Me.CompUp1.InitialImage = Nothing
-        Me.CompUp1.Location = New System.Drawing.Point(349, 12)
+        Me.CompUp1.Location = New System.Drawing.Point(363, 12)
         Me.CompUp1.Name = "CompUp1"
         Me.CompUp1.Size = New System.Drawing.Size(139, 209)
         Me.CompUp1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

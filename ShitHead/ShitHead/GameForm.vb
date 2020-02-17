@@ -5,7 +5,7 @@
     Public FormFrom As String
     Public FirstPlayer As Integer
     Dim card As Card
-    Public PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
+    Public PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3} 'this isnt getting values
     Dim currentPlayer As Integer
     Dim discardPile As List(Of Card)
 
@@ -50,7 +50,7 @@
     Private Sub SetUp(PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
         Dim CardVal As String
         For i = 0 To 2
-            PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
+            PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i)) 'breaks here becuase the PHandList is empty
             PHandList(i).Tag = card_swap.handtag(i)
 
             PTableList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.tablepics(i))
