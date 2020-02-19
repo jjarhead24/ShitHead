@@ -5,7 +5,7 @@
     Public FormFrom As String
     Public FirstPlayer As Integer
     Dim card As Card
-    Public PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3} 'this isnt getting values
+    Public PHandList As New List(Of PictureBox)
     Dim currentPlayer As Integer
     Dim discardPile As List(Of Card)
 
@@ -30,6 +30,9 @@
         HLH2.Hide()
         HLH3.Hide()
         HLP.Hide()
+        PHandList.Add(HandCard1)
+        PHandList.Add(HandCard2)
+        PHandList.Add(HandCard3)
         Me.WindowState = FormWindowState.Maximized
         UpdateCardCount()
         SetUp(PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
@@ -54,7 +57,7 @@
     Private Sub SetUp(PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
         Dim CardVal As String
         For i = 0 To 2
-            PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i)) 'breaks here becuase the PHandList is empty
+            PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
             PHandList(i).Tag = card_swap.handtag(i)
 
             PTableList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.tablepics(i))
@@ -147,11 +150,11 @@
             HLP.Hide()
             cardplaying = ""
         ElseIf cardplaying = "Hand1" Then
-            HLH2.Hide()
+            HLH1.Hide()
             HLP.Show()
             cardplaying = "Pile"
         ElseIf cardplaying = "Hand2" Then
-            HLH3.Hide()
+            HLH2.Hide()
             HLP.Show()
             cardplaying = "Pile"
         ElseIf cardplaying = "Hand3" Then
@@ -312,7 +315,7 @@
 
     Private Sub RNDplayer_Click(sender As Object, e As EventArgs) Handles RNDplayer.Click
         Dim r As New Random
-        FirstPlayer = r.Next(0, SettingsForGame.BotsIn)
+        currentPlayer = r.Next(0, SettingsForGame.BotsIn)
         PlayGame()
     End Sub
 
@@ -320,18 +323,28 @@
 
         If currentPlayer = 0 Then
             PickUpPile.Enabled = True
-            For i = 0 To Len(PHandList) - 1
+            For i = 0 To PHandList.Count - 1
                 PHandList(i).Enabled = True
             Next
         ElseIf currentPlayer = 1 Then
-
+            If card_swap.Comp1Cards.Count > 6 Then
+                NextTurnWithHand()
+            End If
+        ElseIf currentPlayer = 2 Then
+            If card_swap.Comp2Cards.Count > 6 Then
+                NextTurnWithHand()
+            End If
+        ElseIf currentPlayer = 3 Then
+            If card_swap.Comp3Cards.Count > 6 Then
+                NextTurnWithHand()
+            End If
         End If
 
     End Sub
 
     Private Sub NextTurnWithHand()
         Dim noplay As Boolean = True
-        Dim highestCards As Card
+        'Dim highestCards As Card
         Dim Thispass As Integer
         Dim ThisPassCard As Card
         Dim lowestDiff As Integer = 1220
@@ -354,7 +367,6 @@
         End If
 
         If currentPlayer = 1 Then
-            highestCards = card_swap.Comp1Cards(i + 6)
             For i = 6 To card_swap.Comp1Cards.Count
 
                 If discardPile(discardPile.Count - 1).Number <> 7 Then
@@ -416,7 +428,6 @@
 
 
         If currentPlayer = 2 Then
-            highestCards = card_swap.Comp2Cards(i + 6)
             For i = 6 To card_swap.Comp2Cards.Count
 
                 If discardPile(discardPile.Count - 1).Number <> 7 Then
@@ -478,7 +489,6 @@
 
 
         If currentPlayer = 3 Then
-            highestCards = card_swap.Comp3Cards(i + 6)
             For i = 6 To card_swap.Comp3Cards.Count
 
                 If discardPile(discardPile.Count - 1).Number <> 7 Then
