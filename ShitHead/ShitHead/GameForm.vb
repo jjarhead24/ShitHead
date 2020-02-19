@@ -26,6 +26,10 @@
         HandCard1.Enabled = False
         HandCard2.Enabled = False
         HandCard3.Enabled = False
+        HLH1.Hide()
+        HLH2.Hide()
+        HLH3.Hide()
+        HLP.Hide()
         Me.WindowState = FormWindowState.Maximized
         UpdateCardCount()
         SetUp(PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
@@ -139,49 +143,93 @@
     'End Sub
 
     Private Sub PickUpPile_Click(sender As Object, e As EventArgs) Handles PickUpPile.Click
-        Dim CardVal As String
-        'check if players turn
-
-
-        If card_swap.SpareCards.Count = 0 Then
-            PickUpPile.Hide()
-        End If
-
-        If currentPlayer = 0 Then
-            card = card_swap.SpareCards(0)
-            CardVal = "_" + card.Type + card.Suit
-            card_swap.handpics.Add(CardVal)
-            card_swap.handtag.Add(card.Number)
-
-            card_swap.SpareCards.Remove(card)
-
-            If card_swap.SpareCards.Count = 0 Then
-                PickUpPile.Hide()
-            End If
-            If card_swap.handpics.Count <= 3 Then
-                HandRight.Enabled = False
-                'LeftClick.Enabled = False
-            Else
-
-                HandRight.Enabled = True
-                'LeftClick.Enabled = True
-
-            End If
-            UpdateCardCount()
+        If cardplaying = "Pile" Then
+            HLP.Hide()
+            cardplaying = ""
+        ElseIf cardplaying = "Hand1" Then
+            HLH2.Hide()
+            HLP.Show()
+            cardplaying = "Pile"
+        ElseIf cardplaying = "Hand2" Then
+            HLH3.Hide()
+            HLP.Show()
+            cardplaying = "Pile"
+        ElseIf cardplaying = "Hand3" Then
+            HLH3.Hide()
+            HLP.Show()
+            cardplaying = "Pile"
+        Else
+            HLP.Show()
+            cardplaying = "Pile"
         End If
 
     End Sub
     Dim mess As String
+    Dim cardplaying As String
     Private Sub HandCard1_Click(sender As Object, e As EventArgs) Handles HandCard1.Click
-
+        If cardplaying = "Hand1" Then
+            HLH1.Hide()
+            cardplaying = ""
+        ElseIf cardplaying = "Hand2" Then
+            HLH2.Hide()
+            HLH1.Show()
+            cardplaying = "Hand1"
+        ElseIf cardplaying = "Hand3" Then
+            HLH3.Hide()
+            HLH1.Show()
+            cardplaying = "Hand1"
+        ElseIf cardplaying = "Pile" Then
+            HLP.Hide()
+            HLH1.Show()
+            cardplaying = "Hand1"
+        Else
+            HLH1.Show()
+            cardplaying = "Hand1"
+        End If
     End Sub
 
     Private Sub HandCard2_Click(sender As Object, e As EventArgs) Handles HandCard2.Click
-
+        If cardplaying = "Hand2" Then
+            HLH2.Hide()
+            cardplaying = ""
+        ElseIf cardplaying = "Hand1" Then
+            HLH1.Hide()
+            HLH2.Show()
+            cardplaying = "Hand2"
+        ElseIf cardplaying = "Hand3" Then
+            HLH3.Hide()
+            HLH2.Show()
+            cardplaying = "Hand2"
+        ElseIf cardplaying = "Pile" Then
+            HLP.Hide()
+            HLH2.Show()
+            cardplaying = "Hand2"
+        Else
+            HLH2.Show()
+            cardplaying = "Hand2"
+        End If
     End Sub
 
     Private Sub HandCard3_Click(sender As Object, e As EventArgs) Handles HandCard3.Click
-
+        If cardplaying = "Hand3" Then
+            HLH3.Hide()
+            cardplaying = ""
+        ElseIf cardplaying = "Hand1" Then
+            HLH1.Hide()
+            HLH3.Show()
+            cardplaying = "Hand3"
+        ElseIf cardplaying = "Hand2" Then
+            HLH2.Hide()
+            HLH3.Show()
+            cardplaying = "Hand3"
+        ElseIf cardplaying = "Pile" Then
+            HLP.Hide()
+            HLH3.Show()
+            cardplaying = "Hand3"
+        Else
+            HLH3.Show()
+            cardplaying = "Hand3"
+        End If
     End Sub
 
     Private Sub CompTable3_Click(sender As Object, e As EventArgs) Handles CompTable3.Click
@@ -488,6 +536,49 @@
             card_swap.Comp3Cards.Remove(lowestCard)
             discardPile.Add(lowestCard)
             PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
+        End If
+    End Sub
+
+    Private Sub PlayIt_Click(sender As Object, e As EventArgs) Handles PlayIt.Click
+        If cardplaying = "Pile" Then
+            Dim CardVal As String
+            'check if players turn
+
+
+            If card_swap.SpareCards.Count = 0 Then
+                PickUpPile.Hide()
+            End If
+
+            If currentPlayer = 0 Then
+                card = card_swap.SpareCards(0)
+                CardVal = "_" + card.Type + card.Suit
+                card_swap.handpics.Add(CardVal)
+                card_swap.handtag.Add(card.Number)
+
+                card_swap.SpareCards.Remove(card)
+
+                If card_swap.SpareCards.Count = 0 Then
+                    PickUpPile.Hide()
+                End If
+                If card_swap.handpics.Count <= 3 Then
+                    HandRight.Enabled = False
+                    'LeftClick.Enabled = False
+                Else
+
+                    HandRight.Enabled = True
+                    'LeftClick.Enabled = True
+
+                End If
+                UpdateCardCount()
+            End If
+        ElseIf cardplaying = "Hand1" Then
+
+        ElseIf cardplaying = "Hand2" Then
+
+        ElseIf cardplaying = "Hand3" Then
+
+        Else
+            MsgBox("please select a card or the pile if you have no cards you can play")
         End If
     End Sub
 End Class

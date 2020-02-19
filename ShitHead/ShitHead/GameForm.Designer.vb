@@ -64,10 +64,10 @@ Partial Class GameForm
         Me.CardCount = New System.Windows.Forms.Label()
         Me.RollStart = New System.Windows.Forms.Button()
         Me.PlayIt = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.HLH1 = New System.Windows.Forms.PictureBox()
+        Me.HLH2 = New System.Windows.Forms.PictureBox()
+        Me.HLH3 = New System.Windows.Forms.PictureBox()
+        Me.HLP = New System.Windows.Forms.PictureBox()
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,10 +100,10 @@ Partial Class GameForm
         CType(Me.Comp3Down3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Comp3Down2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Comp3Down1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HLH1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HLH2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HLH3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HLP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CmdClose
@@ -646,61 +646,61 @@ Partial Class GameForm
         Me.PlayIt.Text = "Play Card!"
         Me.PlayIt.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'HLH1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox1.ErrorImage = Nothing
-        Me.PictureBox1.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(460, 481)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 146)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 45
-        Me.PictureBox1.TabStop = False
+        Me.HLH1.BackColor = System.Drawing.Color.Transparent
+        Me.HLH1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.HLH1.ErrorImage = Nothing
+        Me.HLH1.Image = Global.ShitHead.My.Resources.Resources.border1
+        Me.HLH1.InitialImage = Nothing
+        Me.HLH1.Location = New System.Drawing.Point(460, 481)
+        Me.HLH1.Name = "HLH1"
+        Me.HLH1.Size = New System.Drawing.Size(100, 146)
+        Me.HLH1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.HLH1.TabIndex = 45
+        Me.HLH1.TabStop = False
         '
-        'PictureBox2
+        'HLH2
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox2.ErrorImage = Nothing
-        Me.PictureBox2.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.PictureBox2.InitialImage = Nothing
-        Me.PictureBox2.Location = New System.Drawing.Point(583, 480)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 146)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 46
-        Me.PictureBox2.TabStop = False
+        Me.HLH2.BackColor = System.Drawing.Color.Transparent
+        Me.HLH2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.HLH2.ErrorImage = Nothing
+        Me.HLH2.Image = Global.ShitHead.My.Resources.Resources.border1
+        Me.HLH2.InitialImage = Nothing
+        Me.HLH2.Location = New System.Drawing.Point(583, 480)
+        Me.HLH2.Name = "HLH2"
+        Me.HLH2.Size = New System.Drawing.Size(100, 146)
+        Me.HLH2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.HLH2.TabIndex = 46
+        Me.HLH2.TabStop = False
         '
-        'PictureBox3
+        'HLH3
         '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox3.ErrorImage = Nothing
-        Me.PictureBox3.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.PictureBox3.InitialImage = Nothing
-        Me.PictureBox3.Location = New System.Drawing.Point(699, 481)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(100, 146)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 47
-        Me.PictureBox3.TabStop = False
+        Me.HLH3.BackColor = System.Drawing.Color.Transparent
+        Me.HLH3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.HLH3.ErrorImage = Nothing
+        Me.HLH3.Image = Global.ShitHead.My.Resources.Resources.border1
+        Me.HLH3.InitialImage = Nothing
+        Me.HLH3.Location = New System.Drawing.Point(699, 481)
+        Me.HLH3.Name = "HLH3"
+        Me.HLH3.Size = New System.Drawing.Size(100, 146)
+        Me.HLH3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.HLH3.TabIndex = 47
+        Me.HLH3.TabStop = False
         '
-        'PictureBox4
+        'HLP
         '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox4.ErrorImage = Nothing
-        Me.PictureBox4.Image = Global.ShitHead.My.Resources.Resources.border1
-        Me.PictureBox4.InitialImage = Nothing
-        Me.PictureBox4.Location = New System.Drawing.Point(635, 238)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(153, 225)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 48
-        Me.PictureBox4.TabStop = False
+        Me.HLP.BackColor = System.Drawing.Color.Transparent
+        Me.HLP.Cursor = System.Windows.Forms.Cursors.Default
+        Me.HLP.ErrorImage = Nothing
+        Me.HLP.Image = Global.ShitHead.My.Resources.Resources.border1
+        Me.HLP.InitialImage = Nothing
+        Me.HLP.Location = New System.Drawing.Point(635, 238)
+        Me.HLP.Name = "HLP"
+        Me.HLP.Size = New System.Drawing.Size(153, 225)
+        Me.HLP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.HLP.TabIndex = 48
+        Me.HLP.TabStop = False
         '
         'GameForm
         '
@@ -751,10 +751,10 @@ Partial Class GameForm
         Me.Controls.Add(Me.Comp3Down3)
         Me.Controls.Add(Me.Comp3Down2)
         Me.Controls.Add(Me.Comp3Down1)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.HLH1)
+        Me.Controls.Add(Me.HLH2)
+        Me.Controls.Add(Me.HLH3)
+        Me.Controls.Add(Me.HLP)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "GameForm"
         Me.Text = "Form1"
@@ -790,10 +790,10 @@ Partial Class GameForm
         CType(Me.Comp3Down3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Comp3Down2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Comp3Down1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HLH1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HLH2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HLH3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HLP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -840,8 +840,8 @@ Partial Class GameForm
     Friend WithEvents CardCount As Label
     Friend WithEvents RollStart As Button
     Friend WithEvents PlayIt As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents HLH1 As PictureBox
+    Friend WithEvents HLH2 As PictureBox
+    Friend WithEvents HLH3 As PictureBox
+    Friend WithEvents HLP As PictureBox
 End Class
