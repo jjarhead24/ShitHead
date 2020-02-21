@@ -8,7 +8,7 @@
     Public PHandList As New List(Of PictureBox)
     Dim currentPlayer As Integer
     Dim discardPile As List(Of Card)
-
+    Dim firstturn As Boolean = True
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim PTableList As New List(Of PictureBox) From {TableCard1, TableCard2, TableCard3}
         Dim PFaceDList As New List(Of PictureBox) From {FaceDown1, FaceDown2, FaceDown3}
@@ -368,7 +368,14 @@
 
         If currentPlayer = 1 Then
             For i = 6 To card_swap.Comp1Cards.Count
-                Try
+                If firstturn = True Then
+                    Thispass = 200 - card_swap.Comp1Cards(i).Number
+                    ThisPassCard = card_swap.Comp1Cards(i)
+                    If Thispass < lowestDiff Then
+                        lowestDiff = Thispass
+                        lowestCard = ThisPassCard
+                    End If
+                Else
                     If discardPile(discardPile.Count - 1).Number <> 7 Then
 
                         If card_swap.Comp1Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
@@ -419,32 +426,7 @@
                             End If
                         End If
                     End If
-                Catch
-                    If card_swap.Comp1Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
-                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp1Cards(i).Number
-                        ThisPassCard = card_swap.Comp1Cards(i)
-                        If Thispass < lowestDiff Then
-                            lowestDiff = Thispass
-                            lowestCard = ThisPassCard
-                        End If
-                    End If
-
-                    If lowestDiff = 1220 Then
-                        For p = 6 To card_swap.Comp1Cards.Count
-                            If card_swap.Comp1Cards(i).Number = 2 Or 10 Then
-                                lowestCard = card_swap.Comp1Cards(i)
-                                noplay = False
-                            End If
-                        Next
-                        If noplay = True Then
-                            For m = 0 To discardPile.Count - 1
-                                card_swap.Comp1Cards.Add(discardPile(m))
-                            Next
-                            discardPile.Clear()
-                        End If
-                    End If
-
-                End Try
+                End If
             Next
             'play the card
             card_swap.Comp1Cards.Remove(lowestCard)
@@ -455,7 +437,14 @@
 
         If currentPlayer = 2 Then
             For i = 6 To card_swap.Comp2Cards.Count
-                Try
+                If firstturn = True Then
+                    Thispass = 200 - card_swap.Comp2Cards(i).Number
+                    ThisPassCard = card_swap.Comp2Cards(i)
+                    If Thispass < lowestDiff Then
+                        lowestDiff = Thispass
+                        lowestCard = ThisPassCard
+                    End If
+                Else
                     If discardPile(discardPile.Count - 1).Number <> 7 Then
 
                         If card_swap.Comp2Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
@@ -506,43 +495,28 @@
                             End If
                         End If
                     End If
-                Catch
-                    If card_swap.Comp2Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
-                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp2Cards(i).Number
-                        ThisPassCard = card_swap.Comp2Cards(i)
-                        If Thispass < lowestDiff Then
-                            lowestDiff = Thispass
-                            lowestCard = ThisPassCard
-                        End If
-                    End If
-
-                    If lowestDiff = 1220 Then
-                        For p = 6 To card_swap.Comp2Cards.Count
-                            If card_swap.Comp2Cards(i).Number = 2 Or 10 Then
-                                lowestCard = card_swap.Comp2Cards(i)
-                                noplay = False
-                            End If
-                        Next
-                        If noplay = True Then
-                            For m = 0 To discardPile.Count - 1
-                                card_swap.Comp2Cards.Add(discardPile(m))
-                            Next
-                            discardPile.Clear()
-                        End If
-                    End If
-                End Try
+                End If
             Next
             'play the card
             card_swap.Comp2Cards.Remove(lowestCard)
             discardPile.Add(lowestCard)
             PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
+            firstturn = False
         End If
 
 
         If currentPlayer = 3 Then
             For i = 6 To card_swap.Comp3Cards.Count
-                Try
-                    If discardPile(discardPile.Count - 1).Number <> 7 Then
+                If firstturn = True Then
+                    Thispass = 200 - card_swap.Comp3Cards(i).Number
+                    ThisPassCard = card_swap.Comp3Cards(i)
+                    If Thispass < lowestDiff Then
+                        lowestDiff = Thispass
+                        lowestCard = ThisPassCard
+                    End If
+                Else
+
+                        If discardPile(discardPile.Count - 1).Number <> 7 Then
 
                         If card_swap.Comp3Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
                             Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp3Cards(i).Number
@@ -592,37 +566,13 @@
                             End If
                         End If
                     End If
-                Catch
-                    If card_swap.Comp3Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
-                        Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp3Cards(i).Number
-                        ThisPassCard = card_swap.Comp3Cards(i)
-                        If Thispass < lowestDiff Then
-                            lowestDiff = Thispass
-                            lowestCard = ThisPassCard
-                        End If
-                    End If
-
-                    If lowestDiff = 1220 Then
-                        For p = 6 To card_swap.Comp3Cards.Count
-                            If card_swap.Comp3Cards(i).Number = 2 Or 10 Then
-                                lowestCard = card_swap.Comp3Cards(i)
-                                noplay = False
-                            End If
-                        Next
-                        If noplay = True Then
-                            For m = 0 To discardPile.Count - 1
-                                card_swap.Comp3Cards.Add(discardPile(m))
-                            Next
-                            discardPile.Clear()
-                        End If
-                    End If
-
-                End Try
+                End If
             Next
             'play the card
             card_swap.Comp3Cards.Remove(lowestCard)
             discardPile.Add(lowestCard)
             PutDownPile.Image = My.Resources.ResourceManager.GetObject(discardPile(discardPile.Count - 1).imagecode)
+            firstturn = False
         End If
     End Sub
 
