@@ -516,7 +516,7 @@
                     End If
                 Else
 
-                        If discardPile(discardPile.Count - 1).Number <> 7 Then
+                    If discardPile(discardPile.Count - 1).Number <> 7 Then
 
                         If card_swap.Comp3Cards(i).Number > discardPile(discardPile.Count - 1).Number Then
                             Thispass = discardPile(discardPile.Count - 1).Number - card_swap.Comp3Cards(i).Number
@@ -582,9 +582,7 @@
             'check if players turn
 
 
-            If card_swap.SpareCards.Count = 0 Then
-                PickUpPile.Hide()
-            End If
+
 
             If currentPlayer = 0 Then
                 card = card_swap.SpareCards(0)
@@ -608,6 +606,7 @@
                 End If
                 UpdateCardCount()
             End If
+
         ElseIf cardplaying = "Hand1" Then
 
         ElseIf cardplaying = "Hand2" Then
@@ -616,6 +615,9 @@
 
         Else
             MsgBox("please select a card or the pile if you have no cards you can play")
+        End If
+        If card_swap.SpareCards.Count = 0 Then
+            PickUpPile.Hide()
         End If
     End Sub
 End Class
