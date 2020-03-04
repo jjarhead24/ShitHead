@@ -68,6 +68,9 @@ Partial Class GameForm
         Me.HLH2 = New System.Windows.Forms.PictureBox()
         Me.HLH3 = New System.Windows.Forms.PictureBox()
         Me.HLP = New System.Windows.Forms.PictureBox()
+        Me.HandNum1 = New System.Windows.Forms.Label()
+        Me.HandNum2 = New System.Windows.Forms.Label()
+        Me.HandNum3 = New System.Windows.Forms.Label()
         CType(Me.TableCard1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableCard3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -702,6 +705,33 @@ Partial Class GameForm
         Me.HLP.TabIndex = 48
         Me.HLP.TabStop = False
         '
+        'HandNum1
+        '
+        Me.HandNum1.AutoSize = True
+        Me.HandNum1.Location = New System.Drawing.Point(487, 559)
+        Me.HandNum1.Name = "HandNum1"
+        Me.HandNum1.Size = New System.Drawing.Size(39, 13)
+        Me.HandNum1.TabIndex = 49
+        Me.HandNum1.Text = "Label1"
+        '
+        'HandNum2
+        '
+        Me.HandNum2.AutoSize = True
+        Me.HandNum2.Location = New System.Drawing.Point(602, 559)
+        Me.HandNum2.Name = "HandNum2"
+        Me.HandNum2.Size = New System.Drawing.Size(39, 13)
+        Me.HandNum2.TabIndex = 50
+        Me.HandNum2.Text = "Label1"
+        '
+        'HandNum3
+        '
+        Me.HandNum3.AutoSize = True
+        Me.HandNum3.Location = New System.Drawing.Point(726, 559)
+        Me.HandNum3.Name = "HandNum3"
+        Me.HandNum3.Size = New System.Drawing.Size(39, 13)
+        Me.HandNum3.TabIndex = 51
+        Me.HandNum3.Text = "Label1"
+        '
         'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -709,6 +739,9 @@ Partial Class GameForm
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.ShitHead.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(1386, 778)
+        Me.Controls.Add(Me.HandNum3)
+        Me.Controls.Add(Me.HandNum2)
+        Me.Controls.Add(Me.HandNum1)
         Me.Controls.Add(Me.PlayIt)
         Me.Controls.Add(Me.RollStart)
         Me.Controls.Add(Me.CardCount)
@@ -844,4 +877,7 @@ Partial Class GameForm
     Friend WithEvents HLH2 As PictureBox
     Friend WithEvents HLH3 As PictureBox
     Friend WithEvents HLP As PictureBox
+    Friend WithEvents HandNum1 As Label
+    Friend WithEvents HandNum2 As Label
+    Friend WithEvents HandNum3 As Label
 End Class
