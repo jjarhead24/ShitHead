@@ -690,10 +690,15 @@
     Public handtag As New List(Of Integer)
     Public tablepics As New List(Of String)
     Public tabletag As New List(Of Integer)
+    Public HandCards As New List(Of Card)
 
 
     Private Sub Done_Click(sender As Object, e As EventArgs) Handles Done.Click
         Dim j As Integer = 0
+        Dim NEWcard As New Card
+        Dim handsPicsList As New List(Of String) From {Hand1.Tag, Hand2.Tag, Hand3.Tag}
+        Dim handNumLists As New List(Of Integer) From {HandLbl1.Text, HandLbl2.Text, HandLbl3.Text}
+
         handpics.Add(Hand1.Tag)
         handpics.Add(Hand2.Tag)
         handpics.Add(Hand3.Tag)
@@ -702,6 +707,10 @@
         handtag.Add(HandLbl2.Text)
         handtag.Add(HandLbl3.Text)
 
+        For i = 0 To 3
+            NEWcard.imagecode = handsPicsList(i)
+            NEWcard.Number = handNumLists(i)
+        Next
 
 
         tablepics.Add(Table1.Tag)

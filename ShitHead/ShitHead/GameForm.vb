@@ -640,8 +640,17 @@
             'if not tell the user the card cannot be played 
             'make sure it doesnt break if its the first turn
             'take the pile if you cant play a card
-            If discardPile(discardPile.Count - 1).Number <> 6 Then
+            If discardPile.Count = 0 Then
                 If HandCard1.Tag >= discardPile(discardPile.Count - 1).Number Then
+                    CardAdded.imagecode = card_swap.handpics(0)
+                    CardAdded.Number = card_swap.handtag(0)
+                    discardPile.Add(CardAdded)
+                    PutDownPile.Image = My.Resources.ResourceManager.GetObject(card_swap.handtag(0))
+                    card_swap.handpics.Remove(0)
+                    card_swap.handtag.Remove(0)
+                    SortTheCards()
+                    UpdateCardCount()
+                ElseIf discardPile(discardPile.Count - 1).Number <> 6 Then
                     CardAdded.imagecode = card_swap.handpics(0)
                     CardAdded.Number = card_swap.handtag(0)
                     discardPile.Add(CardAdded)
@@ -653,6 +662,8 @@
                 Else
                     MsgBox("That card cant be played either choose a different card or take the pile")
                 End If
+
+
             Else
                 If HandCard1.Tag <= discardPile(discardPile.Count - 1).Number Then
                     card_swap.handpics.Remove(0)
