@@ -58,12 +58,12 @@
     Private Sub SetUp(PTableList, PFaceDList, FaceDLblList, CompTableUp, CompTableDown, Comp2TableCards, Comp2DownCard, Comp3TableCards, Comp3DownCards)
         Dim CardVal As String
         For i = 0 To 2
-            PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(i))
-            PHandList(i).Tag = card_swap.handtag(i)
+            PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.HandCards(i).imagecode)
+            PHandList(i).Tag = card_swap.HandCards(i).Number
 
 
-            PTableList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.tablepics(i))
-            PTableList(i).Tag = card_swap.tabletag(i)
+            PTableList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.TableCards(i).imagecode)
+            PTableList(i).Tag = card_swap.TableCards(i).Number
 
             PFaceDList(i).Tag = card_swap.FaceDownNumList(i)
             FaceDLblList(i).Text = card_swap.FaceDownPicList(i)
@@ -147,7 +147,30 @@
     '    HandCard1.Tag = card_swap.handtag(u)
     'End Sub
 
-    Private Sub PickUpPile_Click(sender As Object, e As EventArgs) Handles PickUpPile.Click
+    'Private Sub PickUpPile_Click(sender As Object, e As EventArgs) Handles PickUpPile.Click
+    '    If cardplaying = "Pile" Then
+    '        HLP.Hide()
+    '        cardplaying = ""
+    '    ElseIf cardplaying = "Hand1" Then
+    '        HLH1.Hide()
+    '        HLP.Show()
+    '        cardplaying = "Pile"
+    '    ElseIf cardplaying = "Hand2" Then
+    '        HLH2.Hide()
+    '        HLP.Show()
+    '        cardplaying = "Pile"
+    '    ElseIf cardplaying = "Hand3" Then
+    '        HLH3.Hide()
+    '        HLP.Show()
+    '        cardplaying = "Pile"
+    '    Else
+    '        HLP.Show()
+    '        cardplaying = "Pile"
+    '    End If
+
+    'End Sub
+
+    Private Sub PutDownPile_Click(sender As Object, e As EventArgs) Handles PutDownPile.Click
         If cardplaying = "Pile" Then
             HLP.Hide()
             cardplaying = ""
@@ -167,7 +190,6 @@
             HLP.Show()
             cardplaying = "Pile"
         End If
-
     End Sub
     Dim mess As String
     Dim cardplaying As String
@@ -606,18 +628,71 @@
 
     Private Sub PlayIt_Click(sender As Object, e As EventArgs) Handles PlayIt.Click
         If cardplaying = "Pile" Then
+            'pick up the dicard pile because they can play
+            For i = 0 To discardPile.Count - 1
+                'HandCards is now a list for the hand cards use this to add these from the list
+                egvsbvrbg
+            Next
+
+        ElseIf cardplaying = "Hand1" Then
+            'if the card selected is higher (or lower if 7) play the card
+            'if the card is special let it play
+            fwef
+            'if not tell the user the card cannot be played 
+            'make sure it doesnt break if its the first turn
+            'take the pile if you cant play a card
+            If discardPile.Count <> 0 Then
+                If HandCard1.Tag >= discardPile(discardPile.Count - 1).Number Then
+                    CardAdded = card_swap.HandCards(0)
+
+                    discardPile.Add(CardAdded)
+                    PutDownPile.Image = My.Resources.ResourceManager.GetObject(card_swap.handtag(0))
+                    card_swap.HandCards.Remove(CardAdded)
+
+                    SortTheCards()
+                    UpdateCardCount()
+                ElseIf discardPile(discardPile.Count - 1).Number <> 6 Then
+                    CardAdded = card_swap.HandCards(0)
+
+                    discardPile.Add(CardAdded)
+                    PutDownPile.Image = My.Resources.ResourceManager.GetObject(card_swap.handtag(0))
+                    card_swap.HandCards.Remove(CardAdded)
+
+                    SortTheCards()
+                    UpdateCardCount()
+                Else
+                    MsgBox("That card cant be played either choose a different card or take the pile")
+                End If
+            Else
+                CardAdded = card_swap.HandCards(0)
+
+                discardPile.Add(CardAdded)
+                PutDownPile.Image = My.Resources.ResourceManager.GetObject(card_swap.handtag(0))
+                card_swap.HandCards.Remove(CardAdded)
+
+                SortTheCards()
+                UpdateCardCount()
+
+            End If
+
+        ElseIf cardplaying = "Hand2" Then
+            'reuse the other code and adapt it to work here
+        ElseIf cardplaying = "Hand3" Then
+            'reuse the other code and adapt it to work here
+        Else
+            MsgBox("please select a card or the pile if you have no cards you can play")
+        End If
+
+        While card_swap.handpics.Count < 3 And card_swap.SpareCards.Count = 0
             Dim CardVal As String
+            Dim newCARD As New Card
             'check if players turn
-
-
-
-
             If currentPlayer = 0 Then
                 card = card_swap.SpareCards(0)
                 CardVal = "_" + card.Type + card.Suit
-                card_swap.handpics.Add(CardVal)
-                card_swap.handtag.Add(card.Number)
-
+                newCARD.imagecode = CardVal
+                newCARD.Number = card.Number
+                card_swap.HandCards.Add(newCARD)
                 card_swap.SpareCards.Remove(card)
 
                 If card_swap.SpareCards.Count = 0 Then
@@ -634,54 +709,7 @@
                 End If
                 UpdateCardCount()
             End If
-
-        ElseIf cardplaying = "Hand1" Then
-            'if the card selected is higher (or lower if 7) play the card
-            'if not tell the user the card cannot be played 
-            'make sure it doesnt break if its the first turn
-            'take the pile if you cant play a card
-            If discardPile.Count = 0 Then
-                If HandCard1.Tag >= discardPile(discardPile.Count - 1).Number Then
-                    CardAdded.imagecode = card_swap.handpics(0)
-                    CardAdded.Number = card_swap.handtag(0)
-                    discardPile.Add(CardAdded)
-                    PutDownPile.Image = My.Resources.ResourceManager.GetObject(card_swap.handtag(0))
-                    card_swap.handpics.Remove(0)
-                    card_swap.handtag.Remove(0)
-                    SortTheCards()
-                    UpdateCardCount()
-                ElseIf discardPile(discardPile.Count - 1).Number <> 6 Then
-                    CardAdded.imagecode = card_swap.handpics(0)
-                    CardAdded.Number = card_swap.handtag(0)
-                    discardPile.Add(CardAdded)
-                    PutDownPile.Image = My.Resources.ResourceManager.GetObject(card_swap.handtag(0))
-                    card_swap.handpics.Remove(0)
-                    card_swap.handtag.Remove(0)
-                    SortTheCards()
-                    UpdateCardCount()
-                Else
-                    MsgBox("That card cant be played either choose a different card or take the pile")
-                End If
-
-
-            Else
-                If HandCard1.Tag <= discardPile(discardPile.Count - 1).Number Then
-                    card_swap.handpics.Remove(0)
-                    card_swap.handtag.Remove(0)
-                    SortTheCards()
-                    UpdateCardCount()
-                Else
-                    MsgBox("That card cant be played either choose a different card or take the pile")
-                End If
-            End If
-
-        ElseIf cardplaying = "Hand2" Then
-            'reuse the other code and adapt it to work here
-        ElseIf cardplaying = "Hand3" Then
-            'reuse the other code and adapt it to work here
-        Else
-            MsgBox("please select a card or the pile if you have no cards you can play")
-        End If
+        End While
         If card_swap.SpareCards.Count = 0 Then
             PickUpPile.Hide()
         End If

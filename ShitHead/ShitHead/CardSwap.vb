@@ -691,6 +691,7 @@
     Public tablepics As New List(Of String)
     Public tabletag As New List(Of Integer)
     Public HandCards As New List(Of Card)
+    Public TableCards As New List(Of Card)
 
 
     Private Sub Done_Click(sender As Object, e As EventArgs) Handles Done.Click
@@ -710,6 +711,7 @@
         For i = 0 To 3
             NEWcard.imagecode = handsPicsList(i)
             NEWcard.Number = handNumLists(i)
+            HandCards.Add(NEWcard)
         Next
 
 
@@ -721,6 +723,11 @@
         tabletag.Add(TableLbl2.Text)
         tabletag.Add(TableLbl3.Text)
 
+        For i = 0 To 3
+            NEWcard.imagecode = handsPicsList(i)
+            NEWcard.Number = handNumLists(i)
+            TableCards.Add(NEWcard)
+        Next
 
         GameForm.Show()
         Me.Hide()

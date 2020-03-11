@@ -698,7 +698,7 @@ Partial Class GameForm
         Me.HLP.ErrorImage = Nothing
         Me.HLP.Image = Global.ShitHead.My.Resources.Resources.border1
         Me.HLP.InitialImage = Nothing
-        Me.HLP.Location = New System.Drawing.Point(635, 238)
+        Me.HLP.Location = New System.Drawing.Point(445, 238)
         Me.HLP.Name = "HLP"
         Me.HLP.Size = New System.Drawing.Size(153, 225)
         Me.HLP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
