@@ -105,25 +105,36 @@
     End Sub
 
     Private Sub HandRight_Click(sender As Object, e As EventArgs) Handles HandRight.Click
-       
+        Dim tempList As New List(Of Card)
+        'If card_swap.handpics.Count > 3 Then
+        '    Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
+
+        '    HandCard1.Image = HandCard2.Image
+        '    HandCard1.Tag = HandCard2.Tag
+
+        '    HandCard2.Image = HandCard3.Image
+        '    HandCard2.Tag = HandCard3.Tag
+
+        '    j += 1
+        '    If j = card_swap.handpics.Count Then
+        '        j = 0
+        '    End If
+
+        '    HandCard3.Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(j))
+        '    HandCard3.Tag = card_swap.handtag(j)
+        'End If
+
         If card_swap.handpics.Count > 3 Then
-            Dim PHandList As New List(Of PictureBox) From {HandCard1, HandCard2, HandCard3}
-
-            HandCard1.Image = HandCard2.Image
-            HandCard1.Tag = HandCard2.Tag
-
-            HandCard2.Image = HandCard3.Image
-            HandCard2.Tag = HandCard3.Tag
-
-            j += 1
-            If j = card_swap.handpics.Count Then
-                j = 0
-            End If
-
-            HandCard3.Image = My.Resources.ResourceManager.GetObject(card_swap.handpics(j))
-            HandCard3.Tag = card_swap.handtag(j)
+            For q = 0 To 2
+                tempList.Add(card_swap.HandCards(q))
+                card_swap.HandCards.Remove(card_swap.HandCards(q))
+                card_swap.HandCards.Add(tempList(q))
+            Next
         End If
-
+        For z = 0 To 2
+            PHandList(i).Image = My.Resources.ResourceManager.GetObject(card_swap.HandCards(i).imagecode)
+            PHandList(i).Tag = card_swap.HandCards(i).Number
+        Next
     End Sub
 
     Dim u As Integer = card_swap.handpics.Count
@@ -333,6 +344,12 @@
 
     Private Sub UpdateCardCount()
         Dim countCard As String
+        If discardPile.Count = 0 Then
+            PickUpPile.Image = My.Resources.ResourceManager.GetObject("Back")
+        Else
+            PickUpPile.Image = My.Resources.ResourceManager.GetObject(discardPile(i).imagecode)
+        End If
+
         countCard = "You have " & card_swap.handpics.Count & " cards in your hand"
         CardCount.Text = countCard
         Return
@@ -631,13 +648,15 @@
             'pick up the dicard pile because they can play
             For i = 0 To discardPile.Count - 1
                 'HandCards is now a list for the hand cards use this to add these from the list
-                egvsbvrbg
+                card_swap.HandCards.Add(discardPile(i))
+                discardPile.Remove(discardPile(i))
+                UpdateCardCount()
             Next
 
         ElseIf cardplaying = "Hand1" Then
             'if the card selected is higher (or lower if 7) play the card
             'if the card is special let it play
-            fwef
+            'fwef
             'if not tell the user the card cannot be played 
             'make sure it doesnt break if its the first turn
             'take the pile if you cant play a card
@@ -660,6 +679,22 @@
 
                     SortTheCards()
                     UpdateCardCount()
+
+                ElseIf HandCard1.tag = 9 Then
+                    For g = 0 To discardPile.Count - 1
+                        discardPile.Remove(discardPile(g))
+                    Next
+
+                ElseIf HandCard1.Tag = 1 Then
+                    CardAdded = card_swap.HandCards(0)
+
+                    discardPile.Add(CardAdded)
+                    PutDownPile.Image = My.Resources.ResourceManager.GetObject(card_swap.handtag(0))
+                    card_swap.HandCards.Remove(CardAdded)
+
+                    SortTheCards()
+                    UpdateCardCount()
+
                 Else
                     MsgBox("That card cant be played either choose a different card or take the pile")
                 End If
