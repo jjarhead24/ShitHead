@@ -344,12 +344,15 @@
 
     Private Sub UpdateCardCount()
         Dim countCard As String
-        If discardPile.Count = 0 Then
+        Try
+            If discardPile.Count = 0 Then thiz iz error
+                PickUpPile.Image = My.Resources.ResourceManager.GetObject("Back")
+            Else
+                PickUpPile.Image = My.Resources.ResourceManager.GetObject(discardPile(i).imagecode)
+            End If
+        Catch
             PickUpPile.Image = My.Resources.ResourceManager.GetObject("Back")
-        Else
-            PickUpPile.Image = My.Resources.ResourceManager.GetObject(discardPile(i).imagecode)
-        End If
-
+        End Try
         countCard = "You have " & card_swap.handpics.Count & " cards in your hand"
         CardCount.Text = countCard
         Return

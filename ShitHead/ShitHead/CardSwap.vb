@@ -708,7 +708,7 @@
         handtag.Add(HandLbl2.Text)
         handtag.Add(HandLbl3.Text)
 
-        For i = 0 To 3
+        For i = 0 To 2
             NEWcard.imagecode = handsPicsList(i)
             NEWcard.Number = handNumLists(i)
             HandCards.Add(NEWcard)
@@ -723,7 +723,7 @@
         tabletag.Add(TableLbl2.Text)
         tabletag.Add(TableLbl3.Text)
 
-        For i = 0 To 3
+        For i = 0 To 2
             NEWcard.imagecode = handsPicsList(i)
             NEWcard.Number = handNumLists(i)
             TableCards.Add(NEWcard)
